@@ -240,12 +240,14 @@
     $("#crumb-page").textContent = p.nav;
     renderRail(key);
     setActiveNav(key);
+    highlightAll(key);
     canvas.scrollTop = 0;
     canvas.focus();
   }
 
   function renderBlock(b) {
-    var bl = el("div", "block"); bl.setAttribute("data-id", b.id); bl.setAttribute("draggable", "false");
+    var slug = (b.type || "block").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    var bl = el("div", "block block--" + slug); bl.setAttribute("data-id", b.id); bl.setAttribute("draggable", "false");
     var bar = el("div", "block__bar");
     bar.innerHTML =
       "<span class='block__handle' title='Drag to reorder'><svg viewBox='0 0 24 24' width='16' height='16' fill='currentColor'><circle cx='9' cy='6' r='1.4'/><circle cx='15' cy='6' r='1.4'/><circle cx='9' cy='12' r='1.4'/><circle cx='15' cy='12' r='1.4'/><circle cx='9' cy='18' r='1.4'/><circle cx='15' cy='18' r='1.4'/></svg></span>" +
@@ -310,7 +312,8 @@
       renderRail(current, true);
       updateMetaCounts();
       refreshNavScore(current);
-    }, 260);
+      highlightAll(current);
+    }, 140);
   }
   function updateMetaCounts() {
     var t = $("#seo-title"), m = $("#seo-meta");
@@ -407,9 +410,10 @@
   function compCard(list) {
     var card = el("div", "rail__card");
     var rows = list.slice(0, 3).map(function (c, i) {
-      return "<div class='comp'><span class='comp__rank'>" + (i + 1) + "</span>" +
+      return "<a class='comp' href='" + escAttr(c.url) + "' target='_blank' rel='noopener' title='" + escAttr((c.name || "") + (c.note ? " — " + c.note : "")) + "'>" +
+        "<span class='comp__rank'>" + (i + 1) + "</span>" +
         "<span class='comp__meta'><span class='comp__name'>" + c.name + "</span><span class='comp__dom'>" + c.domain + "</span></span>" +
-        "<a class='comp__link' href='" + escAttr(c.url) + "' target='_blank' rel='noopener' title='" + escAttr(c.note || "Open") + "'><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M8 7h9v9'/></svg></a></div>";
+        "<span class='comp__link'><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M8 7h9v9'/></svg></span></a>";
     }).join("");
     card.innerHTML = "<p class='rail__h'>Top 3 Competitors <span class='hint'>ValueSERP · Houston</span></p>" + rows;
     return card;
@@ -447,15 +451,11 @@
     return card;
   }
   function kwChip(k, isTarget) {
-    var cls = "kw is-" + k.status + (k.status === "done" ? "" : "");
-    var countTxt;
-    if (isTarget || k.min === 0) countTxt = "<span class='kw__count'>vol</span>";
-    else countTxt = "<span class='kw__count'>" + k.count + "/" + k.min + (k.max ? "-" + k.max : "+") + "</span>";
-    return "<div class='" + cls + "' data-term='" + k.term.replace(/'/g, "") + "'>" +
-      "<span class='kw__dot'></span>" +
-      "<span class='kw__term'>" + k.term + "</span>" +
-      (k.vol ? "<span class='kw__vol'>" + fmtVol(k.vol) + "</span>" : "") +
-      countTxt + "</div>";
+    var term = k.term.replace(/'/g, "");
+    if (isTarget || k.min === 0) return "<span class='kw is-target' data-term='" + term + "'>" + k.term + "</span>";
+    var cls = (k.status === "todo" && k.tier === "basic") ? "is-miss" : "is-" + k.status;
+    return "<span class='kw " + cls + "' data-term='" + term + "'>" + k.term +
+      " <b class='kw__c'>" + k.count + "/" + k.min + (k.max ? "-" + k.max : "+") + "</b></span>";
   }
 
   /* ---------- content highlight (CSS Custom Highlight API, non-destructive) ---------- */
@@ -486,6 +486,34 @@
     }
   }
   function clearHighlight() { if (HL_OK) CSS.highlights.delete("kw"); }
+  /* persistent auto-highlight of ALL keyword occurrences in content (updates on edit) */
+  function highlightAll(key) {
+    if (!HL_OK) return;
+    var p = D.pages[key];
+    if (!p || !p.keywords || p.kind === "branding") { try { CSS.highlights.delete("kwauto"); } catch (e) {} return; }
+    var terms = [];
+    ["basic", "extended"].forEach(function (t) { (p.keywords[t] || []).forEach(function (k) { if (k.min > 0) terms.push(k.term); }); });
+    var ranges = [];
+    Array.prototype.forEach.call(document.querySelectorAll("#canvas .block__body"), function (body) {
+      var nodes = [], walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null), nd;
+      while ((nd = walker.nextNode())) nodes.push(nd);
+      terms.forEach(function (term) {
+        var tokens = norm(term).split(" ").filter(Boolean); if (!tokens.length) return;
+        var gap = "[\\s\\-\\u2010-\\u2015]+";
+        var pat = tokens.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("(?:" + gap + "\\w+){0,2}" + gap);
+        var re = new RegExp("(?:^|[^A-Za-z0-9])(" + pat + ")(?![A-Za-z0-9])", "gi");
+        nodes.forEach(function (node) {
+          var txt = node.nodeValue, m; re.lastIndex = 0;
+          while ((m = re.exec(txt))) {
+            var start = m.index + (m[0].length - m[1].length);
+            try { var r = document.createRange(); r.setStart(node, start); r.setEnd(node, start + m[1].length); ranges.push(r); } catch (e) {}
+            if (m.index === re.lastIndex) re.lastIndex++;
+          }
+        });
+      });
+    });
+    try { if (ranges.length) { var h = new Highlight(); ranges.forEach(function (r) { h.add(r); }); CSS.highlights.set("kwauto", h); } else CSS.highlights.delete("kwauto"); } catch (e) {}
+  }
 
   /* ---------- brand quick-ref rail ---------- */
   function brandRef() {
