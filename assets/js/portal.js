@@ -11,6 +11,7 @@
   /* realistic word targets (leave visible headroom, like a real SEO tool) */
   var TARGETS = { home: 620, about: 380, services: 340, "service-24hour": 300, "service-respite": 285,
     "service-personal": 260, "service-companionship": 270, "service-homesupport": 280, blog: 300, careers: 240, contact: 140 };
+  var AI_PROXY = "https://candor-ai-proxy-production.up.railway.app"; /* ZeroGPT proxy (Railway) */
 
   /* ---------- tiny helpers ---------- */
   function $(s, r) { return (r || document).querySelector(s); }
@@ -317,6 +318,35 @@
     if (m) { var lm = m.value.length; var c2 = $("#ct-meta"); if (c2) { c2.textContent = lm + " / 160"; c2.className = "count " + (lm >= 120 && lm <= 160 ? "ok" : "warn"); } }
   }
 
+  /* ---------- AI detection (ZeroGPT via proxy) ---------- */
+  function aiCard() {
+    var card = el("div", "rail__card");
+    card.innerHTML =
+      "<p class='rail__h'>AI Detection <span class='hint'>ZeroGPT</span></p>" +
+      "<div class='ai__result' id='ai-result'><span class='ai__idle'>Scan this page's content to check it reads as human-written.</span></div>" +
+      "<button class='ai__btn' id='ai-run'>Run AI scan</button>";
+    card.querySelector("#ai-run").addEventListener("click", runAiScan);
+    return card;
+  }
+  function runAiScan() {
+    var box = $("#ai-result"), btn = $("#ai-run"); if (!box) return;
+    var text = ""; Array.prototype.forEach.call(document.querySelectorAll("#canvas .block__body"), function (b) { text += " " + b.textContent; });
+    text = text.replace(/\s+/g, " ").trim();
+    box.innerHTML = "<span class='ai__idle'>Scanning…</span>"; if (btn) btn.disabled = true;
+    fetch(AI_PROXY + "/detect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: text }) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (btn) btn.disabled = false;
+        if (d && d.configured === false) { box.innerHTML = "<span class='ai__idle'>" + (d.message || "AI detection isn't configured yet.") + "</span>"; return; }
+        if (d && d.error) { box.innerHTML = "<span class='ai__err'>" + d.error + "</span>"; return; }
+        var ai = (d && d.aiPercentage) || 0, human = d && d.isHuman;
+        box.innerHTML =
+          "<div class='ai__pct " + (human ? "is-human" : "is-ai") + "'>" + ai + "<small>% AI</small></div>" +
+          "<div class='ai__verdict " + (human ? "is-human" : "is-ai") + "'>" + (human ? "Content appears human-written" : escAttr(d.feedback || "May read as AI-generated")) + "</div>";
+      })
+      .catch(function () { if (btn) btn.disabled = false; box.innerHTML = "<span class='ai__err'>Could not reach the detector. Try again shortly.</span>"; });
+  }
+
   /* ---------- right rail ---------- */
   function renderRail(key, live) {
     var p = D.pages[key]; var rail = $("#rail"); rail.innerHTML = "";
@@ -328,6 +358,7 @@
     if (p.kind === "content") {
       $("#scorepill").hidden = false; $("#scorepill-num").textContent = s.overall;
       rail.appendChild(scoreCard(s));
+      rail.appendChild(aiCard());
     } else { $("#scorepill").hidden = true; }
 
     if (p.competitors) rail.appendChild(compCard(p.competitors));
@@ -391,7 +422,7 @@
     var basic = s.per.filter(function (x) { return x.tier === "basic"; });
     var ext = s.per.filter(function (x) { return x.tier === "extended"; });
     card.innerHTML =
-      "<p class='rail__h'>" + (p.kind === "strategy" ? "Target Keywords" : "Keywords") + " <span class='hint'>hover to highlight</span></p>" +
+      "<p class='rail__h'>" + (p.kind === "strategy" ? "Target Keywords" : "Keywords") + " <span class='hint'>ValueSERP</span></p>" +
       "<div class='kwtabs'>" +
         "<button class='kwtab" + (kwTab === "basic" ? " is-on" : "") + "' data-tab='basic'>Basic <span class='n'>" + basic.length + "</span></button>" +
         "<button class='kwtab" + (kwTab === "extended" ? " is-on" : "") + "' data-tab='extended'>Extended <span class='n'>" + ext.length + "</span></button>" +

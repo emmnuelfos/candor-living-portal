@@ -1,8 +1,8 @@
 /* ============================================================
    CANDOR LIVING HOME CARE — Content & SEO model
-   Built by TaskFloVA. Competitors = ValueSERP live Google SERP (Houston,
-   TX). Keyword volumes = Semrush (US db). Jun 2026. Scoring + keyword
-   highlighting run client-side against these sets.
+   Built by TaskFloVA. Competitors + keyword targets = ValueSERP live Google SERP
+   (Houston, TX). Jun 2026. Scoring + keyword highlighting run
+   client-side against these sets.
    ============================================================ */
 window.CANDOR = {
   meta: {
@@ -15,7 +15,7 @@ window.CANDOR = {
     address: "1919 Taylor Street, STE F, Houston, TX 77007",
     serviceArea: "Houston and surrounding areas",
     builtBy: "TaskFloVA",
-    researchNote: "Competitor rankings from ValueSERP (live Google SERP, Houston, TX). Keyword search volumes from Semrush (US database). June 2026."
+    researchNote: "Competitors and keyword targets from ValueSERP (live Google SERP, Houston, TX). June 2026."
   },
 
   /* ---- Brand system (drives the Branding nav pages) ---- */
@@ -60,23 +60,23 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "home care houston", vol: 1300, min: 4, max: 9 },
-        { term: "home care services houston", vol: 1000, min: 2, max: 5 },
-        { term: "senior home care houston", vol: 140, min: 2, max: 4 },
-        { term: "in-home care houston", vol: 320, min: 1, max: 3 },
-        { term: "home care agency houston", vol: 720, min: 1, max: 3 }
+        { term: "home care houston", min: 4, max: 9 },
+        { term: "home care services houston", min: 2, max: 5 },
+        { term: "senior home care houston", min: 2, max: 4 },
+        { term: "in-home care houston", min: 1, max: 3 },
+        { term: "home care agency houston", min: 1, max: 3 }
       ],
       extended: [
-        { term: "non-medical home care", vol: 40, min: 1, max: 3 },
-        { term: "elderly care houston", vol: 260, min: 1, max: 2 },
-        { term: "caregivers", vol: 320, min: 2, max: 5 },
-        { term: "senior care houston", vol: 720, min: 1, max: 2 },
-        { term: "home care for seniors", vol: 33100, min: 1, max: 3 },
-        { term: "in-home senior care", vol: 60500, min: 1, max: 2 },
-        { term: "respite care", vol: 165000, min: 1, max: 2 },
-        { term: "companionship", vol: 1600, min: 1, max: 3 },
-        { term: "personal care", vol: 49500, min: 1, max: 3 },
-        { term: "aging in place", vol: 8100, min: 1, max: 2 }
+        { term: "non-medical home care", min: 1, max: 3 },
+        { term: "elderly care houston", min: 1, max: 2 },
+        { term: "caregivers", min: 2, max: 5 },
+        { term: "senior care houston", min: 1, max: 2 },
+        { term: "home care for seniors", min: 1, max: 3 },
+        { term: "in-home senior care", min: 1, max: 2 },
+        { term: "respite care", min: 1, max: 2 },
+        { term: "companionship", min: 1, max: 3 },
+        { term: "personal care", min: 1, max: 3 },
+        { term: "aging in place", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -151,17 +151,17 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "home care houston", vol: 1300, min: 2, max: 5 },
-        { term: "non-medical home care", vol: 40, min: 1, max: 3 },
-        { term: "home care agency houston", vol: 720, min: 1, max: 3 },
-        { term: "senior care houston", vol: 720, min: 1, max: 2 }
+        { term: "home care houston", min: 2, max: 5 },
+        { term: "non-medical home care", min: 1, max: 3 },
+        { term: "home care agency houston", min: 1, max: 3 },
+        { term: "senior care houston", min: 1, max: 2 }
       ],
       extended: [
-        { term: "caregivers", vol: 320, min: 2, max: 4 },
-        { term: "in-home care", vol: 320, min: 1, max: 3 },
-        { term: "elderly care", vol: 260, min: 1, max: 2 },
-        { term: "aging in place", vol: 8100, min: 1, max: 2 },
-        { term: "trusted", vol: 0, min: 1, max: 2 }
+        { term: "caregivers", min: 2, max: 4 },
+        { term: "in-home care", min: 1, max: 3 },
+        { term: "elderly care", min: 1, max: 2 },
+        { term: "aging in place", min: 1, max: 2 },
+        { term: "trusted", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -213,18 +213,18 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "home care services houston", vol: 1000, min: 3, max: 6 },
-        { term: "home care houston", vol: 1300, min: 2, max: 5 },
-        { term: "in-home care", vol: 320, min: 2, max: 4 },
-        { term: "senior care houston", vol: 720, min: 1, max: 3 }
+        { term: "home care services houston", min: 3, max: 6 },
+        { term: "home care houston", min: 2, max: 5 },
+        { term: "in-home care", min: 2, max: 4 },
+        { term: "senior care houston", min: 1, max: 3 }
       ],
       extended: [
-        { term: "24 hour home care", vol: 165000, min: 1, max: 3 },
-        { term: "respite care", vol: 165000, min: 1, max: 3 },
-        { term: "personal care", vol: 49500, min: 1, max: 3 },
-        { term: "companionship", vol: 1600, min: 1, max: 3 },
-        { term: "homemaking services", vol: 6600, min: 1, max: 2 },
-        { term: "non-medical home care", vol: 40, min: 1, max: 2 }
+        { term: "24 hour home care", min: 1, max: 3 },
+        { term: "respite care", min: 1, max: 3 },
+        { term: "personal care", min: 1, max: 3 },
+        { term: "companionship", min: 1, max: 3 },
+        { term: "homemaking services", min: 1, max: 2 },
+        { term: "non-medical home care", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -278,17 +278,17 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "24 hour home care", vol: 165000, min: 4, max: 8 },
-        { term: "24 hour home care houston", vol: 110, min: 2, max: 4 },
-        { term: "around the clock care", vol: 0, min: 1, max: 3 },
-        { term: "live-in care", vol: 0, min: 1, max: 3 }
+        { term: "24 hour home care", min: 4, max: 8 },
+        { term: "24 hour home care houston", min: 2, max: 4 },
+        { term: "around the clock care", min: 1, max: 3 },
+        { term: "live-in care", min: 1, max: 3 }
       ],
       extended: [
-        { term: "overnight care", vol: 0, min: 1, max: 3 },
-        { term: "home care houston", vol: 1300, min: 1, max: 3 },
-        { term: "senior care", vol: 720, min: 1, max: 2 },
-        { term: "caregivers", vol: 320, min: 1, max: 3 },
-        { term: "aging in place", vol: 8100, min: 1, max: 2 }
+        { term: "overnight care", min: 1, max: 3 },
+        { term: "home care houston", min: 1, max: 3 },
+        { term: "senior care", min: 1, max: 2 },
+        { term: "caregivers", min: 1, max: 3 },
+        { term: "aging in place", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -332,16 +332,16 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "respite care", vol: 165000, min: 4, max: 8 },
-        { term: "respite care houston", vol: 480, min: 2, max: 5 },
-        { term: "respite care near me", vol: 14800, min: 1, max: 3 }
+        { term: "respite care", min: 4, max: 8 },
+        { term: "respite care houston", min: 2, max: 5 },
+        { term: "respite care near me", min: 1, max: 3 }
       ],
       extended: [
-        { term: "family caregiver", vol: 0, min: 1, max: 3 },
-        { term: "short-term care", vol: 0, min: 1, max: 3 },
-        { term: "caregiver relief", vol: 0, min: 1, max: 2 },
-        { term: "in-home care", vol: 320, min: 1, max: 3 },
-        { term: "home care houston", vol: 1300, min: 1, max: 2 }
+        { term: "family caregiver", min: 1, max: 3 },
+        { term: "short-term care", min: 1, max: 3 },
+        { term: "caregiver relief", min: 1, max: 2 },
+        { term: "in-home care", min: 1, max: 3 },
+        { term: "home care houston", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -380,17 +380,17 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "personal care services", vol: 49500, min: 4, max: 8 },
-        { term: "personal care", vol: 49500, min: 3, max: 7 },
-        { term: "personal care services houston", vol: 20, min: 1, max: 3 }
+        { term: "personal care services", min: 4, max: 8 },
+        { term: "personal care", min: 3, max: 7 },
+        { term: "personal care services houston", min: 1, max: 3 }
       ],
       extended: [
-        { term: "bathing and dressing", vol: 0, min: 1, max: 3 },
-        { term: "grooming", vol: 0, min: 1, max: 3 },
-        { term: "mobility assistance", vol: 0, min: 1, max: 2 },
-        { term: "activities of daily living", vol: 0, min: 1, max: 2 },
-        { term: "in-home care", vol: 320, min: 1, max: 2 },
-        { term: "home care houston", vol: 1300, min: 1, max: 2 }
+        { term: "bathing and dressing", min: 1, max: 3 },
+        { term: "grooming", min: 1, max: 3 },
+        { term: "mobility assistance", min: 1, max: 2 },
+        { term: "activities of daily living", min: 1, max: 2 },
+        { term: "in-home care", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -433,17 +433,17 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "companion care", vol: 165000, min: 4, max: 8 },
-        { term: "companionship for seniors", vol: 1600, min: 2, max: 5 },
-        { term: "elderly companionship", vol: 480, min: 1, max: 3 },
-        { term: "companion care houston", vol: 40, min: 1, max: 3 }
+        { term: "companion care", min: 4, max: 8 },
+        { term: "companionship for seniors", min: 2, max: 5 },
+        { term: "elderly companionship", min: 1, max: 3 },
+        { term: "companion care houston", min: 1, max: 3 }
       ],
       extended: [
-        { term: "loneliness", vol: 0, min: 1, max: 3 },
-        { term: "social interaction", vol: 0, min: 1, max: 2 },
-        { term: "senior companionship", vol: 0, min: 1, max: 3 },
-        { term: "in-home care", vol: 320, min: 1, max: 2 },
-        { term: "home care houston", vol: 1300, min: 1, max: 2 }
+        { term: "loneliness", min: 1, max: 3 },
+        { term: "social interaction", min: 1, max: 2 },
+        { term: "senior companionship", min: 1, max: 3 },
+        { term: "in-home care", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -486,17 +486,17 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "homemaking services", vol: 6600, min: 3, max: 6 },
-        { term: "home support services", vol: 590, min: 2, max: 5 },
-        { term: "light housekeeping for seniors", vol: 1000, min: 1, max: 3 },
-        { term: "homemaker services houston", vol: 20, min: 1, max: 3 }
+        { term: "homemaking services", min: 3, max: 6 },
+        { term: "home support services", min: 2, max: 5 },
+        { term: "light housekeeping for seniors", min: 1, max: 3 },
+        { term: "homemaker services houston", min: 1, max: 3 }
       ],
       extended: [
-        { term: "meal preparation", vol: 0, min: 1, max: 3 },
-        { term: "laundry", vol: 0, min: 1, max: 2 },
-        { term: "errands", vol: 0, min: 1, max: 2 },
-        { term: "housekeeping", vol: 0, min: 1, max: 3 },
-        { term: "home care houston", vol: 1300, min: 1, max: 2 }
+        { term: "meal preparation", min: 1, max: 3 },
+        { term: "laundry", min: 1, max: 2 },
+        { term: "errands", min: 1, max: 2 },
+        { term: "housekeeping", min: 1, max: 3 },
+        { term: "home care houston", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -541,16 +541,16 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "senior home care", vol: 12100, min: 2, max: 5 },
-        { term: "home care for seniors", vol: 33100, min: 1, max: 3 },
-        { term: "in-home senior care", vol: 60500, min: 1, max: 3 }
+        { term: "senior home care", min: 2, max: 5 },
+        { term: "home care for seniors", min: 1, max: 3 },
+        { term: "in-home senior care", min: 1, max: 3 }
       ],
       extended: [
-        { term: "how much does in home senior care cost", vol: 110, min: 1, max: 2 },
-        { term: "does medicare cover in home care", vol: 170, min: 1, max: 2 },
-        { term: "aging in place", vol: 8100, min: 1, max: 3 },
-        { term: "quality of life", vol: 0, min: 1, max: 2 },
-        { term: "home care houston", vol: 1300, min: 1, max: 2 }
+        { term: "how much does in home senior care cost", min: 1, max: 2 },
+        { term: "does medicare cover in home care", min: 1, max: 2 },
+        { term: "aging in place", min: 1, max: 3 },
+        { term: "quality of life", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -585,16 +585,16 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "caregiver jobs houston", vol: 720, min: 3, max: 6 },
-        { term: "cna jobs houston", vol: 880, min: 2, max: 5 },
-        { term: "home care jobs houston", vol: 110, min: 1, max: 3 }
+        { term: "caregiver jobs houston", min: 3, max: 6 },
+        { term: "cna jobs houston", min: 2, max: 5 },
+        { term: "home care jobs houston", min: 1, max: 3 }
       ],
       extended: [
-        { term: "caregiver", vol: 0, min: 3, max: 7 },
-        { term: "home health aide", vol: 20, min: 1, max: 3 },
-        { term: "flexible shifts", vol: 0, min: 1, max: 2 },
-        { term: "hiring", vol: 0, min: 1, max: 3 },
-        { term: "houston", vol: 0, min: 2, max: 6 }
+        { term: "caregiver", min: 3, max: 7 },
+        { term: "home health aide", min: 1, max: 3 },
+        { term: "flexible shifts", min: 1, max: 2 },
+        { term: "hiring", min: 1, max: 3 },
+        { term: "houston", min: 2, max: 6 }
       ]
     },
     blocks: [
@@ -635,14 +635,14 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "home care houston", vol: 1300, min: 2, max: 4 },
-        { term: "home care near me", vol: 33100, min: 1, max: 2 },
-        { term: "home care agency houston", vol: 720, min: 1, max: 2 }
+        { term: "home care houston", min: 2, max: 4 },
+        { term: "home care near me", min: 1, max: 2 },
+        { term: "home care agency houston", min: 1, max: 2 }
       ],
       extended: [
-        { term: "free consultation", vol: 0, min: 1, max: 2 },
-        { term: "in-home care", vol: 320, min: 1, max: 2 },
-        { term: "houston and surrounding areas", vol: 0, min: 1, max: 2 }
+        { term: "free consultation", min: 1, max: 2 },
+        { term: "in-home care", min: 1, max: 2 },
+        { term: "houston and surrounding areas", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -776,29 +776,29 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "home care houston", vol: 1300, min: 0, max: 0 },
-        { term: "home care services houston", vol: 1000, min: 0, max: 0 },
-        { term: "home care agency houston", vol: 720, min: 0, max: 0 },
-        { term: "senior care houston", vol: 720, min: 0, max: 0 },
-        { term: "respite care houston", vol: 480, min: 0, max: 0 }
+        { term: "home care houston", min: 0, max: 0 },
+        { term: "home care services houston", min: 0, max: 0 },
+        { term: "home care agency houston", min: 0, max: 0 },
+        { term: "senior care houston", min: 0, max: 0 },
+        { term: "respite care houston", min: 0, max: 0 }
       ],
       extended: [
-        { term: "24 hour home care", vol: 165000, min: 0, max: 0 },
-        { term: "respite care", vol: 165000, min: 0, max: 0 },
-        { term: "companion care", vol: 165000, min: 0, max: 0 },
-        { term: "personal care services", vol: 49500, min: 0, max: 0 },
-        { term: "cna jobs houston", vol: 880, min: 0, max: 0 },
-        { term: "caregiver jobs houston", vol: 720, min: 0, max: 0 }
+        { term: "24 hour home care", min: 0, max: 0 },
+        { term: "respite care", min: 0, max: 0 },
+        { term: "companion care", min: 0, max: 0 },
+        { term: "personal care services", min: 0, max: 0 },
+        { term: "cna jobs houston", min: 0, max: 0 },
+        { term: "caregiver jobs houston", min: 0, max: 0 }
       ]
     },
     blocks: [
       { id: "seo-hero", type: "Intro", label: "SEO Strategy", html:
         "<p class='eyebrow'>Branding / Strategy</p>" +
         "<h1>SEO Strategy</h1>" +
-        "<p class='lead'>How Candor Living wins search in Houston. Competitor rankings come from live ValueSERP results (Houston Google SERP); search volumes come from Semrush (US database). June 2026, not guesswork.</p>" },
+        "<p class='lead'>How Candor Living wins search in Houston. Competitor rankings and keyword targets come from live ValueSERP results (Houston Google SERP). June 2026, not guesswork.</p>" },
       { id: "seo-landscape", type: "Landscape", label: "The Landscape", html:
         "<h2>The competitive landscape</h2>" +
-        "<p>The money term is <strong>home care houston</strong> (1,300 searches a month, $4.15 CPC via Semrush). In Houston's live ValueSERP results, the front page is led by local independents (houston-homecare.com, Home Care Team TX, homecare-houston.com) alongside national franchises with Houston pages (Homewatch CareGivers, Visiting Angels, TheKey). Directories like Care.com and Yelp also rank, which is an opening: a focused local brand with real service pages can outrank a directory listing.</p>" },
+        "<p>The money term is <strong>home care houston</strong>. In Houston's live ValueSERP results, the front page is led by local independents (houston-homecare.com, Home Care Team TX, homecare-houston.com) alongside national franchises with Houston pages (Homewatch CareGivers, Visiting Angels, TheKey). Directories like Care.com and Yelp also rank, which is an opening: a focused local brand with real service pages can outrank a directory listing.</p>" },
       { id: "seo-approach", type: "Approach", label: "Our Approach", html:
         "<h2>The plan, in five moves</h2>" +
         "<ol class='steps'>" +
@@ -810,17 +810,17 @@ window.CANDOR.addPages({
         "</ol>" },
       { id: "seo-targets", type: "Targets", label: "Priority Keywords", html:
         "<h2>Priority keyword map</h2>" +
-        "<table class='kw-table'><thead><tr><th>Page</th><th>Primary keyword</th><th>Volume/mo</th></tr></thead><tbody>" +
-        "<tr><td>Home</td><td>home care houston</td><td>1,300</td></tr>" +
-        "<tr><td>Services</td><td>home care services houston</td><td>1,000</td></tr>" +
-        "<tr><td>24-Hour</td><td>24 hour home care (houston)</td><td>165,000 / 110</td></tr>" +
-        "<tr><td>Respite</td><td>respite care houston</td><td>480</td></tr>" +
-        "<tr><td>Personal Care</td><td>personal care services</td><td>49,500</td></tr>" +
-        "<tr><td>Companionship</td><td>companion care</td><td>165,000</td></tr>" +
-        "<tr><td>Home Support</td><td>homemaking services</td><td>6,600</td></tr>" +
-        "<tr><td>Careers</td><td>cna jobs houston</td><td>880</td></tr>" +
+        "<table class='kw-table'><thead><tr><th>Page</th><th>Primary keyword</th><th>Search demand</th></tr></thead><tbody>" +
+        "<tr><td>Home</td><td>home care houston</td><td>High (local)</td></tr>" +
+        "<tr><td>Services</td><td>home care services houston</td><td>High (local)</td></tr>" +
+        "<tr><td>24-Hour</td><td>24 hour home care</td><td>Very high (national)</td></tr>" +
+        "<tr><td>Respite</td><td>respite care houston</td><td>Medium (local)</td></tr>" +
+        "<tr><td>Personal Care</td><td>personal care services</td><td>High (national)</td></tr>" +
+        "<tr><td>Companionship</td><td>companion care</td><td>Very high (national)</td></tr>" +
+        "<tr><td>Home Support</td><td>homemaking services</td><td>Medium</td></tr>" +
+        "<tr><td>Careers</td><td>cna jobs houston</td><td>Medium (local)</td></tr>" +
         "</tbody></table>" +
-        "<p class='muted'>Local head terms are lower volume but far higher intent and easier to win than the national terms. We target both: local for conversions now, national for reach as authority grows.</p>" }
+        "<p class='muted'>Local head terms have far higher intent and are easier to win than the national terms. We target both: local for conversions now, national for reach as authority grows.</p>" }
     ]
   }
 
