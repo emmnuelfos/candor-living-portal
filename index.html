@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Content Portal — Candor Living Home Care | TaskFloVA</title>
+<meta name="description" content="Private content portal by TaskFloVA for Candor Living Home Care Service.">
+<link rel="icon" type="image/svg+xml" href="assets/img/tf-blue.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/portal.css?v=20260701a">
+</head>
+<body>
+
+<!-- ====================== LOGIN GATE ====================== -->
+<div class="gate" id="gate">
+  <div class="gate__aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="gate__grain" aria-hidden="true"></div>
+  <div class="gate__card" role="dialog" aria-labelledby="gate-title">
+    <img class="gate__logo" src="assets/img/tf-white.svg" alt="TaskFloVA">
+    <div class="gate__divider"><span></span><em>CONTENT PORTAL</em><span></span></div>
+    <h1 id="gate-title" class="gate__client">Candor Living<br>Home Care</h1>
+    <p class="gate__hint">This workspace is private. Enter the access key provided by your TaskFloVA team to view your website content.</p>
+    <form class="gate__form" id="gate-form" autocomplete="off">
+      <div class="gate__field">
+        <label for="gate-pass">Access key</label>
+        <div class="gate__inputwrap">
+          <input type="password" id="gate-pass" name="password" placeholder="••••••••••••" autocomplete="current-password" required>
+          <button type="button" class="gate__eye" id="gate-eye" aria-label="Show password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <p class="gate__error" id="gate-error" role="alert" hidden>That key isn't right. Check your welcome email or contact TaskFloVA.</p>
+      </div>
+      <button type="submit" class="gate__btn" id="gate-btn">
+        <span class="gate__btn-label">Unlock portal</span>
+        <svg class="gate__btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </button>
+    </form>
+    <p class="gate__foot">Crafted &amp; managed by <strong>TaskFloVA</strong> for Candor Living Home Care</p>
+  </div>
+</div>
+
+<!-- ====================== APP SHELL ====================== -->
+<div class="app" id="app" hidden>
+
+  <!-- LEFT: navigation -->
+  <aside class="side" id="side" aria-label="Portal navigation">
+    <div class="side__brand">
+      <img src="assets/img/tf-white.svg" alt="TaskFloVA" class="side__logo">
+    </div>
+    <div class="side__client">
+      <span class="side__client-mark" aria-hidden="true">CL</span>
+      <span class="side__client-meta">
+        <strong>Candor Living</strong>
+        <em>Content workspace</em>
+      </span>
+    </div>
+    <nav class="side__nav" id="nav"><!-- nav tree injected by portal.js --></nav>
+    <div class="side__foot">
+      <button class="side__logout" id="logout">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+        <span>Lock portal</span>
+      </button>
+      <p class="side__credit">Managed by TaskFloVA</p>
+    </div>
+  </aside>
+
+  <!-- CENTER: editor / content -->
+  <div class="editor">
+    <header class="ebar">
+      <button class="ebar__burger" id="burger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="ebar__crumb">
+        <span class="ebar__site" id="crumb-site">candorlivinghcs.com</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        <span class="ebar__page" id="crumb-page">Home</span>
+      </div>
+      <div class="ebar__actions">
+        <span class="ebar__scorepill" id="scorepill" hidden><b id="scorepill-num">0</b>/100</span>
+        <button class="ebar__btn ebar__btn--ghost" id="btn-reset" title="Reset any edits on this page">Reset</button>
+        <button class="ebar__btn ebar__btn--primary" id="btn-save"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg><span>Save</span></button>
+      </div>
+    </header>
+    <main class="canvas" id="canvas" tabindex="-1"><!-- page injected by portal.js --></main>
+    <footer class="editor__foot">
+      <img src="assets/img/tf-white.svg" alt="TaskFloVA" class="editor__foot-logo">
+      <p>Content portal crafted for <strong>Candor Living Home Care</strong> · Houston, TX</p>
+    </footer>
+  </div>
+
+  <!-- RIGHT: SEO rail -->
+  <aside class="rail" id="rail" aria-label="SEO analysis"><!-- injected by portal.js --></aside>
+
+</div>
+
+<script src="assets/js/data.js?v=20260701a"></script>
+<script src="assets/js/portal.js?v=20260701a"></script>
+</body>
+</html>
