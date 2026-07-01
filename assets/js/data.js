@@ -1,7 +1,7 @@
 /* ============================================================
    CANDOR LIVING HOME CARE — Content & SEO model
-   Built by TaskFloVA. Data is baked from real Semrush research
-   (US database, Houston market, Jun 2026). Scoring + keyword
+   Built by TaskFloVA. Competitors = ValueSERP live Google SERP (Houston,
+   TX). Keyword volumes = Semrush (US db). Jun 2026. Scoring + keyword
    highlighting run client-side against these sets.
    ============================================================ */
 window.CANDOR = {
@@ -15,7 +15,7 @@ window.CANDOR = {
     address: "1919 Taylor Street, STE F, Houston, TX 77007",
     serviceArea: "Houston and surrounding areas",
     builtBy: "TaskFloVA",
-    researchNote: "Keyword volumes and competitor rankings pulled from Semrush (US database), June 2026."
+    researchNote: "Competitor rankings from ValueSERP (live Google SERP, Houston, TX). Keyword search volumes from Semrush (US database). June 2026."
   },
 
   /* ---- Brand system (drives the Branding nav pages) ---- */
@@ -54,9 +54,9 @@ window.CANDOR.addPages({
     h1: "Compassionate Home Care in Houston, Built Around Your Family",
     targetWords: 780,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Ranks #1 for 'home care houston'" },
-      { name: "AAH Care", domain: "aahcare.com", url: "https://www.aahcare.com/", note: "Top-3 local organic" },
-      { name: "Homewatch CareGivers (Galleria)", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "National brand, strong Houston page" }
+      { name: "Houston Home Care", domain: "houston-homecare.com", url: "https://www.houston-homecare.com/", note: "Houston organic #1 (ValueSERP)" },
+      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "Houston organic #2" },
+      { name: "Home Care Team TX", domain: "homecareteamtx.com", url: "https://www.homecareteamtx.com/", note: "Houston organic #4" }
     ],
     keywords: {
       basic: [
@@ -145,9 +145,9 @@ window.CANDOR.addPages({
     h1: "About Candor Living Home Care",
     targetWords: 560,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/about/", note: "Local leader" },
-      { name: "Visiting Angels Houston", domain: "visitingangels.com", url: "https://www.visitingangels.com/houstonmetro/home", note: "National brand" },
-      { name: "Hearts at Home", domain: "heartsathome.com", url: "https://heartsathome.com/houston/", note: "Local competitor" }
+      { name: "Houston Home Care", domain: "houston-homecare.com", url: "https://www.houston-homecare.com/", note: "Houston organic #1 (ValueSERP)" },
+      { name: "Home Matters Caregiving", domain: "homematters.com", url: "https://homematters.com/southwest-houston-tx/", note: "Houston organic (ValueSERP)" },
+      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Houston organic #7" }
     ],
     keywords: {
       basic: [
@@ -207,9 +207,9 @@ window.CANDOR.addPages({
     h1: "Home Care Services in Houston",
     targetWords: 620,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Local leader" },
-      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "National brand" },
-      { name: "Nurse Next Door", domain: "nursenextdoor.com", url: "https://www.nursenextdoor.com/location/houston", note: "National brand" }
+      { name: "Houston Home Care", domain: "houston-homecare.com", url: "https://www.houston-homecare.com/", note: "Houston organic #1 (ValueSERP)" },
+      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "Houston organic #2" },
+      { name: "Home Care Team TX", domain: "homecareteamtx.com", url: "https://www.homecareteamtx.com/", note: "Houston organic #4" }
     ],
     keywords: {
       basic: [
@@ -272,9 +272,9 @@ window.CANDOR.addPages({
     h1: "24-Hour Home Care in Houston",
     targetWords: 560,
     competitors: [
-      { name: "Encore Caregivers", domain: "encorecaregivers.com", url: "https://encorecaregivers.com/24-hour-home-care/", note: "Ranks #1 for '24 hour home care houston'" },
-      { name: "Home Instead", domain: "homeinstead.com", url: "https://www.homeinstead.com/home-care/usa/tx/houston/252/", note: "National brand" },
-      { name: "24 Hour Home Care", domain: "24hrcares.com", url: "https://www.24hrcares.com/", note: "Top-3 local organic" }
+      { name: "24 Hour Home Care", domain: "24hrcares.com", url: "https://www.24hrcares.com/", note: "Houston #1 for '24 hour home care' (ValueSERP)" },
+      { name: "Encore Caregivers", domain: "encorecaregivers.com", url: "https://encorecaregivers.com/24-hour-home-care/", note: "Houston organic #2" },
+      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "Houston organic #3" }
     ],
     keywords: {
       basic: [
@@ -326,9 +326,9 @@ window.CANDOR.addPages({
     h1: "Respite Care in Houston",
     targetWords: 560,
     competitors: [
-      { name: "BrightStar Care", domain: "brightstarcare.com", url: "https://www.brightstarcare.com/locations/southeast-houston-sw-metro/services/in-home-care/respite-care/", note: "Ranks for 'respite care houston'" },
-      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/northwesthouston/respite-care", note: "National brand" },
-      { name: "CarePatrol", domain: "carepatrol.com", url: "https://carepatrol.com/greater-houston-clear-lake/", note: "Local organic" }
+      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/northwesthouston/respite-care", note: "Houston organic for 'respite care' (ValueSERP)" },
+      { name: "Home Instead", domain: "homeinstead.com", url: "https://www.homeinstead.com/home-care/usa/tx/houston/252/", note: "Houston organic" },
+      { name: "Buckner Parkway Place", domain: "bucknerparkwayplace.org", url: "https://bucknerparkwayplace.org/care-options/respite-care/", note: "Houston organic (local respite)" }
     ],
     keywords: {
       basic: [
@@ -374,9 +374,9 @@ window.CANDOR.addPages({
     h1: "Personal Care Services in Houston",
     targetWords: 560,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Local leader" },
-      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "National brand" },
-      { name: "Comfort Keepers", domain: "comfortkeepers.com", url: "https://www.comfortkeepers.com/offices/texas/west-central-houston/", note: "National brand" }
+      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/houstonmetro/home", note: "Houston organic for 'personal care' (ValueSERP)" },
+      { name: "Touching Hearts at Home", domain: "touchinghearts.com", url: "https://touchinghearts.com/northhouston/", note: "Houston organic" },
+      { name: "Home Matters Caregiving", domain: "homematters.com", url: "https://homematters.com/southwest-houston-tx/", note: "Houston organic" }
     ],
     keywords: {
       basic: [
@@ -427,9 +427,9 @@ window.CANDOR.addPages({
     h1: "Companionship for Seniors in Houston",
     targetWords: 540,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Local leader" },
-      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/houstonmetro/home", note: "National brand" },
-      { name: "Home Instead", domain: "homeinstead.com", url: "https://www.homeinstead.com/home-care/usa/tx/houston/252/", note: "National brand" }
+      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/houstonmetro/home", note: "Houston #1 for 'companion care' (ValueSERP)" },
+      { name: "Comfort Keepers", domain: "comfortkeepers.com", url: "https://www.comfortkeepers.com/offices/texas/west-central-houston/", note: "Houston organic #2" },
+      { name: "At Your Side Home Care", domain: "atyoursidehomecare.com", url: "https://atyoursidehomecare.com/", note: "Houston organic #3 (local)" }
     ],
     keywords: {
       basic: [
@@ -480,9 +480,9 @@ window.CANDOR.addPages({
     h1: "Home Support & Homemaking Services in Houston",
     targetWords: 540,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Local leader" },
-      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "National brand" },
-      { name: "Nurse Next Door", domain: "nursenextdoor.com", url: "https://www.nursenextdoor.com/location/houston", note: "National brand" }
+      { name: "Encore Caregivers", domain: "encorecaregivers.com", url: "https://encorecaregivers.com/", note: "Houston #1 for 'homemaker services' (ValueSERP)" },
+      { name: "Home Helpers Home Care", domain: "homehelpershomecare.com", url: "https://www.homehelpershomecare.com/", note: "Houston organic #2" },
+      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "Houston organic #5" }
     ],
     keywords: {
       basic: [
@@ -535,9 +535,9 @@ window.CANDOR.addPages({
     h1: "The Candor Living Blog",
     targetWords: 480,
     competitors: [
-      { name: "Home Matters (blog)", domain: "homematters.com", url: "https://homematters.com/southwest-houston-tx/blog/", note: "Ranks with local blog content" },
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Local leader" },
-      { name: "Home Instead", domain: "homeinstead.com", url: "https://www.homeinstead.com/", note: "Strong resource library" }
+      { name: "A Place for Mom", domain: "aplaceformom.com", url: "https://www.aplaceformom.com/", note: "Ranks for 'home care cost' (ValueSERP)" },
+      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/", note: "Ranks for cost content" },
+      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "Houston organic content" }
     ],
     keywords: {
       basic: [
@@ -579,9 +579,9 @@ window.CANDOR.addPages({
     h1: "Caregiver Careers in Houston",
     targetWords: 500,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/careers/", note: "Hiring locally" },
-      { name: "Visiting Angels", domain: "visitingangels.com", url: "https://www.visitingangels.com/houstonmetro/jobs", note: "National employer" },
-      { name: "Home Instead", domain: "homeinstead.com", url: "https://www.homeinstead.com/", note: "National employer" }
+      { name: "Indeed", domain: "indeed.com", url: "https://www.indeed.com/q-caregiver-l-houston,-tx-jobs.html", note: "Top job board for 'caregiver jobs' (ValueSERP)" },
+      { name: "Home Instead", domain: "homeinstead.com", url: "https://www.homeinstead.com/home-care/usa/tx/houston/252/", note: "Competing Houston employer" },
+      { name: "Caring Senior Service", domain: "caringseniorservice.com", url: "https://www.caringseniorservice.com/", note: "Houston organic employer" }
     ],
     keywords: {
       basic: [
@@ -629,9 +629,9 @@ window.CANDOR.addPages({
     h1: "Contact Candor Living Home Care",
     targetWords: 360,
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/contact/", note: "Local leader" },
-      { name: "AAH Care", domain: "aahcare.com", url: "https://www.aahcare.com/", note: "Top-3 local organic" },
-      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "National brand" }
+      { name: "Houston Home Care", domain: "houston-homecare.com", url: "https://www.houston-homecare.com/", note: "Houston organic #1 (ValueSERP)" },
+      { name: "Home Care Team TX", domain: "homecareteamtx.com", url: "https://www.homecareteamtx.com/", note: "Houston organic #4" },
+      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/contact/", note: "Houston organic #7" }
     ],
     keywords: {
       basic: [
@@ -770,9 +770,9 @@ window.CANDOR.addPages({
     nav: "SEO Strategy", group: "branding", kind: "strategy", url: "#brand-seo",
     seoTitle: "", metaDescription: "", h1: "SEO Strategy",
     competitors: [
-      { name: "Homecare Houston", domain: "homecare-houston.com", url: "https://homecare-houston.com/", note: "#1 organic for 'home care houston'" },
-      { name: "AAH Care", domain: "aahcare.com", url: "https://www.aahcare.com/", note: "Top-3 local" },
-      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "National brand, strong local page" }
+      { name: "Houston Home Care", domain: "houston-homecare.com", url: "https://www.houston-homecare.com/", note: "#1 organic for 'home care' in Houston (ValueSERP)" },
+      { name: "Homewatch CareGivers", domain: "homewatchcaregivers.com", url: "https://www.homewatchcaregivers.com/houston-galleria/", note: "#2 Houston organic" },
+      { name: "Home Care Team TX", domain: "homecareteamtx.com", url: "https://www.homecareteamtx.com/", note: "#4 Houston organic" }
     ],
     keywords: {
       basic: [
@@ -795,10 +795,10 @@ window.CANDOR.addPages({
       { id: "seo-hero", type: "Intro", label: "SEO Strategy", html:
         "<p class='eyebrow'>Branding / Strategy</p>" +
         "<h1>SEO Strategy</h1>" +
-        "<p class='lead'>How Candor Living wins search in Houston. Everything below is built on live Semrush data (US database, June 2026), not guesswork.</p>" },
+        "<p class='lead'>How Candor Living wins search in Houston. Competitor rankings come from live ValueSERP results (Houston Google SERP); search volumes come from Semrush (US database). June 2026, not guesswork.</p>" },
       { id: "seo-landscape", type: "Landscape", label: "The Landscape", html:
         "<h2>The competitive landscape</h2>" +
-        "<p>The money term is <strong>home care houston</strong> (1,300 searches a month, $4.15 CPC), and the front page is a mix of one strong local independent (homecare-houston.com), local players (AAH Care, Hearts at Home, Lilly Home Care), and national franchises with Houston pages (Homewatch CareGivers, Visiting Angels, TheKey, Nurse Next Door). Directories like Care.com and Yelp also rank, which is an opening: a focused local brand with real service pages can outrank a directory listing.</p>" },
+        "<p>The money term is <strong>home care houston</strong> (1,300 searches a month, $4.15 CPC via Semrush). In Houston's live ValueSERP results, the front page is led by local independents (houston-homecare.com, Home Care Team TX, homecare-houston.com) alongside national franchises with Houston pages (Homewatch CareGivers, Visiting Angels, TheKey). Directories like Care.com and Yelp also rank, which is an opening: a focused local brand with real service pages can outrank a directory listing.</p>" },
       { id: "seo-approach", type: "Approach", label: "Our Approach", html:
         "<h2>The plan, in five moves</h2>" +
         "<ol class='steps'>" +

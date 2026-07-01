@@ -15,6 +15,7 @@
   /* ---------- tiny helpers ---------- */
   function $(s, r) { return (r || document).querySelector(s); }
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function escAttr(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&quot;"); }
   function sha256(str) {
     return crypto.subtle.digest("SHA-256", new TextEncoder().encode(str)).then(function (buf) {
       return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
@@ -377,9 +378,9 @@
     var rows = list.slice(0, 3).map(function (c, i) {
       return "<div class='comp'><span class='comp__rank'>" + (i + 1) + "</span>" +
         "<span class='comp__meta'><span class='comp__name'>" + c.name + "</span><span class='comp__dom'>" + c.domain + "</span></span>" +
-        "<a class='comp__link' href='" + c.url + "' target='_blank' rel='noopener' title='" + (c.note || "Open") + "'><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M8 7h9v9'/></svg></a></div>";
+        "<a class='comp__link' href='" + escAttr(c.url) + "' target='_blank' rel='noopener' title='" + escAttr(c.note || "Open") + "'><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M8 7h9v9'/></svg></a></div>";
     }).join("");
-    card.innerHTML = "<p class='rail__h'>Top 3 Competitors <span class='hint'>Semrush</span></p>" + rows;
+    card.innerHTML = "<p class='rail__h'>Top 3 Competitors <span class='hint'>ValueSERP · Houston</span></p>" + rows;
     return card;
   }
 
