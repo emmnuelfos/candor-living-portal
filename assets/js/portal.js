@@ -194,6 +194,37 @@
     if (a) { var s = scoreModel(key, true); a.textContent = s.overall; }
   }
 
+  /* ---------- website mockup helpers ---------- */
+  function slugify(t) { return (t || "block").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  var MEDIA_TYPES = { hero: 1, intro: 1, story: 1, mission: 1, "what-it-is": 1, "why-it-matters": 1, dignity: 1, "why-us": 1, "what-s-included": 1, "who-it-s-for": 1, values: 1, audience: 1, safety: 1, "why-work-here": 1, guidance: 1, "service-area": 1, landscape: 1 };
+  function hasMedia(slug) { return !!MEDIA_TYPES[slug]; }
+  var PIC_SVG = "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='3'/><circle cx='8.5' cy='8.5' r='1.7'/><path d='m21 15-5-5L5 21'/></svg>";
+  function mediaFor() { var m = el("div", "block__media"); m.setAttribute("contenteditable", "false"); m.innerHTML = "<span class='block__ph'>" + PIC_SVG + "</span>"; return m; }
+  var NAVITEMS = [["home", "Home"], ["about", "About"], ["services", "Services"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact"]];
+  function siteNav(activeKey) {
+    var ap = D.pages[activeKey], parent = ap && ap.parent;
+    var links = NAVITEMS.map(function (it) {
+      var on = (it[0] === activeKey || it[0] === parent);
+      return "<span class='site-nav__link" + (on ? " is-active" : "") + "'>" + it[1] + "</span>";
+    }).join("");
+    var n = el("div", "site-nav"); n.setAttribute("contenteditable", "false");
+    n.innerHTML = "<span class='site-nav__logo'>Candor Living</span><nav class='site-nav__links'>" + links + "</nav><span class='site-nav__cta'>Request Care</span>";
+    return n;
+  }
+  function siteFooter() {
+    var f = el("div", "site-foot"); f.setAttribute("contenteditable", "false");
+    f.innerHTML =
+      "<div class='site-foot__top'>" +
+        "<div class='site-foot__brand'><strong>Candor Living</strong><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
+          "<div class='site-foot__social'><span>f</span><span>in</span><span>X</span></div></div>" +
+        "<div class='site-foot__col'><h4>Services</h4><a>24-Hour Home Care</a><a>Respite Care</a><a>Personal Care</a><a>Companionship</a><a>Home Support</a></div>" +
+        "<div class='site-foot__col'><h4>Company</h4><a>About Us</a><a>Careers</a><a>Blog</a><a>Contact</a></div>" +
+        "<div class='site-foot__col'><h4>Get in touch</h4><a>(713) 730-5017</a><a>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a></div>" +
+      "</div>" +
+      "<div class='site-foot__bar'><span>&copy; 2026 Candor Living Home Care Service</span><span>Privacy Policy &nbsp;&middot;&nbsp; Accessibility</span></div>";
+    return f;
+  }
+
   /* ---------- render page (center) ---------- */
   var current = null;
   function renderPage(key) {
@@ -205,8 +236,9 @@
 
     /* head */
     var head = el("div", "pagehead");
-    head.innerHTML = "<h1 class='pagehead__title'>" + p.nav + "</h1>" +
-      (p.url ? "<p class='pagehead__url'>" + (p.url.charAt(0) === "#" ? "Brand reference" : "candorlivinghcs.com" + p.url) + "</p>" : "");
+    head.innerHTML = "<span class='pagehead__eyebrow'>" + (p.group === "pages" ? "Live website preview" : "Brand reference") + "</span>" +
+      "<h1 class='pagehead__title'>" + p.nav + "</h1>" +
+      (p.url ? "<p class='pagehead__url'>" + (p.url.charAt(0) === "#" ? "Internal reference" : "candorlivinghcs.com" + p.url) + "</p>" : "");
     doc.appendChild(head);
 
     /* SEO meta card (content + strategy only) */
@@ -220,10 +252,19 @@
       doc.appendChild(meta);
     }
 
-    /* blocks */
+    /* blocks = real website sections, wrapped in a site frame (nav + footer) */
     var blocks = el("div", "blocks"); blocks.id = "blocks";
-    m.blocks.forEach(function (b) { blocks.appendChild(renderBlock(b)); });
-    doc.appendChild(blocks);
+    var mediaCount = 0;
+    m.blocks.forEach(function (b) {
+      var side = null;
+      if (p.group === "pages" && hasMedia(slugify(b.type))) { side = (mediaCount % 2 === 0) ? "right" : "left"; mediaCount++; }
+      blocks.appendChild(renderBlock(b, side));
+    });
+    var site = el("div", "site" + (p.group === "pages" ? "" : " site--ref"));
+    if (p.group === "pages") site.appendChild(siteNav(key));
+    site.appendChild(blocks);
+    if (p.group === "pages") site.appendChild(siteFooter());
+    doc.appendChild(site);
     canvas.appendChild(doc);
 
     /* wire editing */
@@ -245,8 +286,8 @@
     canvas.focus();
   }
 
-  function renderBlock(b) {
-    var slug = (b.type || "block").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  function renderBlock(b, side) {
+    var slug = slugify(b.type);
     var bl = el("div", "block block--" + slug); bl.setAttribute("data-id", b.id); bl.setAttribute("draggable", "false");
     var bar = el("div", "block__bar");
     bar.innerHTML =
@@ -258,7 +299,10 @@
         "<button class='block__tool' data-act='down' title='Move down'><svg viewBox='0 0 24 24' width='16' height='16' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg></button>" +
       "</span>";
     var body = el("div", "block__body"); body.setAttribute("contenteditable", "true"); body.spellcheck = false; body.innerHTML = b.html;
-    bl.appendChild(bar); bl.appendChild(body);
+    var stage = el("div", "block__stage");
+    if (side) { stage.classList.add("has-media", "media-" + side); stage.appendChild(mediaFor()); }
+    stage.appendChild(body);
+    bl.appendChild(bar); bl.appendChild(stage);
 
     /* move up/down */
     bar.querySelector("[data-act='up']").addEventListener("click", function () { moveBlock(bl, -1); });
