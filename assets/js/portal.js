@@ -365,13 +365,25 @@
     if (m) { var lm = m.value.length; var c2 = $("#ct-meta"); if (c2) { c2.textContent = lm + " / 160"; c2.className = "count " + (lm >= 120 && lm <= 160 ? "ok" : "warn"); } }
   }
 
-  /* ---------- AI detection (ZeroGPT via proxy) ---------- */
+  /* ---------- AI detection (ZeroGPT via proxy) — result persists per page ---------- */
+  function aiStoreKey() { return "cl_ai_v1_" + current; }
+  function savedAi() { try { return JSON.parse(localStorage.getItem(aiStoreKey()) || "null"); } catch (e) { return null; } }
+  function aiStamp() { try { var d = new Date(); return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ", " + d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
+  function aiBand(ai) { return ai < 25 ? "is-human" : (ai < 60 ? "is-mid" : "is-ai"); }
+  function aiResultHtml(d) {
+    var ai = d.aiPercentage || 0, band = aiBand(ai);
+    var verdict = d.feedback || (ai < 25 ? "Content appears human-written" : "May read as AI-generated");
+    return "<div class='ai__pct " + band + "'>" + ai + "<small>% AI</small></div>" +
+      "<div class='ai__verdict " + band + "'>" + escAttr(verdict) + "</div>" +
+      (d.ts ? "<div class='ai__stamp'>Saved &middot; last scan " + escAttr(d.ts) + "</div>" : "");
+  }
   function aiCard() {
     var card = el("div", "rail__card");
+    var saved = savedAi();
     card.innerHTML =
       "<p class='rail__h'>AI Detection <span class='hint'>ZeroGPT</span></p>" +
-      "<div class='ai__result' id='ai-result'><span class='ai__idle'>Scan this page's content to check it reads as human-written.</span></div>" +
-      "<button class='ai__btn' id='ai-run'>Run AI scan</button>";
+      "<div class='ai__result' id='ai-result'>" + (saved ? aiResultHtml(saved) : "<span class='ai__idle'>Scan this page's content to check it reads as human-written.</span>") + "</div>" +
+      "<button class='ai__btn' id='ai-run'>" + (saved ? "Re-scan page" : "Run AI scan") + "</button>";
     card.querySelector("#ai-run").addEventListener("click", runAiScan);
     return card;
   }
@@ -385,11 +397,11 @@
       .then(function (d) {
         if (btn) btn.disabled = false;
         if (d && d.configured === false) { box.innerHTML = "<span class='ai__idle'>" + (d.message || "AI detection isn't configured yet.") + "</span>"; return; }
-        if (d && d.error) { box.innerHTML = "<span class='ai__err'>" + d.error + "</span>"; return; }
-        var ai = (d && d.aiPercentage) || 0, human = d && d.isHuman;
-        box.innerHTML =
-          "<div class='ai__pct " + (human ? "is-human" : "is-ai") + "'>" + ai + "<small>% AI</small></div>" +
-          "<div class='ai__verdict " + (human ? "is-human" : "is-ai") + "'>" + (human ? "Content appears human-written" : escAttr(d.feedback || "May read as AI-generated")) + "</div>";
+        if (d && d.error) { box.innerHTML = "<span class='ai__err'>" + escAttr(d.error) + "</span>"; return; }
+        var rec = { aiPercentage: (d && d.aiPercentage) || 0, feedback: (d && d.feedback) || "", ts: aiStamp() };
+        try { localStorage.setItem(aiStoreKey(), JSON.stringify(rec)); } catch (e) {}
+        box.innerHTML = aiResultHtml(rec);
+        if (btn) btn.textContent = "Re-scan page";
       })
       .catch(function () { if (btn) btn.disabled = false; box.innerHTML = "<span class='ai__err'>Could not reach the detector. Try again shortly.</span>"; });
   }

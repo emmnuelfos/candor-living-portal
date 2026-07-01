@@ -356,10 +356,13 @@ button{font-family:inherit;cursor:pointer}
 .ai__pct{font-family:var(--font-disp);font-weight:700;font-size:36px;line-height:1}
 .ai__pct small{font-size:12px;color:var(--text-mut);font-weight:500;margin-left:3px}
 .ai__pct.is-human{color:var(--good)}
-.ai__pct.is-ai{color:var(--warn)}
-.ai__verdict{font-size:12px}
+.ai__pct.is-mid{color:var(--warn)}
+.ai__pct.is-ai{color:var(--coral)}
+.ai__verdict{font-size:12px;line-height:1.45}
 .ai__verdict.is-human{color:var(--good)}
-.ai__verdict.is-ai{color:var(--warn)}
+.ai__verdict.is-mid{color:var(--warn)}
+.ai__verdict.is-ai{color:var(--coral)}
+.ai__stamp{margin-top:8px;font-size:10.5px;color:var(--text-mut);font-family:var(--font-mono)}
 .ai__btn{width:100%;padding:9px;border-radius:9px;border:1px solid var(--line-2);background:var(--ink-0);color:var(--text);font-weight:600;font-size:13px;transition:.15s}
 .ai__btn:hover{border-color:var(--teal);color:var(--teal)}
 .ai__btn:disabled{opacity:.5;cursor:default}
