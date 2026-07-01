@@ -62,21 +62,45 @@ window.CANDOR.addPages({
       basic: [
         { term: "home care houston", min: 4, max: 9 },
         { term: "home care services houston", min: 2, max: 5 },
-        { term: "senior home care houston", min: 2, max: 4 },
-        { term: "in-home care houston", min: 1, max: 3 },
-        { term: "home care agency houston", min: 1, max: 3 }
+        { term: "home care agency houston", min: 1, max: 4 },
+        { term: "in-home care houston", min: 1, max: 4 },
+        { term: "senior home care houston", min: 1, max: 3 },
+        { term: "home care in houston tx", min: 1, max: 3 },
+        { term: "houston texas home care", min: 1, max: 2 },
+        { term: "home care", min: 6, max: 12 },
+        { term: "caregivers", min: 3, max: 7 },
+        { term: "senior care", min: 2, max: 5 },
+        { term: "non-medical home care", min: 1, max: 3 },
+        { term: "houston", min: 5, max: 10 }
       ],
       extended: [
-        { term: "non-medical home care", min: 1, max: 3 },
+        { term: "in-home senior care", min: 1, max: 3 },
         { term: "elderly care houston", min: 1, max: 2 },
-        { term: "caregivers", min: 2, max: 5 },
-        { term: "senior care houston", min: 1, max: 2 },
         { term: "home care for seniors", min: 1, max: 3 },
-        { term: "in-home senior care", min: 1, max: 2 },
+        { term: "senior care at home", min: 1, max: 2 },
+        { term: "in-home caregivers", min: 1, max: 2 },
+        { term: "home caregivers houston", min: 1, max: 2 },
+        { term: "houston in-home care", min: 1, max: 2 },
+        { term: "home care assistance", min: 1, max: 2 },
+        { term: "24-hour home care", min: 1, max: 3 },
+        { term: "live-in care", min: 1, max: 2 },
+        { term: "hourly home care", min: 1, max: 2 },
         { term: "respite care", min: 1, max: 2 },
-        { term: "companionship", min: 1, max: 3 },
         { term: "personal care", min: 1, max: 3 },
-        { term: "aging in place", min: 1, max: 2 }
+        { term: "companion care", min: 1, max: 2 },
+        { term: "companionship", min: 1, max: 3 },
+        { term: "dementia care", min: 1, max: 2 },
+        { term: "aging in place", min: 1, max: 3 },
+        { term: "loved one", min: 2, max: 5 },
+        { term: "families", min: 2, max: 5 },
+        { term: "in-home", min: 3, max: 7 },
+        { term: "seniors", min: 3, max: 7 },
+        { term: "elderly", min: 1, max: 3 },
+        { term: "dignity", min: 1, max: 2 },
+        { term: "independence", min: 1, max: 2 },
+        { term: "compassionate", min: 1, max: 2 },
+        { term: "insured", min: 1, max: 2 },
+        { term: "background-checked", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -152,16 +176,32 @@ window.CANDOR.addPages({
     keywords: {
       basic: [
         { term: "home care houston", min: 2, max: 5 },
-        { term: "non-medical home care", min: 1, max: 3 },
         { term: "home care agency houston", min: 1, max: 3 },
-        { term: "senior care houston", min: 1, max: 2 }
+        { term: "senior care houston", min: 1, max: 3 },
+        { term: "non-medical home care", min: 1, max: 3 },
+        { term: "home care", min: 4, max: 8 },
+        { term: "caregivers", min: 3, max: 6 },
+        { term: "houston", min: 3, max: 7 },
+        { term: "in-home care", min: 1, max: 3 }
       ],
       extended: [
-        { term: "caregivers", min: 2, max: 4 },
-        { term: "in-home care", min: 1, max: 3 },
         { term: "elderly care", min: 1, max: 2 },
-        { term: "aging in place", min: 1, max: 2 },
-        { term: "trusted", min: 1, max: 2 }
+        { term: "senior care", min: 1, max: 3 },
+        { term: "aging in place", min: 1, max: 3 },
+        { term: "loved one", min: 2, max: 4 },
+        { term: "families", min: 2, max: 5 },
+        { term: "seniors", min: 2, max: 5 },
+        { term: "disabled adults", min: 1, max: 2 },
+        { term: "compassionate", min: 1, max: 2 },
+        { term: "dignity", min: 1, max: 3 },
+        { term: "trusted", min: 1, max: 3 },
+        { term: "independence", min: 1, max: 2 },
+        { term: "home care provider", min: 1, max: 2 },
+        { term: "in-home", min: 1, max: 3 },
+        { term: "respite care", min: 1, max: 2 },
+        { term: "personal care", min: 1, max: 2 },
+        { term: "companionship", min: 1, max: 2 },
+        { term: "care plan", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -216,15 +256,31 @@ window.CANDOR.addPages({
         { term: "home care services houston", min: 3, max: 6 },
         { term: "home care houston", min: 2, max: 5 },
         { term: "in-home care", min: 2, max: 4 },
-        { term: "senior care houston", min: 1, max: 3 }
+        { term: "senior care houston", min: 1, max: 3 },
+        { term: "home care services", min: 3, max: 7 },
+        { term: "home care", min: 4, max: 9 },
+        { term: "caregivers", min: 2, max: 5 },
+        { term: "houston", min: 3, max: 7 }
       ],
       extended: [
-        { term: "24 hour home care", min: 1, max: 3 },
+        { term: "24-hour home care", min: 1, max: 3 },
         { term: "respite care", min: 1, max: 3 },
         { term: "personal care", min: 1, max: 3 },
         { term: "companionship", min: 1, max: 3 },
+        { term: "companion care", min: 1, max: 2 },
         { term: "homemaking services", min: 1, max: 2 },
-        { term: "non-medical home care", min: 1, max: 2 }
+        { term: "home support", min: 1, max: 2 },
+        { term: "non-medical home care", min: 1, max: 2 },
+        { term: "elderly care", min: 1, max: 2 },
+        { term: "senior care", min: 1, max: 3 },
+        { term: "in-home senior care", min: 1, max: 2 },
+        { term: "hourly care", min: 1, max: 2 },
+        { term: "live-in care", min: 1, max: 2 },
+        { term: "loved one", min: 1, max: 4 },
+        { term: "seniors", min: 2, max: 5 },
+        { term: "care plan", min: 1, max: 2 },
+        { term: "aging in place", min: 1, max: 2 },
+        { term: "dementia care", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -278,17 +334,34 @@ window.CANDOR.addPages({
     ],
     keywords: {
       basic: [
-        { term: "24 hour home care", min: 4, max: 8 },
+        { term: "24-hour home care", min: 4, max: 8 },
         { term: "24 hour home care houston", min: 2, max: 4 },
         { term: "around the clock care", min: 1, max: 3 },
-        { term: "live-in care", min: 1, max: 3 }
+        { term: "live-in care", min: 2, max: 4 },
+        { term: "24-hour care", min: 2, max: 5 },
+        { term: "home care", min: 3, max: 7 },
+        { term: "caregivers", min: 2, max: 5 },
+        { term: "houston", min: 2, max: 5 }
       ],
       extended: [
         { term: "overnight care", min: 1, max: 3 },
+        { term: "live-in caregiver", min: 1, max: 2 },
         { term: "home care houston", min: 1, max: 3 },
-        { term: "senior care", min: 1, max: 2 },
-        { term: "caregivers", min: 1, max: 3 },
-        { term: "aging in place", min: 1, max: 2 }
+        { term: "senior care", min: 1, max: 3 },
+        { term: "in-home care", min: 1, max: 3 },
+        { term: "dementia care", min: 1, max: 2 },
+        { term: "alzheimer's care", min: 1, max: 2 },
+        { term: "fall risk", min: 1, max: 2 },
+        { term: "hospital discharge", min: 1, max: 2 },
+        { term: "continuous care", min: 1, max: 2 },
+        { term: "night care", min: 1, max: 2 },
+        { term: "loved one", min: 2, max: 4 },
+        { term: "seniors", min: 2, max: 4 },
+        { term: "elderly", min: 1, max: 2 },
+        { term: "safety", min: 1, max: 3 },
+        { term: "nursing home alternative", min: 1, max: 2 },
+        { term: "aging in place", min: 1, max: 2 },
+        { term: "personal care", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -334,14 +407,31 @@ window.CANDOR.addPages({
       basic: [
         { term: "respite care", min: 4, max: 8 },
         { term: "respite care houston", min: 2, max: 5 },
-        { term: "respite care near me", min: 1, max: 3 }
+        { term: "respite care near me", min: 1, max: 3 },
+        { term: "respite", min: 4, max: 8 },
+        { term: "family caregiver", min: 2, max: 5 },
+        { term: "caregivers", min: 2, max: 5 },
+        { term: "home care", min: 2, max: 5 },
+        { term: "houston", min: 2, max: 5 }
       ],
       extended: [
-        { term: "family caregiver", min: 1, max: 3 },
         { term: "short-term care", min: 1, max: 3 },
         { term: "caregiver relief", min: 1, max: 2 },
-        { term: "in-home care", min: 1, max: 3 },
-        { term: "home care houston", min: 1, max: 2 }
+        { term: "caregiver burnout", min: 1, max: 2 },
+        { term: "in-home respite", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 },
+        { term: "senior care", min: 1, max: 2 },
+        { term: "temporary care", min: 1, max: 2 },
+        { term: "break", min: 1, max: 3 },
+        { term: "loved one", min: 2, max: 4 },
+        { term: "personal care", min: 1, max: 2 },
+        { term: "companionship", min: 1, max: 2 },
+        { term: "elderly", min: 1, max: 2 },
+        { term: "seniors", min: 1, max: 3 },
+        { term: "hourly care", min: 1, max: 2 },
+        { term: "overnight care", min: 1, max: 2 },
+        { term: "weekend care", min: 1, max: 2 },
+        { term: "family caregivers", min: 1, max: 3 }
       ]
     },
     blocks: [
@@ -381,16 +471,33 @@ window.CANDOR.addPages({
     keywords: {
       basic: [
         { term: "personal care services", min: 4, max: 8 },
-        { term: "personal care", min: 3, max: 7 },
-        { term: "personal care services houston", min: 1, max: 3 }
+        { term: "personal care", min: 4, max: 8 },
+        { term: "personal care services houston", min: 1, max: 3 },
+        { term: "home care", min: 2, max: 5 },
+        { term: "caregivers", min: 2, max: 5 },
+        { term: "houston", min: 2, max: 4 },
+        { term: "in-home care", min: 1, max: 3 },
+        { term: "activities of daily living", min: 1, max: 3 }
       ],
       extended: [
-        { term: "bathing and dressing", min: 1, max: 3 },
-        { term: "grooming", min: 1, max: 3 },
-        { term: "mobility assistance", min: 1, max: 2 },
-        { term: "activities of daily living", min: 1, max: 2 },
-        { term: "in-home care", min: 1, max: 2 },
-        { term: "home care houston", min: 1, max: 2 }
+        { term: "bathing", min: 2, max: 4 },
+        { term: "dressing", min: 2, max: 4 },
+        { term: "grooming", min: 2, max: 4 },
+        { term: "toileting", min: 1, max: 3 },
+        { term: "hygiene", min: 1, max: 3 },
+        { term: "mobility assistance", min: 1, max: 3 },
+        { term: "incontinence", min: 1, max: 2 },
+        { term: "transfers", min: 1, max: 2 },
+        { term: "bathing and dressing", min: 1, max: 2 },
+        { term: "senior care", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 },
+        { term: "dignity", min: 1, max: 3 },
+        { term: "loved one", min: 1, max: 3 },
+        { term: "seniors", min: 1, max: 3 },
+        { term: "elderly", min: 1, max: 2 },
+        { term: "non-medical", min: 1, max: 2 },
+        { term: "caregiver", min: 2, max: 5 },
+        { term: "aging in place", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -434,16 +541,32 @@ window.CANDOR.addPages({
     keywords: {
       basic: [
         { term: "companion care", min: 4, max: 8 },
-        { term: "companionship for seniors", min: 2, max: 5 },
+        { term: "companionship", min: 3, max: 7 },
+        { term: "companionship for seniors", min: 2, max: 4 },
+        { term: "companion care houston", min: 1, max: 3 },
         { term: "elderly companionship", min: 1, max: 3 },
-        { term: "companion care houston", min: 1, max: 3 }
+        { term: "senior companionship", min: 1, max: 3 },
+        { term: "home care", min: 2, max: 5 },
+        { term: "caregivers", min: 2, max: 4 }
       ],
       extended: [
-        { term: "loneliness", min: 1, max: 3 },
-        { term: "social interaction", min: 1, max: 2 },
-        { term: "senior companionship", min: 1, max: 3 },
-        { term: "in-home care", min: 1, max: 2 },
-        { term: "home care houston", min: 1, max: 2 }
+        { term: "loneliness", min: 2, max: 4 },
+        { term: "social interaction", min: 1, max: 3 },
+        { term: "isolation", min: 1, max: 3 },
+        { term: "in-home companion", min: 1, max: 2 },
+        { term: "companion", min: 3, max: 6 },
+        { term: "senior care", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 },
+        { term: "conversation", min: 1, max: 3 },
+        { term: "activities", min: 1, max: 3 },
+        { term: "errands", min: 1, max: 2 },
+        { term: "loved one", min: 2, max: 4 },
+        { term: "seniors", min: 2, max: 5 },
+        { term: "elderly", min: 1, max: 3 },
+        { term: "aging in place", min: 1, max: 2 },
+        { term: "emotional support", min: 1, max: 2 },
+        { term: "houston", min: 1, max: 3 },
+        { term: "hobbies", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -489,14 +612,30 @@ window.CANDOR.addPages({
         { term: "homemaking services", min: 3, max: 6 },
         { term: "home support services", min: 2, max: 5 },
         { term: "light housekeeping for seniors", min: 1, max: 3 },
-        { term: "homemaker services houston", min: 1, max: 3 }
+        { term: "homemaker services houston", min: 1, max: 3 },
+        { term: "homemaking", min: 3, max: 6 },
+        { term: "home support", min: 2, max: 5 },
+        { term: "home care", min: 2, max: 4 },
+        { term: "houston", min: 1, max: 4 }
       ],
       extended: [
-        { term: "meal preparation", min: 1, max: 3 },
-        { term: "laundry", min: 1, max: 2 },
-        { term: "errands", min: 1, max: 2 },
-        { term: "housekeeping", min: 1, max: 3 },
-        { term: "home care houston", min: 1, max: 2 }
+        { term: "light housekeeping", min: 2, max: 4 },
+        { term: "housekeeping", min: 2, max: 4 },
+        { term: "meal preparation", min: 2, max: 4 },
+        { term: "laundry", min: 2, max: 4 },
+        { term: "errands", min: 2, max: 4 },
+        { term: "grocery shopping", min: 1, max: 2 },
+        { term: "meal prep", min: 1, max: 2 },
+        { term: "home care houston", min: 1, max: 2 },
+        { term: "senior care", min: 1, max: 2 },
+        { term: "caregivers", min: 1, max: 3 },
+        { term: "seniors", min: 2, max: 4 },
+        { term: "elderly", min: 1, max: 3 },
+        { term: "loved one", min: 1, max: 3 },
+        { term: "aging in place", min: 1, max: 2 },
+        { term: "non-medical", min: 1, max: 2 },
+        { term: "personal care", min: 1, max: 2 },
+        { term: "companion care", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -543,14 +682,30 @@ window.CANDOR.addPages({
       basic: [
         { term: "senior home care", min: 2, max: 5 },
         { term: "home care for seniors", min: 1, max: 3 },
-        { term: "in-home senior care", min: 1, max: 3 }
+        { term: "in-home senior care", min: 1, max: 3 },
+        { term: "home care", min: 3, max: 7 },
+        { term: "home care cost", min: 1, max: 3 },
+        { term: "home care houston", min: 1, max: 3 },
+        { term: "caregivers", min: 1, max: 4 },
+        { term: "seniors", min: 2, max: 5 }
       ],
       extended: [
-        { term: "how much does in home senior care cost", min: 1, max: 2 },
-        { term: "does medicare cover in home care", min: 1, max: 2 },
+        { term: "how much does in-home care cost", min: 1, max: 2 },
+        { term: "does medicare cover in-home care", min: 1, max: 2 },
+        { term: "private pay home care", min: 1, max: 2 },
+        { term: "home care cost per hour", min: 1, max: 2 },
         { term: "aging in place", min: 1, max: 3 },
+        { term: "signs elderly parent needs help", min: 1, max: 2 },
+        { term: "cost of home care", min: 1, max: 2 },
+        { term: "medicare", min: 1, max: 3 },
+        { term: "in-home care", min: 1, max: 3 },
+        { term: "elderly care", min: 1, max: 2 },
+        { term: "dementia care", min: 1, max: 2 },
+        { term: "respite care", min: 1, max: 2 },
         { term: "quality of life", min: 1, max: 2 },
-        { term: "home care houston", min: 1, max: 2 }
+        { term: "loved one", min: 1, max: 3 },
+        { term: "families", min: 1, max: 3 },
+        { term: "caregiver", min: 1, max: 3 }
       ]
     },
     blocks: [
@@ -587,14 +742,31 @@ window.CANDOR.addPages({
       basic: [
         { term: "caregiver jobs houston", min: 3, max: 6 },
         { term: "cna jobs houston", min: 2, max: 5 },
-        { term: "home care jobs houston", min: 1, max: 3 }
+        { term: "home care jobs houston", min: 1, max: 3 },
+        { term: "caregiver jobs", min: 3, max: 6 },
+        { term: "caregiver", min: 4, max: 8 },
+        { term: "houston", min: 3, max: 6 },
+        { term: "hiring caregivers", min: 1, max: 3 },
+        { term: "home health aide", min: 1, max: 3 }
       ],
       extended: [
-        { term: "caregiver", min: 3, max: 7 },
-        { term: "home health aide", min: 1, max: 3 },
-        { term: "flexible shifts", min: 1, max: 2 },
-        { term: "hiring", min: 1, max: 3 },
-        { term: "houston", min: 2, max: 6 }
+        { term: "caregiver jobs near me", min: 1, max: 2 },
+        { term: "cna", min: 2, max: 4 },
+        { term: "home care jobs", min: 1, max: 3 },
+        { term: "private caregiver jobs", min: 1, max: 2 },
+        { term: "live-in caregiver jobs", min: 1, max: 2 },
+        { term: "flexible shifts", min: 1, max: 3 },
+        { term: "home health aide jobs", min: 1, max: 2 },
+        { term: "caregiver careers", min: 1, max: 2 },
+        { term: "part-time caregiver", min: 1, max: 2 },
+        { term: "full-time", min: 1, max: 2 },
+        { term: "overnight caregiver", min: 1, max: 2 },
+        { term: "apply", min: 2, max: 4 },
+        { term: "hiring", min: 2, max: 4 },
+        { term: "seniors", min: 1, max: 3 },
+        { term: "compassionate", min: 1, max: 2 },
+        { term: "experience", min: 1, max: 3 },
+        { term: "training", min: 1, max: 2 }
       ]
     },
     blocks: [
@@ -636,13 +808,26 @@ window.CANDOR.addPages({
     keywords: {
       basic: [
         { term: "home care houston", min: 2, max: 4 },
-        { term: "home care near me", min: 1, max: 2 },
-        { term: "home care agency houston", min: 1, max: 2 }
+        { term: "home care near me", min: 1, max: 3 },
+        { term: "home care agency houston", min: 1, max: 3 },
+        { term: "home care", min: 2, max: 5 },
+        { term: "caregivers", min: 1, max: 3 },
+        { term: "houston", min: 2, max: 5 },
+        { term: "free consultation", min: 1, max: 3 },
+        { term: "contact", min: 2, max: 4 }
       ],
       extended: [
-        { term: "free consultation", min: 1, max: 2 },
-        { term: "in-home care", min: 1, max: 2 },
-        { term: "houston and surrounding areas", min: 1, max: 2 }
+        { term: "senior care houston", min: 1, max: 2 },
+        { term: "in-home care", min: 1, max: 3 },
+        { term: "houston and surrounding areas", min: 1, max: 2 },
+        { term: "request care", min: 1, max: 2 },
+        { term: "start care", min: 1, max: 2 },
+        { term: "phone", min: 1, max: 3 },
+        { term: "service area", min: 1, max: 2 },
+        { term: "care plan", min: 1, max: 2 },
+        { term: "loved one", min: 1, max: 3 },
+        { term: "seniors", min: 1, max: 3 },
+        { term: "consultation", min: 1, max: 3 }
       ]
     },
     blocks: [
