@@ -421,3 +421,110 @@ button{font-family:inherit;cursor:pointer}
   .block__body ul.svc-grid,.block__body .svc-cards,.block__body .contact-grid,.block__body .swatches{grid-template-columns:1fr}
   .gate__card{padding:30px 22px}
 }
+
+
+/* ==========================================================================
+   THE ATELIER — agency redesign layer (overrides via cascade)
+   Dark editorial chrome · client teal/gold identity · varied section layouts
+   ========================================================================== */
+
+/* ---------- LOGIN GATE ---------- */
+.gate__aurora{opacity:.32;filter:blur(95px)}
+.gate__aurora i:nth-child(1){animation-duration:26s}
+.gate__aurora i:nth-child(2){animation-duration:30s}
+.gate__aurora i:nth-child(3){animation-duration:34s}
+.gate__card{width:min(444px,100%);padding:38px 38px 24px;background:rgba(13,23,26,.92);border:1px solid rgba(203,179,138,.24);border-radius:22px}
+.gate__clientlogo{width:158px;margin:0 auto 20px;background:#F7F2EA;border-radius:16px;padding:16px 18px 12px;box-shadow:0 20px 44px -20px rgba(0,0,0,.65)}
+.gate__clientlogo img{width:100%;display:block}
+.gate__kicker{font-family:var(--font-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
+.gate__client{font-family:var(--font-serif);font-weight:600;font-size:30px;line-height:1.12;letter-spacing:-.01em;margin:0 0 12px}
+.gate__client em{font-style:italic;font-weight:500;color:var(--gold)}
+.gate__btn{background:#CBB38A;color:#2b241a;box-shadow:0 12px 28px -12px rgba(203,179,138,.45)}
+.gate__btn:hover{background:#d9c49f;box-shadow:0 16px 32px -12px rgba(203,179,138,.55)}
+.gate__foot{display:flex;align-items:center;justify-content:center;gap:8px}
+.gate__tf{height:13px;opacity:.7}
+@media (prefers-reduced-motion:reduce){.gate__aurora i{animation:none}}
+
+/* ---------- LEFT NAV: numbered index, gold ticks ---------- */
+.side__client{background:transparent;border:1px solid var(--line)}
+.side__client-mark{background:#F7F2EA;color:#3d6e70;font-family:var(--font-serif);font-weight:700}
+.side__nav{counter-reset:nv}
+.side__nav > .nav__link,.side__nav .nav__parentwrap > .nav__parent{counter-increment:nv}
+.side__nav > .nav__link::before,.side__nav .nav__parentwrap > .nav__parent::before{content:counter(nv,decimal-leading-zero);font-family:var(--font-mono);font-size:9.5px;letter-spacing:.05em;color:rgba(203,179,138,.75);width:19px;flex:none}
+.nav__ico{display:none}
+.nav__link{gap:9px;border-radius:0;border:1px solid transparent;border-left:2px solid transparent;padding:9px 10px 9px 7px}
+.nav__link:hover{background:rgba(255,255,255,.03);color:var(--text)}
+.nav__link.is-active{background:rgba(203,179,138,.06);border-color:transparent;border-left-color:var(--gold);color:#fff}
+.nav__group{color:rgba(203,179,138,.62);letter-spacing:.28em;font-size:9.5px;padding:18px 10px 8px 7px}
+.nav__score{background:none;border:none;padding:0;font-size:10px;color:var(--text-mut)}
+.nav__children{border-left-color:rgba(203,179,138,.22);margin-left:19px}
+.side__credit{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+
+/* ---------- RIGHT RAIL: hairline sections, gold microheads ---------- */
+.rail{padding:10px 20px 44px}
+.rail__card{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:20px 2px;margin:0}
+.rail__card:last-child{border-bottom:none}
+.rail__h{color:var(--gold);font-size:9.5px;letter-spacing:.26em;margin-bottom:15px}
+.rail__h .hint{color:var(--text-mut);letter-spacing:.02em;text-transform:none}
+.comp{margin:0 -6px;padding:9px 6px}
+
+/* ---------- TOPBAR ---------- */
+.ebar__page{font-family:var(--font-serif);font-size:14.5px;letter-spacing:.01em}
+
+/* ---------- WEBSITE PREVIEW: logo in nav + footer ---------- */
+.site-nav{padding:10px 26px}
+.site-nav__logoimg{height:54px;width:auto;flex:none}
+.site-foot__logowrap{display:inline-block;background:#F7F2EA;border-radius:12px;padding:10px 14px 8px;margin:0 0 12px}
+.site-foot__logowrap img{height:56px;width:auto;display:block}
+
+/* ---------- SECTION LAYOUTS ---------- */
+/* FAQ — accordion rows */
+.block--faq .block__body h2{margin-bottom:12px}
+.block--faq .block__body h3{position:relative;margin:0;padding:16px 48px 15px 0;border-top:1px solid #e8ddc9;font-family:var(--font-serif);font-weight:600;font-size:17.5px;color:#2e2a26}
+.block--faq .block__body h2 + h3{border-top:none}
+.block--faq .block__body h3::after{content:"+";position:absolute;right:2px;top:13px;width:27px;height:27px;border:1px solid rgba(203,179,138,.8);border-radius:50%;display:grid;place-items:center;color:#9c7f4e;font-size:16px;font-family:var(--font-ui);font-weight:400}
+.block--faq .block__body p{padding:0 46px 8px 0;margin:0 0 8px;color:#6b6459}
+
+/* Testimonials — card trio with stars */
+.block--testimonials .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 14px}
+.tst{margin:0;background:#fff;border:1px solid #ece3d3;border-radius:16px;padding:18px;box-shadow:0 10px 26px -18px rgba(79,64,48,.5);display:flex;flex-direction:column;gap:10px}
+.tst__stars{color:#CBB38A;font-size:14px;letter-spacing:3.5px}
+.tst blockquote{margin:0;font-family:var(--font-serif);font-style:italic;font-size:15px;line-height:1.5;color:#3a352f}
+.tst figcaption{display:flex;flex-direction:column;gap:1px;margin-top:auto;font-size:12px;color:#928a7d}
+.tst figcaption strong{font-size:13px;color:#2e2a26}
+
+/* Pricing — tinted panel with gold rule */
+.block--pricing .block__body{background:linear-gradient(160deg,#eef4f2,#f6f1e7);border-top:3px solid #CBB38A}
+
+/* Process — horizontal step cards */
+.block--process ol.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 4px}
+.block--process ol.steps li{margin:0;padding:18px 16px 16px;background:#fff;border:1px solid #ece3d3;border-radius:14px;box-shadow:0 8px 22px -18px rgba(79,64,48,.5)}
+.block--process ol.steps li::before{position:static;display:inline-grid;margin-bottom:11px}
+
+/* Scenarios / task lists / signs — card grids */
+.block--scenarios ul.check,.block--task-list ul.check,.block--signs ul.check{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0}
+.block--scenarios ul.check li,.block--task-list ul.check li,.block--signs ul.check li{margin:0;padding:16px 16px 15px 48px;background:#fff;border:1px solid #ece3d3;border-radius:14px}
+.block--scenarios ul.check li::before,.block--task-list ul.check li::before,.block--signs ul.check li::before{left:16px;top:17px}
+
+/* Comparison — labelled split cards */
+.block--comparison .block__body{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.block--comparison .block__body h2{grid-column:1/-1;margin-bottom:0}
+.block--comparison .block__body p{margin:0;max-width:none;background:#fff;border:1px solid #ece3d3;border-radius:14px;padding:46px 18px 18px;position:relative}
+.block--comparison .block__body p::before{position:absolute;top:15px;left:18px;font-family:var(--font-ui);font-weight:700;font-size:10px;letter-spacing:.14em;color:#9c7f4e;background:rgba(203,179,138,.16);padding:4px 9px;border-radius:5px}
+.block--comparison .block__body p:nth-of-type(1)::before{content:"THE FACILITY"}
+.block--comparison .block__body p:nth-of-type(2)::before{content:"AT HOME WITH CANDOR"}
+
+/* Sample visit — timeline rule */
+.block--sample-visit .block__body p:first-of-type{border-left:3px solid #CBB38A;padding:4px 0 4px 18px}
+
+/* Branding: logo stage + sitemap notes */
+.block__body .logo-stage{background:#fff;border:1px solid #ece3d3;border-radius:16px;padding:34px;display:grid;place-items:center;margin-top:18px;box-shadow:0 12px 30px -20px rgba(79,64,48,.45)}
+.block__body .logo-stage img{max-width:340px;width:100%}
+.block__body .map-note{font-weight:400;font-style:normal;color:#928a7d;font-size:12px;margin-left:8px}
+
+@media (max-width:680px){
+  .block--testimonials .tst-grid,.block--process ol.steps,.block--comparison .block__body,
+  .block--scenarios ul.check,.block--task-list ul.check,.block--signs ul.check{grid-template-columns:1fr}
+  .site-nav__logoimg{height:42px}
+  .gate__clientlogo{width:128px}
+}

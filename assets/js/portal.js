@@ -246,14 +246,14 @@
       return "<span class='site-nav__link" + (on ? " is-active" : "") + "'>" + it[1] + "</span>";
     }).join("");
     var n = el("div", "site-nav"); n.setAttribute("contenteditable", "false");
-    n.innerHTML = "<span class='site-nav__logo'>Candor Living</span><nav class='site-nav__links'>" + links + "</nav><span class='site-nav__cta'>Request Care</span>";
+    n.innerHTML = "<img class='site-nav__logoimg' src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'><nav class='site-nav__links'>" + links + "</nav><span class='site-nav__cta'>Request Care</span>";
     return n;
   }
   function siteFooter() {
     var f = el("div", "site-foot"); f.setAttribute("contenteditable", "false");
     f.innerHTML =
       "<div class='site-foot__top'>" +
-        "<div class='site-foot__brand'><strong>Candor Living</strong><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
+        "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'></span><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
           "<div class='site-foot__social'><span>f</span><span>in</span><span>X</span></div></div>" +
         "<div class='site-foot__col'><h4>Services</h4><a>24-Hour Home Care</a><a>Respite Care</a><a>Personal Care</a><a>Companionship</a><a>Home Support</a></div>" +
         "<div class='site-foot__col'><h4>Company</h4><a>About Us</a><a>Careers</a><a>Blog</a><a>Contact</a></div>" +

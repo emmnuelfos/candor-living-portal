@@ -134,8 +134,11 @@ window.CANDOR.addPages({
       { id: "home-faq", type: "FAQ", label: "FAQ", html:
         "<h2>Questions Houston families ask</h2><h3>How fast can care actually start?</h3><p>Often within 24 hours of the first call. Same week, almost always. If it's urgent, say so up front. We've scrambled a caregiver on a Sunday before.</p><h3>Does Medicare pay for any of this?</h3><p>For non-medical home care, usually no. Long-term care insurance often does. VA benefits sometimes do. Most families pay privately by the hour, and we'll walk the options honestly before anything gets signed.</p><h3>Is there a minimum number of hours?</h3><p>Low ones, kept reasonable on purpose. Hourly home care two mornings a week is a perfectly good start. Plenty of seniors begin exactly there.</p><h3>What if the caregiver isn't a fit?</h3><p>Tell us. No hurt feelings, no awkward conversation. Matching in-home caregivers to personalities is half our job, and we swap until it clicks.</p><h3>Can care grow if things change?</h3><p>That's the design. Companion care becomes personal care. Hourly visits become half days, then live-in care or senior care at home around the clock. One phone call moves it. Houston in-home care is built to flex.</p><h3>Who exactly shows up?</h3><p>Our own people, not gig strangers. Background-checked, insured, trained, and matched to your loved one's personality. You meet them before care starts. Always.</p>" },
 
+      { id: "home-testimonials", type: "Testimonials", label: "Testimonials", html:
+        "<h2>Kind words, straight from the source</h2><div class='tst-grid'><figure class='tst'><span class='tst__stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote>They had someone at mom's house within a day of my first call. Two months in, she calls Rosa &ldquo;my Tuesday girl.&rdquo;</blockquote><figcaption><strong>D.M.</strong><span>Daughter of a client &middot; The Heights</span></figcaption></figure><figure class='tst'><span class='tst__stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote>I slept through a whole weekend for the first time in a year. Came home to a cleaner house than I left.</blockquote><figcaption><strong>R.T.</strong><span>Family caregiver &middot; Katy</span></figcaption></figure><figure class='tst'><span class='tst__stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote>Straight answers about cost on the first phone call. No runaround. That alone sold us.</blockquote><figcaption><strong>J.C.</strong><span>Son of a client &middot; Pearland</span></figcaption></figure></div><p class='muted'>Sample layout. Verified reviews from real Candor Living clients replace these before launch.</p>" },
+
       { id: "home-trust", type: "Trust Band", label: "Trust / Credentials", html:
-        "<h2>Care you can feel good about</h2><ul class='trust'><li>Background-checked caregivers</li><li>Insured and dependable</li><li>Non-medical, in-home focus</li><li>Built on dignity and independence</li></ul><p class='muted'>Reviews from Houston families will show up here as they come in. We'd rather keep this space honest than fill it with stuff we made up.</p>" },
+        "<h2>Care you can feel good about</h2><ul class='trust'><li>Background-checked caregivers</li><li>Insured and dependable</li><li>Non-medical, in-home focus</li><li>Built on dignity and independence</li></ul>" },
 
       { id: "home-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Let's talk about your family's care</h2><p>Maybe care's needed this week. Maybe you're months out and just poking around. Both are fine. Call (713) 730-5017, or leave a note and we'll ring you back.</p><p class='cta-row'><a class='btn btn-primary'>Get a free consultation</a></p>" }
@@ -829,7 +832,8 @@ window.CANDOR.addPages({
       { id: "logo-hero", type: "Intro", label: "Logo", html:
         "<p class='eyebrow'>Branding</p>" +
         "<h1>Logo &amp; Brand Mark</h1>" +
-        "<p class='lead'>Candor Living uses a combination mark (icon plus wordmark). These are the rules that keep it looking sharp and consistent across the website and print.</p>" },
+        "<p class='lead'>Candor Living uses a combination mark, exactly as chosen in the brand survey: the teal-and-gold house-heart icon with a script-and-serif wordmark. Below is the supplied mark and the rules that keep it sharp everywhere.</p>" +
+        "<div class='logo-stage'><img src='assets/img/candor-logo.png' alt='Candor Living Home Care Services logo'></div>" },
       { id: "logo-usage", type: "Usage", label: "Usage Rules", html:
         "<h2>Using the logo</h2>" +
         "<ul class='check'>" +
@@ -838,7 +842,9 @@ window.CANDOR.addPages({
         "<li><strong>Clear space:</strong> keep space equal to the height of the 'C' on every side.</li>" +
         "<li><strong>Do not</strong> stretch, recolor outside the palette, add shadows, or place on a busy photo without a scrim.</li>" +
         "</ul>" +
-        "<p class='muted'>Client's supplied logo file drops in here once received. This page becomes the single source of truth for logo assets (SVG, PNG, favicon).</p>" }
+        "<h2>Wordmark note</h2>" +
+        "<p>The supplied logo reads <strong>Home Care Services</strong>, while the survey lists the business name as <strong>Candor Living Home Care Service</strong>. The logo wording leads everywhere the mark appears; the registered name stays in footers, legal copy and schema. Worth one confirmation with Candilyn before launch.</p>" +
+        "<p class='muted'>Source file: client-supplied PNG (transparent, 838px). SVG redraw + favicon set are on the build list.</p>" }
     ]
   },
 
@@ -849,7 +855,7 @@ window.CANDOR.addPages({
       { id: "pal-hero", type: "Intro", label: "Palette", html:
         "<p class='eyebrow'>Branding</p>" +
         "<h1>Color Palette</h1>" +
-        "<p class='lead'>A warm, modern-luxurious scheme drawn from the client brief. Teal leads, cream and beige carry the calm, and soft gold adds the touch of premium.</p>" },
+        "<p class='lead'>Six colors, all supplied by the client in the brand survey, hex for hex. The brief in their own words: a <em>&ldquo;modern luxurious welcome to the family feel.&rdquo;</em> Teal leads, cream carries the calm, gold is the trim.</p>" },
       { id: "pal-swatches", type: "Swatches", label: "Brand Colors", html:
         "<div class='swatches'>" +
         "<figure><span class='sw' style='background:#4F8A8B'></span><figcaption><strong>Candor Teal</strong><code>#4F8A8B</code><em>Primary — headers, buttons, marks</em></figcaption></figure>" +
@@ -861,7 +867,8 @@ window.CANDOR.addPages({
         "</div>" },
       { id: "pal-use", type: "Usage", label: "How to Use", html:
         "<h2>Balance</h2>" +
-        "<p>Lead with cream and white space. Use teal for structure and calls-to-action. Reserve gold for small accents like dividers, icons and hovers, so it stays special. Charcoal handles body text for comfortable reading.</p>" }
+        "<p>Lead with cream and white space. Use teal for structure and calls-to-action. Reserve gold for small accents, dividers, icons, hovers, exactly the trim role the survey assigned to #CBB38A. Charcoal handles body text for comfortable reading.</p>" +
+        "<p class='muted'>From the survey: Primary #4F8A8B &middot; Secondary #F7F2EA &middot; #CBB38A &middot; #A8917D &middot; #333333 &middot; #D8C9BB &middot; Trim/Outline #CBB38A. Style boxes checked: Elegant/Classic + Clean/Minimalist.</p>" }
     ]
   },
 
@@ -872,7 +879,7 @@ window.CANDOR.addPages({
       { id: "type-hero", type: "Intro", label: "Typography", html:
         "<p class='eyebrow'>Branding</p>" +
         "<h1>Typography</h1>" +
-        "<p class='lead'>A warm serif for headlines and a clean sans for reading. The pairing feels premium and welcoming without ever looking clinical, which matches the brief exactly.</p>" },
+        "<p class='lead'>The survey named no fonts, so this pairing is our recommendation, chosen against the boxes the client did check: Elegant/Classic, Clean/Minimalist, and that &ldquo;modern luxurious welcome to the family&rdquo; feel. A warm serif for headlines, a clean sans for reading.</p>" },
       { id: "type-specimen", type: "Specimen", label: "Type Specimen", html:
         "<div class='specimen'>" +
         "<div class='spec-display'><span class='spec-label'>Display — Fraunces</span><p style=\"font-family:Georgia,serif;font-size:2rem;line-height:1.15;font-weight:600\">Care That Feels Like Home</p></div>" +
@@ -898,7 +905,7 @@ window.CANDOR.addPages({
         "<p class='lead'>The full page structure for the Candor Living website. Flat and shallow on purpose, so families and search engines can reach any page in one or two clicks.</p>" },
       { id: "site-tree", type: "Tree", label: "Page Structure", html:
         "<ul class='sitemap'>" +
-        "<li>Home</li>" +
+        "<li>Home <em class='map-note'>includes Testimonials + FAQ sections</em></li>" +
         "<li>About Us</li>" +
         "<li>Services" +
         "<ul><li>24-Hour Home Care</li><li>Respite Care</li><li>Personal Care</li><li>Companionship</li><li>Home Support (Homemaking)</li></ul></li>" +
@@ -906,6 +913,8 @@ window.CANDOR.addPages({
         "<li>Careers</li>" +
         "<li>Contact Us</li>" +
         "</ul>" +
+        "<h2>How this maps to the survey</h2>" +
+        "<p>The client checked eight pages: Home, About Us, Services, Contact Us, <strong>FAQs</strong>, <strong>Testimonials/Reviews</strong>, Careers, and <strong>Gallery</strong>. FAQs live as rich sections on every page (stronger for SEO than one orphan page). Testimonials open as a Home section and grow into a full Reviews page once real client reviews exist. Gallery is parked until photography is shot. Blog was added for the search demand we mapped.</p>" +
         "<p class='muted'>Plus system pages: Privacy Policy, Accessibility Statement, 404. Each service page targets a distinct high-intent Houston keyword.</p>" }
     ]
   },
