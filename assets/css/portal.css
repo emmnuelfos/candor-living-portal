@@ -369,6 +369,7 @@ button{font-family:inherit;cursor:pointer}
 .ai__verdict.is-mid{color:var(--warn)}
 .ai__verdict.is-ai{color:var(--coral)}
 .ai__stamp{margin-top:8px;font-size:10.5px;color:var(--text-mut);font-family:var(--font-mono)}
+.ai__stale{margin-top:6px;font-size:11px;line-height:1.4;color:var(--warn);background:rgba(240,182,75,.09);border:1px solid rgba(240,182,75,.3);border-radius:7px;padding:5px 9px}
 .ai__btn{width:100%;padding:9px;border-radius:9px;border:1px solid var(--line-2);background:var(--ink-0);color:var(--text);font-weight:600;font-size:13px;transition:.15s}
 .ai__btn:hover{border-color:var(--teal);color:var(--teal)}
 .ai__btn:disabled{opacity:.5;cursor:default}

@@ -366,32 +366,51 @@
     if (m) { var lm = m.value.length; var c2 = $("#ct-meta"); if (c2) { c2.textContent = lm + " / 160"; c2.className = "count " + (lm >= 120 && lm <= 160 ? "ok" : "warn"); } }
   }
 
-  /* ---------- AI detection (ZeroGPT via proxy) — result persists per page ---------- */
-  function aiStoreKey() { return "cl_ai_v3_" + current; } /* v3: scans of the expanded content */
-  function savedAi() { try { return JSON.parse(localStorage.getItem(aiStoreKey()) || "null"); } catch (e) { return null; } }
+  /* ---------- AI detection (ZeroGPT via proxy) — results persist forever; content
+     changes mark them stale instead of hiding them ---------- */
+  function aiStoreKey() { return "cl_ai_v3_" + current; }
+  function aiHash(str) { var h = 5381, i = str.length; while (i) h = (h * 33) ^ str.charCodeAt(--i); return String(h >>> 0); }
+  function pageText() {
+    var t = ""; Array.prototype.forEach.call(document.querySelectorAll("#canvas .block__body"), function (b) { t += " " + stripTags(b.innerHTML); });
+    return t.replace(/\s+/g, " ").trim();
+  }
+  function savedAi() {
+    try {
+      var v = JSON.parse(localStorage.getItem(aiStoreKey()) || "null");
+      if (v) return v;
+      /* migrate older scans so they never vanish (they'll show as stale) */
+      var legacy = ["cl_ai_v2_" + current, "cl_ai_v1_" + current];
+      for (var i = 0; i < legacy.length; i++) {
+        var o = JSON.parse(localStorage.getItem(legacy[i]) || "null");
+        if (o) { try { localStorage.setItem(aiStoreKey(), JSON.stringify(o)); } catch (e) {} return o; }
+      }
+      return null;
+    } catch (e) { return null; }
+  }
   function aiStamp() { try { var d = new Date(); return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ", " + d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
   function aiBand(ai) { return ai < 25 ? "is-human" : (ai < 60 ? "is-mid" : "is-ai"); }
-  function aiResultHtml(d) {
+  function aiResultHtml(d, stale) {
     var ai = d.aiPercentage || 0, band = aiBand(ai);
     var verdict = d.feedback || (ai < 25 ? "Content appears human-written" : "May read as AI-generated");
     return "<div class='ai__pct " + band + "'>" + ai + "<small>% AI</small></div>" +
       "<div class='ai__verdict " + band + "'>" + escAttr(verdict) + "</div>" +
-      (d.ts ? "<div class='ai__stamp'>Saved &middot; last scan " + escAttr(d.ts) + "</div>" : "");
+      (d.ts ? "<div class='ai__stamp'>Saved &middot; last scan " + escAttr(d.ts) + "</div>" : "") +
+      (stale ? "<div class='ai__stale'>Page content changed since this scan &middot; re-scan for a fresh score</div>" : "");
   }
   function aiCard() {
     var card = el("div", "rail__card");
     var saved = savedAi();
+    var stale = !!(saved && saved.hash !== aiHash(pageText()));
     card.innerHTML =
       "<p class='rail__h'>AI Detection <span class='hint'>ZeroGPT</span></p>" +
-      "<div class='ai__result' id='ai-result'>" + (saved ? aiResultHtml(saved) : "<span class='ai__idle'>Scan this page's content to check it reads as human-written.</span>") + "</div>" +
+      "<div class='ai__result' id='ai-result'>" + (saved ? aiResultHtml(saved, stale) : "<span class='ai__idle'>Scan this page's content to check it reads as human-written.</span>") + "</div>" +
       "<button class='ai__btn' id='ai-run'>" + (saved ? "Re-scan page" : "Run AI scan") + "</button>";
     card.querySelector("#ai-run").addEventListener("click", runAiScan);
     return card;
   }
   function runAiScan() {
     var box = $("#ai-result"), btn = $("#ai-run"); if (!box) return;
-    var text = ""; Array.prototype.forEach.call(document.querySelectorAll("#canvas .block__body"), function (b) { text += " " + stripTags(b.innerHTML); });
-    text = text.replace(/\s+/g, " ").trim();
+    var text = pageText();
     box.innerHTML = "<span class='ai__idle'>Scanning…</span>"; if (btn) btn.disabled = true;
     fetch(AI_PROXY + "/detect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: text }) })
       .then(function (r) { return r.json(); })
@@ -399,9 +418,9 @@
         if (btn) btn.disabled = false;
         if (d && d.configured === false) { box.innerHTML = "<span class='ai__idle'>" + (d.message || "AI detection isn't configured yet.") + "</span>"; return; }
         if (d && d.error) { box.innerHTML = "<span class='ai__err'>" + escAttr(d.error) + "</span>"; return; }
-        var rec = { aiPercentage: (d && d.aiPercentage) || 0, feedback: (d && d.feedback) || "", ts: aiStamp() };
+        var rec = { aiPercentage: (d && d.aiPercentage) || 0, feedback: (d && d.feedback) || "", ts: aiStamp(), hash: aiHash(text) };
         try { localStorage.setItem(aiStoreKey(), JSON.stringify(rec)); } catch (e) {}
-        box.innerHTML = aiResultHtml(rec);
+        box.innerHTML = aiResultHtml(rec, false);
         if (btn) btn.textContent = "Re-scan page";
       })
       .catch(function () { if (btn) btn.disabled = false; box.innerHTML = "<span class='ai__err'>Could not reach the detector. Try again shortly.</span>"; });
