@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Candor Living — Website Preview</title>
+<link rel="icon" type="image/png" href="assets/img/candor-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/portal.css?v=20260703a">
+<style>
+/* ---------- PREVIEW MODE: clean reading view, no editor chrome ---------- */
+body{background:#e9e2d2;overflow:auto}
+.pv-wrap{max-width:1020px;margin:0 auto;padding:18px 16px 46px}
+.pv-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 6px 16px}
+.pv-bar__label{font-family:"Spline Sans Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a7a55}
+.pv-bar__page{font-family:"Fraunces",Georgia,serif;font-size:20px;font-weight:600;color:#2e2a26}
+.pv-bar__note{margin-left:auto;font-size:13px;color:#8b8272}
+.pv-pages{display:flex;flex-wrap:wrap;gap:7px;padding:0 6px 16px}
+.pv-pages a{font-family:"Instrument Sans",sans-serif;font-size:13.5px;font-weight:600;color:#5c554d;background:#f7f2ea;border:1px solid #ddd2bd;border-radius:999px;padding:7px 14px;text-decoration:none}
+.pv-pages a:hover{border-color:#4F8A8B;color:#356a6b}
+.pv-pages a.on{background:#4F8A8B;border-color:#4F8A8B;color:#fff}
+/* the website frame reuses portal styles; strip editor artifacts */
+.preview .block__bar{display:none !important}
+.preview .block::after{display:none !important}
+.preview .block__body h1::before,.preview .block__body h2::before,.preview .block__body h3::before{content:none !important;display:none !important}
+.preview .block__body{font-size:17px}
+.preview .block__body p{max-width:66ch}
+.preview .site-nav__link{cursor:pointer}
+.preview .svc-cards .link{cursor:pointer}
+.pv-foot{text-align:center;padding:26px 10px 0;font-size:12.5px;color:#94896f}
+.pv-foot img{height:14px;vertical-align:-2px;opacity:.65;filter:invert(45%) sepia(12%) saturate(600%) hue-rotate(10deg)}
+@media (max-width:680px){.pv-wrap{padding:10px 8px 40px}.pv-bar__note{display:none}}
+</style>
+</head>
+<body>
+<div class="pv-wrap preview">
+  <div class="pv-bar">
+    <span class="pv-bar__label">Website preview</span>
+    <span class="pv-bar__page" id="pv-page">Home</span>
+    <span class="pv-bar__note">A preview of candorlivinghcs.com &mdash; for review only</span>
+  </div>
+  <nav class="pv-pages" id="pv-pages" aria-label="Preview pages"></nav>
+  <div class="site" id="pv-site"><!-- rendered by script --></div>
+  <p class="pv-foot">Prepared for Candor Living Home Care Services by TaskFloVA &middot; content preview, not the live website</p>
+</div>
+
+<script src="assets/js/data.js?v=20260703a"></script>
+<script>
+(function () {
+  "use strict";
+  var D = window.CANDOR;
+  var STATE_URL = "https://candor-ai-proxy-production.up.railway.app/state";
+  var STATE_KEY = "63bf487578e946cfa006bed174e70e8140d5d48fc952fd8db1f1988960e5484e";
+  var REMOTE = { edits: {}, ok: false };
+
+  var PAGES = ["home", "about", "services", "service-24hour", "service-respite", "service-personal", "service-companionship", "service-homesupport", "blog", "careers", "contact"];
+  var NAVITEMS = [["home", "Home"], ["about", "About"], ["services", "Services"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact"]];
+  var SUBPAGES = ["service-24hour", "service-respite", "service-personal", "service-companionship", "service-homesupport"];
+  var MEDIA_TYPES = { hero: 1, intro: 1, story: 1, mission: 1, "what-it-is": 1, "why-it-matters": 1, dignity: 1, "why-us": 1, "what-s-included": 1, "who-it-s-for": 1, values: 1, audience: 1, safety: 1, "why-work-here": 1, guidance: 1, "service-area": 1, landscape: 1 };
+  var PIC_SVG = "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='3'/><circle cx='8.5' cy='8.5' r='1.7'/><path d='m21 15-5-5L5 21'/></svg>";
+
+  function slugify(t) { return (t || "block").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function pageKey() {
+    var h = (location.hash || "").replace("#", "");
+    return PAGES.indexOf(h) >= 0 ? h : "home";
+  }
+  function goto(key) { location.hash = "#" + key; }
+
+  function blocksFor(key) {
+    var p = D.pages[key];
+    var blocks = p.blocks.map(function (b) { return { id: b.id, type: b.type, html: b.html }; });
+    var rec = REMOTE.ok ? REMOTE.edits[key] : null;
+    if (rec) {
+      if (rec.blocks) blocks.forEach(function (b) { if (rec.blocks[b.id] != null) b.html = rec.blocks[b.id]; });
+      if (rec.order) blocks.sort(function (a, b) { var ia = rec.order.indexOf(a.id), ib = rec.order.indexOf(b.id); return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); });
+    }
+    return blocks;
+  }
+
+  function siteNav(activeKey) {
+    var parent = D.pages[activeKey] && D.pages[activeKey].parent;
+    var links = NAVITEMS.map(function (it) {
+      var on = (it[0] === activeKey || it[0] === parent);
+      return "<span class='site-nav__link" + (on ? " is-active" : "") + "' data-goto='" + it[0] + "'>" + it[1] + "</span>";
+    }).join("");
+    return "<div class='site-nav'><img class='site-nav__logoimg' src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'>" +
+      "<nav class='site-nav__links'>" + links + "</nav><span class='site-nav__cta'>Request Care</span></div>";
+  }
+
+  function siteFooter() {
+    return "<div class='site-foot'><div class='site-foot__top'>" +
+      "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living'></span><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
+      "<div class='site-foot__social'><span>f</span><span>in</span><span>X</span></div></div>" +
+      "<div class='site-foot__col'><h4>Services</h4><a>24-Hour Home Care</a><a>Respite Care</a><a>Personal Care</a><a>Companionship</a><a>Home Support</a></div>" +
+      "<div class='site-foot__col'><h4>Company</h4><a>About Us</a><a>Careers</a><a>Blog</a><a>Contact</a></div>" +
+      "<div class='site-foot__col'><h4>Get in touch</h4><a>(713) 730-5017</a><a>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a></div>" +
+      "</div><div class='site-foot__bar'><span>&copy; 2026 Candor Living Home Care Service</span><span>Privacy Policy &nbsp;&middot;&nbsp; Accessibility</span></div></div>";
+  }
+
+  function render() {
+    var key = pageKey();
+    var p = D.pages[key];
+    document.getElementById("pv-page").textContent = p.nav;
+    document.title = "Candor Living — " + p.nav + " (Preview)";
+
+    /* page pills */
+    document.getElementById("pv-pages").innerHTML = PAGES.map(function (k) {
+      return "<a href='#" + k + "' class='" + (k === key ? "on" : "") + "'>" + D.pages[k].nav + "</a>";
+    }).join("");
+
+    /* website frame */
+    var html = siteNav(key) + "<div class='blocks'>";
+    var mediaCount = 0;
+    blocksFor(key).forEach(function (b) {
+      var slug = slugify(b.type), side = null;
+      if (MEDIA_TYPES[slug]) { side = (mediaCount % 2 === 0) ? "right" : "left"; mediaCount++; }
+      html += "<div class='block block--" + slug + "'><div class='block__stage" + (side ? " has-media media-" + side : "") + "'>" +
+        (side ? "<div class='block__media'><span class='block__ph'>" + PIC_SVG + "</span></div>" : "") +
+        "<div class='block__body'>" + b.html + "</div></div></div>";
+    });
+    html += "</div>" + siteFooter();
+    var site = document.getElementById("pv-site");
+    site.innerHTML = html;
+
+    /* make the website nav + service cards real navigation */
+    Array.prototype.forEach.call(site.querySelectorAll("[data-goto]"), function (el) {
+      el.addEventListener("click", function () { goto(el.getAttribute("data-goto")); });
+    });
+    if (key === "services") {
+      Array.prototype.forEach.call(site.querySelectorAll(".svc-cards .link"), function (a, i) {
+        if (SUBPAGES[i]) a.addEventListener("click", function () { goto(SUBPAGES[i]); });
+      });
+    }
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener("hashchange", render);
+
+  /* pull shared edits so the preview always matches the portal, then render */
+  var ctl = ("AbortController" in window) ? new AbortController() : null;
+  var t = setTimeout(function () { if (ctl) ctl.abort(); }, 5000);
+  fetch(STATE_URL, { headers: { "X-Portal-Key": STATE_KEY }, signal: ctl ? ctl.signal : undefined })
+    .then(function (r) { return r.json(); })
+    .then(function (s) { if (s && s.edits) { REMOTE.edits = s.edits; REMOTE.ok = true; } })
+    .catch(function () {})
+    .finally(function () { clearTimeout(t); render(); });
+})();
+</script>
+</body>
+</html>
