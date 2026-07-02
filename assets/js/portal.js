@@ -7,10 +7,11 @@
 
   var D = window.CANDOR;
   var PASS_HASH = "63bf487578e946cfa006bed174e70e8140d5d48fc952fd8db1f1988960e5484e"; /* sha256("CandorCare2026") */
-  var LS = "cl_edits_v2_"; /* v2: content rewrite Jul 2026 — old local edits retired */
+  var LS = "cl_edits_v3_"; /* v3: competitor-length expansion Jul 2026 */
   /* realistic word targets (leave visible headroom, like a real SEO tool) */
-  var TARGETS = { home: 620, about: 380, services: 340, "service-24hour": 300, "service-respite": 285,
-    "service-personal": 260, "service-companionship": 270, "service-homesupport": 280, blog: 300, careers: 240, contact: 140 };
+  /* competitor-informed word targets (Jul 2026 expansion) */
+  var TARGETS = { home: 1150, about: 500, services: 500, "service-24hour": 760, "service-respite": 620,
+    "service-personal": 580, "service-companionship": 580, "service-homesupport": 520, blog: 300, careers: 240, contact: 140 };
   var AI_PROXY = "https://candor-ai-proxy-production.up.railway.app"; /* ZeroGPT proxy (Railway) */
 
   /* ---------- tiny helpers ---------- */
@@ -366,7 +367,7 @@
   }
 
   /* ---------- AI detection (ZeroGPT via proxy) — result persists per page ---------- */
-  function aiStoreKey() { return "cl_ai_v2_" + current; } /* v2: scans of the rewritten content */
+  function aiStoreKey() { return "cl_ai_v3_" + current; } /* v3: scans of the expanded content */
   function savedAi() { try { return JSON.parse(localStorage.getItem(aiStoreKey()) || "null"); } catch (e) { return null; } }
   function aiStamp() { try { var d = new Date(); return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ", " + d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
   function aiBand(ai) { return ai < 25 ? "is-human" : (ai < 60 ? "is-mid" : "is-ai"); }

@@ -67,11 +67,11 @@ window.CANDOR.addPages({
         { term: "senior home care houston", min: 1, max: 3 },
         { term: "home care in houston tx", min: 1, max: 3 },
         { term: "houston texas home care", min: 1, max: 2 },
-        { term: "home care", min: 6, max: 12 },
-        { term: "caregivers", min: 3, max: 7 },
+        { term: "home care", min: 6, max: 21 },
+        { term: "caregivers", min: 3, max: 10 },
         { term: "senior care", min: 2, max: 5 },
         { term: "non-medical home care", min: 1, max: 3 },
-        { term: "houston", min: 5, max: 10 }
+        { term: "houston", min: 5, max: 22 }
       ],
       extended: [
         { term: "in-home senior care", min: 1, max: 3 },
@@ -92,15 +92,15 @@ window.CANDOR.addPages({
         { term: "dementia care", min: 1, max: 2 },
         { term: "aging in place", min: 1, max: 3 },
         { term: "loved one", min: 2, max: 5 },
-        { term: "families", min: 2, max: 5 },
+        { term: "families", min: 2, max: 12 },
         { term: "in-home", min: 3, max: 7 },
         { term: "seniors", min: 3, max: 7 },
         { term: "elderly", min: 1, max: 3 },
         { term: "dignity", min: 1, max: 2 },
         { term: "independence", min: 1, max: 2 },
         { term: "compassionate", min: 1, max: 2 },
-        { term: "insured", min: 1, max: 2 },
-        { term: "background-checked", min: 1, max: 2 }
+        { term: "insured", min: 1, max: 4 },
+        { term: "background-checked", min: 1, max: 4 }
       ]
     },
     blocks: [
@@ -109,6 +109,9 @@ window.CANDOR.addPages({
 
       { id: "home-intro", type: "Intro", label: "Welcome / Intro", html:
         "<h2>Home care in Houston that feels like family</h2><p>Picking someone to help mom or dad is hard. Most families call us worried about the same stuff. Is she safe? Will they treat him with dignity? Can I trust a stranger in the house? Fair questions, every one. That's the bar we hire and train to.</p><p>Candor Living is a home care agency here in Houston. We send caregivers into the home for seniors, elderly parents, and other older adults who need a hand with everyday things, from a shower and a hot meal to a ride to the doctor. Small stuff. Big difference. It's the kind of in-home care that keeps aging in place realistic instead of wishful.</p>" },
+
+      { id: "home-nonmedical", type: "Explainer", label: "What Non-Medical Means", html:
+        "<h2>What non-medical home care means</h2><p>People ask, so, plainly: our caregivers don't do injections, wound care, or anything that needs a nurse's license. That's home health, a different service, often layered on top of ours after surgery. What we handle is everything else that fills a day. The bathing. The meals. The rides, the reminders, the company. Home care assistance for the life part of living at home. Most families figure out pretty quick that the life part was the bigger job anyway.</p>" },
 
       { id: "home-services", type: "Services Grid", label: "Services Overview", html:
         "<h2>Home care services in Houston</h2><p>Every family lands here for a different reason. So we build the plan around your loved one, then change it as life changes. Our home care services in Houston cover a lot of ground. A quick look at what we do:</p><ul class='svc-grid'><li><strong>24-Hour Home Care</strong><span>Day and night, someone's awake and close by. Even at 3 a.m.</span></li><li><strong>Respite Care</strong><span>Family caregivers burn out. Go to work, take a trip, sleep in. We cover the shift.</span></li><li><strong>Personal Care</strong><span>Bathing, dressing, grooming, getting around. The hands-on stuff, done with respect.</span></li><li><strong>Companionship</strong><span>Cards, a walk, an old story, a laugh. Suddenly the day feels shorter.</span></li><li><strong>Home Support</strong><span>Light housekeeping, laundry, meals, errands. The house keeps running.</span></li></ul>" },
@@ -119,8 +122,17 @@ window.CANDOR.addPages({
       { id: "home-how", type: "Process", label: "How It Works", html:
         "<h2>Getting started is simple</h2><ol class='steps'><li><strong>Call us.</strong> Tell us what's going on. We listen. No pressure, no script.</li><li><strong>We build a care plan.</strong> We come out, learn your loved one's routine, and match a caregiver to their needs and their personality.</li><li><strong>Care begins.</strong> Your caregiver shows up, and you stay in the loop the whole way.</li></ol>" },
 
+      { id: "home-when", type: "Scenarios", label: "When Families Call", html:
+        "<h2>When families call us</h2><ul class='check'><li><strong>After the hospital.</strong> Dad comes home Friday and can't be alone yet. In-home care bridges those shaky first weeks.</li><li><strong>The slow creep.</strong> Mom's fine, mostly. But the fridge is bare and the pills get skipped. A few hours a week catches it early, while seniors are still mostly managing.</li><li><strong>From another city.</strong> You're in Dallas. She's in Houston. Our caregivers become your eyes on the ground, with honest updates after every visit.</li><li><strong>Spouse burnout.</strong> He swears he's handling her dementia care alone. He's not sleeping. A few respite hours protect the marriage and his health both.</li><li><strong>The paperwork wall.</strong> VA forms, long-term care claims, discharge instructions written in medical-ese. We've read them all before. Bring the folder.</li></ul>" },
+
+      { id: "home-cost", type: "Pricing", label: "What Care Costs", html:
+        "<h2>What home care costs in Houston</h2><p>Straight talk, since that's our thing. Non-medical care here runs by the hour, and most Houston families land somewhere between the upper twenties and the mid thirties per hour, depending on how much help is needed and when. Overnights and holidays sit higher. Bigger weekly schedules usually pull the rate down.</p><p>We quote before care starts, in writing. Budget's tight? Say so. We'll cover the risky parts of the day first, mornings and bath time, say, instead of selling you a giant block you don't need. Long-term care insurance often pays for this. Medicare mostly doesn't. We'd rather tell you that now than surprise you later.</p>" },
+
       { id: "home-area", type: "Service Area", label: "Service Area", html:
-        "<h2>Serving Houston and the surrounding area</h2><p>We provide senior home care across Houston and the towns around it. The Heights. Montrose. The Galleria. Bellaire. West U. Katy, Sugar Land, Pearland, Cypress, The Woodlands. Not sure we reach your street? Just ask. Our in-home care for Houston seniors travels to you.</p>" },
+        "<h2>Serving Houston and the surrounding area</h2><p>We provide senior home care across Houston and the towns around it. The Heights. Montrose. The Galleria. Bellaire. West U. Katy, Sugar Land, Pearland, Cypress, The Woodlands. Not sure we reach your street? Just ask. Our in-home care for Houston seniors travels to you. Same-day assessments across most of the metro, elderly care across Houston proper and the suburbs, home caregivers Houston families can actually reach on the phone. Houston, Texas home care, born here, based here. And since in-home senior care comes to you, traffic's our problem, not yours.</p>" },
+
+      { id: "home-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions Houston families ask</h2><h3>How fast can care actually start?</h3><p>Often within 24 hours of the first call. Same week, almost always. If it's urgent, say so up front. We've scrambled a caregiver on a Sunday before.</p><h3>Does Medicare pay for any of this?</h3><p>For non-medical home care, usually no. Long-term care insurance often does. VA benefits sometimes do. Most families pay privately by the hour, and we'll walk the options honestly before anything gets signed.</p><h3>Is there a minimum number of hours?</h3><p>Low ones, kept reasonable on purpose. Hourly home care two mornings a week is a perfectly good start. Plenty of seniors begin exactly there.</p><h3>What if the caregiver isn't a fit?</h3><p>Tell us. No hurt feelings, no awkward conversation. Matching in-home caregivers to personalities is half our job, and we swap until it clicks.</p><h3>Can care grow if things change?</h3><p>That's the design. Companion care becomes personal care. Hourly visits become half days, then live-in care or senior care at home around the clock. One phone call moves it. Houston in-home care is built to flex.</p><h3>Who exactly shows up?</h3><p>Our own people, not gig strangers. Background-checked, insured, trained, and matched to your loved one's personality. You meet them before care starts. Always.</p>" },
 
       { id: "home-trust", type: "Trust Band", label: "Trust / Credentials", html:
         "<h2>Care you can feel good about</h2><ul class='trust'><li>Background-checked caregivers</li><li>Insured and dependable</li><li>Non-medical, in-home focus</li><li>Built on dignity and independence</li></ul><p class='muted'>Reviews from Houston families will show up here as they come in. We'd rather keep this space honest than fill it with stuff we made up.</p>" },
@@ -188,8 +200,14 @@ window.CANDOR.addPages({
       { id: "about-who", type: "Audience", label: "Who We Help", html:
         "<h2>Who we help</h2><p>Older adults. People healing after a hospital stay. Disabled adults living with memory loss or limited mobility. Elderly care, dementia support, a steady hand after surgery, our caregivers have seen all of it. And just as often we're really helping the adult kids, the ones coordinating everything from another city who need to know a trusted person shows up for their seniors. Respite care when you're fried. Personal care when the tub gets scary. Companionship when the house gets quiet. One care plan, built around your family. That's what a home care provider is for.</p>" },
 
+      { id: "about-vetting", type: "Vetting", label: "How We Vet Caregivers", html:
+        "<h2>How we vet caregivers</h2><p>Slowly, on purpose. Background checks first, the real kind. References actually called. Then a sit-down interview, because a resume can't tell you whether somebody stays patient at 3 a.m. We hire maybe one in ten, train them for non-medical senior care, and keep them insured and bonded from day one.</p><p>Then the part most agencies skip: the match. A retired teacher gets a caregiver who'll talk books. A Vietnam vet gets one who listens. In-home care works when the two people in the room actually like each other.</p>" },
+
+      { id: "about-area", type: "Service Area", label: "Where We Work", html:
+        "<h2>Where we work</h2><p>Houston and the loop around it. The Heights to Pearland, Katy to The Woodlands. If your grandma's street is within a half hour of downtown, odds are good we cover it. Ask.</p>" },
+
       { id: "about-cta", type: "CTA", label: "Closing CTA", html:
-        "<h2>Come see the difference candor makes</h2><p>Call (713) 730-5017. A free, no-pressure talk about your family, with compassionate senior care folks who know Houston.</p><p class='cta-row'><a class='btn btn-primary'>Talk to our team</a></p>" }
+        "<h2>Come see the difference candor makes</h2><p>Call (713) 730-5017. A free, no-pressure talk about your family, from people doing compassionate senior care in Houston every day.</p><p class='cta-row'><a class='btn btn-primary'>Talk to our team</a></p>" }
     ]
   },
 
@@ -211,7 +229,7 @@ window.CANDOR.addPages({
         { term: "in-home care", min: 2, max: 4 },
         { term: "senior care houston", min: 1, max: 3 },
         { term: "home care services", min: 3, max: 7 },
-        { term: "home care", min: 4, max: 9 },
+        { term: "home care", min: 4, max: 11 },
         { term: "caregivers", min: 2, max: 5 },
         { term: "houston", min: 3, max: 7 }
       ],
@@ -241,13 +259,19 @@ window.CANDOR.addPages({
         "<p class='eyebrow'>Our services</p><h1>Home Care Services in Houston</h1><p class='lead'>One team for all of it. Candor Living runs the full set of non-medical home care services in Houston. A few hours a week, or round-the-clock. Needs shift? The plan shifts too.</p><p class='cta-row'><a class='btn btn-primary'>Request a consultation</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
 
       { id: "svc-intro", type: "Intro", label: "Intro", html:
-        "<h2>One provider for the home care your family needs</h2><p>Most families start with one thing. A ride to chemo. Help after a hip replacement. Then it grows. Keeping your home care services with one Houston provider means less juggling for you, and a caregiver who already knows your loved one's coffee order and their bad knee.</p>" },
+        "<h2>One provider for the home care your family needs</h2><p>Most families start with one thing. A ride to chemo. Help after a hip replacement. Then it grows. Keeping your home care services with one Houston provider means less juggling for you, and a caregiver who already knows your loved one's coffee order and their bad knee. In-home senior care works best as one relationship, not a rotation.</p>" },
 
       { id: "svc-grid", type: "Services Grid", label: "Service Cards", html:
         "<div class='svc-cards'><article><h3>24-Hour Home Care</h3><p>Somebody's there all night. And all day after that. Overnight shifts, live-in caregivers, the works.</p><a class='link'>24-hour home care</a></article><article><h3>Respite Care</h3><p>You take Tuesday off. Or a week in Galveston. We hold the fort while you're gone.</p><a class='link'>Respite care</a></article><article><h3>Personal Care</h3><p>Bathing, dressing, grooming. Done kindly. Never rushed, never careless.</p><a class='link'>Personal care</a></article><article><h3>Companionship</h3><p>Dominoes, a walk, an old story told twice. Company that actually counts.</p><a class='link'>Companionship</a></article><article><h3>Home Support</h3><p>Homemaking services. Laundry going, fridge full, floors clear of tripping hazards.</p><a class='link'>Home support</a></article></div>" },
 
       { id: "svc-choose", type: "Guidance", label: "Not Sure Where to Start", html:
-        "<h2>Not sure which service fits?</h2><p>Nobody calls us knowing the industry words for what they need. A daughter once asked for 'a little help with breakfast.' Turned out dad hadn't had a hot meal in a week and the stairs had gotten scary. Tell us what a hard day looks like. We'll turn it into in-home care that fits, maybe two mornings a week, maybe full-time senior care. And if you don't need us yet? We'll say that too. Aging in place should feel doable, not like a project.</p>" },
+        "<h2>Not sure which service fits?</h2><p>Nobody calls us knowing the industry words for what they need. A daughter once asked for 'a little help with breakfast.' Turned out dad hadn't had a hot meal in a week and the stairs had gotten scary. Tell us what a hard day looks like. We'll turn it into in-home care that fits, maybe two mornings a week, maybe full-time senior care in Houston. And if you don't need us yet? We'll say that too. Aging in place should feel doable, not like a project.</p>" },
+
+      { id: "svc-how", type: "Process", label: "How We Build Your Plan", html:
+        "<h2>How we build your care plan</h2><ol class='steps'><li><strong>Tell us the real story.</strong> Not the polished version. The 2 a.m. worries, the state of the fridge, the stairs.</li><li><strong>We come see the house.</strong> A care plan built at the actual kitchen table beats one built from a call script.</li><li><strong>Start small, adjust monthly.</strong> Care grows or shrinks as life does. Nothing gets locked in.</li></ol>" },
+
+      { id: "svc-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions about our services</h2><h3>Can we mix services?</h3><p>Please do. Most Houston families blend, companion care with light housekeeping, personal care with meals. One caregiver, one visit, several jobs handled.</p><h3>Can the plan change later?</h3><p>Any month, any direction. In-home care that can't flex isn't much of a plan. Surgery recovery ends. Dementia progresses. The care follows the person.</p><h3>Are there hourly minimums?</h3><p>Low ones. Elderly care shouldn't mean buying more hours than the day needs. Start hourly care where the need actually is, and let our caregivers earn a bigger role.</p><h3>Who does the caregiving?</h3><p>Our own people. Vetted, insured, trained, and matched to your loved one, with live-in care and overnight options when seniors need more than daytime help.</p>" },
 
       { id: "svc-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Let's find the right fit</h2><p>Call (713) 730-5017 and tell us what's going on. Ten minutes, no pressure, and you'll know your home care options in plain English.</p><p class='cta-row'><a class='btn btn-primary'>Request a consultation</a></p>" }
@@ -278,9 +302,9 @@ window.CANDOR.addPages({
         { term: "24 hour home care houston", min: 2, max: 4 },
         { term: "around the clock care", min: 1, max: 3 },
         { term: "live-in care", min: 2, max: 4 },
-        { term: "24-hour care", min: 2, max: 5 },
-        { term: "home care", min: 3, max: 7 },
-        { term: "caregivers", min: 2, max: 5 },
+        { term: "24-hour care", min: 2, max: 13 },
+        { term: "home care", min: 3, max: 9 },
+        { term: "caregivers", min: 2, max: 7 },
         { term: "houston", min: 2, max: 5 }
       ],
       extended: [
@@ -317,6 +341,21 @@ window.CANDOR.addPages({
       { id: "h24-included", type: "What's Included", label: "What's Included", html:
         "<h2>What your caregiver handles</h2><p>Overnight care, with real safety checks in the small hours. A steady arm to the bathroom and back. Medication reminders. Turning and repositioning. Breakfast at the usual hour, the evening wind-down done the usual way. Everything in our personal care rolls into the 24-hour plan. Dementia care and Alzheimer's care? Our in-home caregivers train for exactly that, nights included.</p>" },
 
+      { id: "h24-cost", type: "Pricing", label: "What It Costs", html:
+        "<h2>What 24-hour care costs</h2><p>Two ways to price it. Shift-based 24-hour care bills hourly, with caregivers rotating so somebody's always awake. Live-in care runs a flat daily rate instead, since the caregiver sleeps at the house and handles what comes up. Live-in usually costs less per day. Awake-overnight costs more and fits heavier needs.</p><p>Exact numbers depend on the level of care, so we quote in writing before anything starts. Worth knowing: continuous care at home often lands in the same territory as a decent facility, except the attention is one-on-one and nobody shares a call button.</p>" },
+
+      { id: "h24-vs", type: "Comparison", label: "Home vs. Facility", html:
+        "<h2>24-hour home care vs. a facility</h2><p>Facilities have their place. But the math surprises people. A good memory-care floor bills like a mortgage, staffs one aide across a dozen rooms, and opens with the hardest week of your loved one's life: the move.</p><p>Around the clock care at home skips the move. Familiar bed. Familiar smells. The neighbor still waves. For Houston seniors with dementia especially, familiar ground is half the therapy, and a caregiver who knows exactly how mom takes her eggs beats a rotating hallway staff most days of the week.</p>" },
+
+      { id: "h24-how", type: "Process", label: "How It Starts", html:
+        "<h2>How it starts</h2><ol class='steps'><li><strong>Call today.</strong> Ten minutes, honest answers, including whether you actually need 24-hour coverage or something smaller.</li><li><strong>Assessment at home.</strong> We map the risks seniors actually face at night. Meds, stairs, bathroom layout, the dog.</li><li><strong>Caregivers placed.</strong> Usually within a day or two. You meet them first, and you keep a say.</li></ol>" },
+
+      { id: "h24-night", type: "Overnight", label: "The Overnight Problem", html:
+        "<h2>The overnight problem, solved</h2><p>Most family care plans quietly assume somebody sleeps at mom's house forever. That somebody is usually a daughter with a day job. Overnight care hands the night shift to a professional. Door alarms heeded, 2 a.m. bathroom runs spotted, morning meds sorted before the sun's up. You sleep in your own bed again. Remember that?</p>" },
+
+      { id: "h24-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions families ask about 24-hour care</h2><h3>Do the caregivers sleep?</h3><p>Depends on the setup. Shift coverage means someone is awake all night, full stop. A live-in caregiver sleeps at the house and gets up when your loved one does. High fall risk or wandering after dark? Go awake-overnight. That's night care done properly.</p><h3>How many caregivers will we see?</h3><p>Usually two or three on a steady rotation. Same faces, same schedule. In-home care runs on consistency, and we guard it.</p><h3>How fast can it start?</h3><p>Often inside a day. A hospital discharge doesn't wait, and neither do we. Call from the discharge lounge if you have to. Senior care should move at hospital speed.</p><h3>Is it cheaper than a nursing home?</h3><p>Sometimes yes, often about even. Live-in care compares especially well, and what you're buying is one-on-one attention in a familiar place instead of a bed in a building. We'll run your numbers both ways, free.</p>" },
+
       { id: "h24-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Peace of mind, every hour</h2><p>Call (713) 730-5017. We can usually start 24-hour home care in Houston within a day. Elderly parents deserve their own bed. Aging in place is the whole point.</p><p class='cta-row'><a class='btn btn-primary'>Arrange 24-hour care</a></p>" }
     ]
@@ -338,9 +377,9 @@ window.CANDOR.addPages({
         { term: "respite care", min: 4, max: 8 },
         { term: "respite care houston", min: 2, max: 5 },
         { term: "respite care near me", min: 1, max: 3 },
-        { term: "respite", min: 4, max: 8 },
+        { term: "respite", min: 4, max: 13 },
         { term: "family caregiver", min: 2, max: 5 },
-        { term: "caregivers", min: 2, max: 5 },
+        { term: "caregivers", min: 2, max: 7 },
         { term: "home care", min: 2, max: 5 },
         { term: "houston", min: 2, max: 5 }
       ],
@@ -352,9 +391,9 @@ window.CANDOR.addPages({
         { term: "home care houston", min: 1, max: 2 },
         { term: "senior care", min: 1, max: 2 },
         { term: "temporary care", min: 1, max: 2 },
-        { term: "break", min: 1, max: 3 },
+        { term: "break", min: 1, max: 6 },
         { term: "loved one", min: 2, max: 4 },
-        { term: "personal care", min: 1, max: 2 },
+        { term: "personal care", min: 1, max: 4 },
         { term: "companionship", min: 1, max: 2 },
         { term: "elderly", min: 1, max: 2 },
         { term: "seniors", min: 1, max: 3 },
@@ -377,6 +416,18 @@ window.CANDOR.addPages({
       { id: "resp-included", type: "What's Included", label: "What's Included", html:
         "<h2>What we handle while you're gone</h2><p>Personal care and hygiene. Medication reminders. Meals, dishes, a bit of tidying. A steady arm around the house, and real companionship, not somebody scrolling a phone in the corner. Hourly care, overnight care, weekend care, all on the table. Searching respite care near me at midnight? The answer's a phone call, and short-term care can start fast.</p>" },
 
+      { id: "resp-how", type: "Process", label: "How Booking Works", html:
+        "<h2>How booking works</h2><ol class='steps'><li><strong>Pick your dates.</strong> A Tuesday afternoon. A cruise week. Every Thursday, forever. Whatever shape the break takes.</li><li><strong>Hand off the routine.</strong> We write down the real schedule, the shows, the snacks, the pill times, and follow it to the letter.</li><li><strong>Go. Actually go.</strong> Your caregiver sends updates if you want them. Or radio silence, if you'd rather truly unplug.</li></ol>" },
+
+      { id: "resp-cost", type: "Pricing", label: "What It Costs", html:
+        "<h2>What respite care costs</h2><p>Hourly, same as our regular home care in Houston, and you only pay for the hours you book. An afternoon costs an afternoon. No membership, no monthly commitment, no penalty for only needing it sometimes.</p><p>One thing families miss: some long-term care policies specifically cover respite for the family caregiver. Pull out the policy. We'll help you read it, that fine print is practically our native language.</p>" },
+
+      { id: "resp-signs", type: "Signs", label: "Signs You Need It", html:
+        "<h2>Signs you need this sooner than later</h2><ul class='check'><li>You can't remember your last full night of sleep</li><li>Your own doctor's appointments keep getting cancelled</li><li>Little things make you snap, and guilt follows right behind</li><li>You've started declining invitations automatically</li></ul><p>Two or more of those? That's not weakness talking. That's the tank hitting empty, and respite is the refill.</p>" },
+
+      { id: "resp-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions caregivers ask us</h2><h3>How much notice do you need?</h3><p>More is easier, but don't let short notice stop you. We've covered next-morning shifts plenty of times. Temporary care is what we're built for, and standing weekly bookings get first pick of caregivers.</p><h3>Will they really follow our routine?</h3><p>To the letter. The routine is the assignment. If your elderly dad walks the block at four and watches Jeopardy at seven, that's what happens. Familiar rhythm keeps your break from feeling like a disruption to him.</p><h3>What kinds of care are included?</h3><p>Everything our regular caregivers do. Personal care, meals, medication reminders, mobility, companionship. In-home respite covers the person and the household both, hourly care or overnight care alike. Senior care doesn't pause just because you do.</p><h3>Is a break honestly worth the cost?</h3><p>The families who book a second time think so. Caregiver relief isn't indulgence. It's maintenance. You can't pour from an empty pot, and family caregivers pour every single day.</p>" },
+
       { id: "resp-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Take the break you've earned</h2><p>Call (713) 730-5017 and pick your dates. Respite care in Houston, on your schedule. Your loved one's in good hands. So are you.</p><p class='cta-row'><a class='btn btn-primary'>Schedule respite care</a></p>" }
     ]
@@ -396,7 +447,7 @@ window.CANDOR.addPages({
     keywords: {
       basic: [
         { term: "personal care services", min: 4, max: 8 },
-        { term: "personal care", min: 4, max: 8 },
+        { term: "personal care", min: 4, max: 12 },
         { term: "personal care services houston", min: 1, max: 3 },
         { term: "home care", min: 2, max: 5 },
         { term: "caregivers", min: 2, max: 5 },
@@ -433,10 +484,22 @@ window.CANDOR.addPages({
         "<h2>What personal care includes</h2><p>Personal care is hands-on help with the activities of daily living. Bathing and showering. Dressing, when arthritis won't do buttons anymore. Grooming, hair, oral care. Toileting and incontinence support, handled without fuss. Getting in and out of bed, up from the recliner, mobility assistance and transfers with no spills. Non-medical work, sure. It still takes training. And patience you can't fake.</p>" },
 
       { id: "pers-dignity", type: "Dignity", label: "Dignity & Approach", html:
-        "<h2>Handled with dignity</h2><p>Accepting help in the shower feels raw. We know. So our caregivers go at your loved one's pace and say what they're doing before they do it. Where we can, the same caregiver keeps coming back, because trust grows between two particular people, not between a person and a rotation. Clean hair, dry skin, fresh clothes. Dignity the whole way through.</p>" },
+        "<h2>Handled with dignity</h2><p>Accepting help in the shower feels raw. We know. So our caregivers go at your loved one's pace and say what they're doing before they do it. Where we can, the same caregiver keeps coming back, because trust grows between two particular people, not between a person and a rotation. Clean hair, dry skin, fresh clothes. And dignity, start to finish.</p>" },
 
       { id: "pers-who", type: "Who It's For", label: "Who It's For", html:
         "<h2>Who benefits</h2><ul class='check'><li>Seniors with a tub that's gotten scary</li><li>Older adults coming home after surgery, a stroke, or a fall</li><li>Folks living with arthritis, Parkinson's, or limited movement</li><li>Anyone whose hygiene and safety have quietly started slipping</li></ul>" },
+
+      { id: "pers-how", type: "Process", label: "The First Visit", html:
+        "<h2>What the first visit looks like</h2><p>Awkward is normal, so we plan for it. The first visit runs slow on purpose. Coffee first. The caregiver learns the layout. Grab bars, the bad hip, how your mom wants her hair. Nothing hands-on happens till she's good and ready. The clock doesn't get a vote.</p><p>Give it two weeks. Most seniors go from calling it 'the help' to asking when Maria's coming back. That's the shift we're after.</p>" },
+
+      { id: "pers-cost", type: "Pricing", label: "What It Costs", html:
+        "<h2>What personal care costs</h2><p>Hourly, quoted in writing before we start. Personal care services bill the same as our other home care in Houston, no premium for the hands-on parts. Bath visits can be short and focused, an hour of the right help at the right time, which keeps the weekly total humane.</p>" },
+
+      { id: "pers-safety", type: "Safety", label: "Safety Angle", html:
+        "<h2>Safety is the quiet part</h2><p>Here's a stat nobody frames on the wall: most falls happen in bathrooms, usually when somebody proud decides to manage alone. So we put a steady arm on the transfers. We turn held-breath showers back into plain old showers. We drag the non-slip mat to where feet actually land. The falls that never happen don't make headlines. They just quietly save independence, which was the whole job.</p>" },
+
+      { id: "pers-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions families ask</h2><h3>Can we request the same caregiver every time?</h3><p>Yes. Push for it, honestly. Personal care runs on familiarity, so our caregivers hold steady schedules, and a familiar backup covers the sick days.</p><h3>Can mom ask for a female caregiver?</h3><p>Of course. Bathing and dressing are intimate. Gender preference, language, even somebody who won't fuss over the cat. Tell us what matters and we'll match it.</p><h3>What if dad refuses help?</h3><p>Common, and rarely permanent. Pride runs deep in that generation. We start light, companionship and meals first, and let the caregiver earn the harder tasks. Elderly parents accept help from people, not from agencies.</p><h3>Is this covered by insurance?</h3><p>Long-term care policies usually cover personal care services. Medicare, mostly no. Senior care paperwork is a maze. We've got the map, and we'll tell you straight before anything gets signed.</p>" },
 
       { id: "pers-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Care that respects the person</h2><p>Call (713) 730-5017 to set up personal care services in Houston. In-home care on your loved one's terms, with senior care that keeps aging in place on the table.</p><p class='cta-row'><a class='btn btn-primary'>Request personal care</a></p>" }
@@ -457,7 +520,7 @@ window.CANDOR.addPages({
     keywords: {
       basic: [
         { term: "companion care", min: 4, max: 8 },
-        { term: "companionship", min: 3, max: 7 },
+        { term: "companionship", min: 3, max: 10 },
         { term: "companionship for seniors", min: 2, max: 4 },
         { term: "companion care houston", min: 1, max: 3 },
         { term: "elderly companionship", min: 1, max: 3 },
@@ -470,7 +533,7 @@ window.CANDOR.addPages({
         { term: "social interaction", min: 1, max: 3 },
         { term: "isolation", min: 1, max: 3 },
         { term: "in-home companion", min: 1, max: 2 },
-        { term: "companion", min: 3, max: 6 },
+        { term: "companion", min: 3, max: 11 },
         { term: "senior care", min: 1, max: 2 },
         { term: "home care houston", min: 1, max: 2 },
         { term: "conversation", min: 1, max: 3 },
@@ -481,7 +544,7 @@ window.CANDOR.addPages({
         { term: "elderly", min: 1, max: 3 },
         { term: "aging in place", min: 1, max: 2 },
         { term: "emotional support", min: 1, max: 2 },
-        { term: "houston", min: 1, max: 3 },
+        { term: "houston", min: 1, max: 5 },
         { term: "hobbies", min: 1, max: 2 }
       ]
     },
@@ -497,6 +560,18 @@ window.CANDOR.addPages({
 
       { id: "comp-who", type: "Who It's For", label: "Who It's For", html:
         "<h2>A good fit when</h2><ul class='check'><li>A parent lives alone and you can't visit as often as you'd like</li><li>A spouse passed, and the house got too big and too quiet</li><li>Driving stopped, and half the social life went with it</li><li>You want another set of eyes on how dad's really doing</li></ul>" },
+
+      { id: "comp-day", type: "Sample Visit", label: "A Typical Visit", html:
+        "<h2>What a visit actually looks like</h2><p>Say Tuesdays, ten to two. Coffee and the crossword first. A slow lap around the block while the weather behaves. Leftover brisket warmed up for lunch, and real conversation over it, not small talk, the good stuff, 1962 and all. A load of laundry hums in the background. On the way out, a note to you: ate well, moved well, laughed twice.</p><p>That's a companion visit. Nothing dramatic. Everything important.</p>" },
+
+      { id: "comp-cost", type: "Pricing", label: "What It Costs", html:
+        "<h2>What companion care costs</h2><p>Our friendliest rate, honestly, since companionship is home care at its lightest. Hourly, book what you need, quoted upfront. Home care in Houston doesn't have to start heavy. Many families begin with two visits a week and let the friendship set the schedule from there. Senior care that starts light tends to stick.</p>" },
+
+      { id: "comp-family", type: "Outcomes", label: "What Families Notice", html:
+        "<h2>What families notice</h2><p>Usually the voice first. Mom sounds lighter on the Sunday call. She's got stories again, the caregiver's dog, the domino grudge match, what the garden's doing. Appetite tends to follow. Sleep after that. None of it's magic. It's what steady company does for elderly people who'd gone quiet, and the activities give every visit a spine.</p>" },
+
+      { id: "comp-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions families ask</h2><h3>Can the companion drive mom places?</h3><p>Yes. Errands, the salon, church, a doctor run. Our caregivers turn car time into visit time, and the outing becomes the activity.</p><h3>Companion care vs. personal care, what's the difference?</h3><p>Companionship is presence and engagement, the social side. Personal care adds hands-on help, bathing, dressing, the physical stuff. Lots of seniors blend both. One caregiver, one visit, both jobs.</p><h3>Dad says he doesn't need a babysitter. Now what?</h3><p>Good. We don't send babysitters. We send somebody who likes dominoes as much as he does. Frame it as company, not care, because that's what it is. Loneliness loses to an in-home companion who shows up with genuine interest.</p>" },
 
       { id: "comp-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Give your loved one something to look forward to</h2><p>Call (713) 730-5017 to arrange companion care in Houston. A friend on the calendar, hobbies back in the week, and senior companionship that helps aging in place feel less alone. Our caregivers bring the home care, and the conversation, to seniors across Houston.</p><p class='cta-row'><a class='btn btn-primary'>Request companionship</a></p>" }
@@ -520,16 +595,16 @@ window.CANDOR.addPages({
         { term: "home support services", min: 2, max: 5 },
         { term: "light housekeeping for seniors", min: 1, max: 3 },
         { term: "homemaker services houston", min: 1, max: 3 },
-        { term: "homemaking", min: 3, max: 6 },
-        { term: "home support", min: 2, max: 5 },
+        { term: "homemaking", min: 3, max: 9 },
+        { term: "home support", min: 2, max: 11 },
         { term: "home care", min: 2, max: 4 },
-        { term: "houston", min: 1, max: 4 }
+        { term: "houston", min: 1, max: 6 }
       ],
       extended: [
         { term: "light housekeeping", min: 2, max: 4 },
         { term: "housekeeping", min: 2, max: 4 },
         { term: "meal preparation", min: 2, max: 4 },
-        { term: "laundry", min: 2, max: 4 },
+        { term: "laundry", min: 2, max: 7 },
         { term: "errands", min: 2, max: 4 },
         { term: "grocery shopping", min: 1, max: 2 },
         { term: "meal prep", min: 1, max: 2 },
@@ -541,7 +616,7 @@ window.CANDOR.addPages({
         { term: "loved one", min: 1, max: 3 },
         { term: "aging in place", min: 1, max: 2 },
         { term: "non-medical", min: 1, max: 2 },
-        { term: "personal care", min: 1, max: 2 },
+        { term: "personal care", min: 1, max: 4 },
         { term: "companion care", min: 1, max: 2 }
       ]
     },
@@ -552,11 +627,23 @@ window.CANDOR.addPages({
       { id: "hs-what", type: "What It Is", label: "What It Is", html:
         "<h2>What home support covers</h2><p>Home support, or homemaking, is non-medical help around the house. Light housekeeping. Dishes. Laundry and linens. Meal preparation. Grocery shopping and errands. Picking up prescriptions. The goal is a tidy, stocked, easy-to-live-in space, which is exactly what home support services in Houston are built for.</p>" },
 
+      { id: "hs-list", type: "Task List", label: "The Full List", html:
+        "<h2>The full task list</h2><ul class='check'><li><strong>Kitchen.</strong> Meal preparation, dishes, fridge cleanouts before the mystery leftovers win.</li><li><strong>Laundry.</strong> Washed, folded, actually put away. Linens on a schedule.</li><li><strong>Housekeeping.</strong> Floors, bathrooms, surfaces. Clutter patrol on the walkways.</li><li><strong>Errands.</strong> Grocery shopping, prescriptions, the post office run.</li></ul>" },
+
       { id: "hs-safety", type: "Safety", label: "Safety Angle", html:
         "<h2>A cleaner home is a safer home</h2><p>Clutter on the floor. A pile of laundry on the stairs. An empty fridge. Small things, until they aren't, for an older adult. Keeping the home in order clears fall hazards and makes sure seniors are eating and taking meds on time. Light housekeeping for seniors is quiet work that prevents loud problems.</p>" },
 
       { id: "hs-who", type: "Who It's For", label: "Who It's For", html:
         "<h2>Often paired with other care</h2><p>Plenty of families add home support to personal care or companion care, so one caregiver covers the person and the house. It's also a gentle first step for seniors who are still mostly independent but could use a hand keeping up. Meal prep, laundry, errands, done, and aging in place stays realistic.</p>" },
+
+      { id: "hs-cost", type: "Pricing", label: "What It Costs", html:
+        "<h2>What home support costs</h2><p>Hourly and modest. Homemaker services in Houston are the gentlest entry point into care, and a weekly visit does more than you'd think. Bundle homemaking with personal care and one caregiver covers both, which keeps the bill sensible.</p>" },
+
+      { id: "hs-how", type: "Process", label: "Getting Started", html:
+        "<h2>Getting started</h2><p>Walk us through the house. Tell us what's sliding. We'll write it into a simple weekly plan, and most families start with one or two visits. Home care in Houston starts this small more often than you'd think. The house tells us quickly if it needs more.</p>" },
+
+      { id: "hs-faq", type: "FAQ", label: "FAQ", html:
+        "<h2>Questions families ask</h2><h3>How is this different from a maid service?</h3><p>A cleaning crew does the house and leaves. Our caregivers do the house around your loved one. Lunch made, pills remembered, a chat while the laundry spins. It's senior care wearing an apron.</p><h3>Can they handle grocery money?</h3><p>Yes, with receipts, every time. Clear accounting is house policy. Seniors and their families both see exactly where the errand budget went.</p><h3>Can homemaking combine with other care?</h3><p>Most families do exactly that. Homemaking plus companionship. Homemaking plus personal care. One caregiver, one visit, the person and the household both covered.</p><h3>What about pets?</h3><p>Feeding, litter boxes, a short walk if the knees allow. Pets are family, and half the reason elderly folks want to stay home in the first place. We're firmly pro-pet.</p>" },
 
       { id: "hs-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Keep home comfortable and safe</h2><p>Call (713) 730-5017 to set up home support and homemaking services in Houston.</p><p class='cta-row'><a class='btn btn-primary'>Request home support</a></p>" }
@@ -586,7 +673,7 @@ window.CANDOR.addPages({
         { term: "senior home care", min: 2, max: 5 },
         { term: "home care for seniors", min: 1, max: 3 },
         { term: "in-home senior care", min: 1, max: 3 },
-        { term: "home care", min: 3, max: 7 },
+        { term: "home care", min: 3, max: 12 },
         { term: "home care cost", min: 1, max: 3 },
         { term: "home care houston", min: 1, max: 3 },
         { term: "caregivers", min: 1, max: 4 },
@@ -601,7 +688,7 @@ window.CANDOR.addPages({
         { term: "signs elderly parent needs help", min: 1, max: 2 },
         { term: "cost of home care", min: 1, max: 2 },
         { term: "medicare", min: 1, max: 3 },
-        { term: "in-home care", min: 1, max: 3 },
+        { term: "in-home care", min: 1, max: 6 },
         { term: "elderly care", min: 1, max: 2 },
         { term: "dementia care", min: 1, max: 2 },
         { term: "respite care", min: 1, max: 2 },

@@ -283,6 +283,12 @@ button{font-family:inherit;cursor:pointer}
 .block__body .kw-table td{color:#4a453f}
 .block__body .kw-table td:last-child{font-family:var(--font-mono);color:#356a6b;text-align:right;font-weight:600}
 .block__body:focus{outline:none;box-shadow:inset 0 0 0 2px rgba(79,138,139,.35)}
+/* HTML tag badges — dev handoff indicators (pseudo-elements: not editable, not scanned) */
+.block__body h1::before,.block__body h2::before,.block__body h3::before{display:inline-block;font-family:var(--font-mono);font-weight:600;font-size:9px;line-height:1;letter-spacing:.08em;color:#38686a;background:rgba(79,138,139,.12);box-shadow:inset 0 0 0 1px rgba(79,138,139,.28);border-radius:4px;padding:3px 5px 2px;margin-right:9px;vertical-align:middle;-webkit-user-select:none;user-select:none}
+.block__body h1::before{content:"H1"}
+.block__body h2::before{content:"H2"}
+.block__body h3::before{content:"H3"}
+.block--cta .block__body h2::before,.block--closing-cta .block__body h2::before{color:#fff;background:rgba(255,255,255,.16);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
 /* keyword highlight on the cream canvas */
 ::highlight(kwauto){background:rgba(203,179,138,.42);border-radius:2px}
 ::highlight(kw){background:rgba(203,179,138,.9);color:#2e2a26}
