@@ -7,7 +7,7 @@
 
   var D = window.CANDOR;
   var PASS_HASH = "63bf487578e946cfa006bed174e70e8140d5d48fc952fd8db1f1988960e5484e"; /* sha256("CandorCare2026") */
-  var LS = "cl_edits_v1_";
+  var LS = "cl_edits_v2_"; /* v2: content rewrite Jul 2026 — old local edits retired */
   /* realistic word targets (leave visible headroom, like a real SEO tool) */
   var TARGETS = { home: 620, about: 380, services: 340, "service-24hour": 300, "service-respite": 285,
     "service-personal": 260, "service-companionship": 270, "service-homesupport": 280, blog: 300, careers: 240, contact: 140 };
@@ -23,10 +23,10 @@
     });
   }
   function fmtVol(v) { if (!v) return ""; return v >= 1000 ? (v / 1000).toFixed(v % 1000 === 0 ? 0 : 1) + "k" : String(v); }
-  function stripTags(html) { var d = el("div", null, html); return d.textContent || ""; }
+  function stripTags(html) { var d = el("div", null, String(html == null ? "" : html).replace(/<[^>]+>/g, " ")); return (d.textContent || "").replace(/\s+/g, " ").trim(); }
   function headingsText(html) {
     var d = el("div", null, html), out = [];
-    d.querySelectorAll("h1,h2,h3").forEach(function (h) { out.push(h.textContent); });
+    d.querySelectorAll("h1,h2,h3").forEach(function (h) { out.push(String(h.innerHTML).replace(/<[^>]+>/g, " ")); });
     return out.join(" ");
   }
   /* normalize so "24-hour" == "24 hour", "in-home" == "in home", "non-medical" == "non medical" */
@@ -366,7 +366,7 @@
   }
 
   /* ---------- AI detection (ZeroGPT via proxy) — result persists per page ---------- */
-  function aiStoreKey() { return "cl_ai_v1_" + current; }
+  function aiStoreKey() { return "cl_ai_v2_" + current; } /* v2: scans of the rewritten content */
   function savedAi() { try { return JSON.parse(localStorage.getItem(aiStoreKey()) || "null"); } catch (e) { return null; } }
   function aiStamp() { try { var d = new Date(); return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ", " + d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
   function aiBand(ai) { return ai < 25 ? "is-human" : (ai < 60 ? "is-mid" : "is-ai"); }
@@ -389,7 +389,7 @@
   }
   function runAiScan() {
     var box = $("#ai-result"), btn = $("#ai-run"); if (!box) return;
-    var text = ""; Array.prototype.forEach.call(document.querySelectorAll("#canvas .block__body"), function (b) { text += " " + b.textContent; });
+    var text = ""; Array.prototype.forEach.call(document.querySelectorAll("#canvas .block__body"), function (b) { text += " " + stripTags(b.innerHTML); });
     text = text.replace(/\s+/g, " ").trim();
     box.innerHTML = "<span class='ai__idle'>Scanning…</span>"; if (btn) btn.disabled = true;
     fetch(AI_PROXY + "/detect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text: text }) })
