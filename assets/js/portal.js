@@ -12,7 +12,40 @@
   /* competitor-informed word targets (Jul 2026 expansion) */
   var TARGETS = { home: 1150, about: 500, services: 500, "service-24hour": 760, "service-respite": 620,
     "service-personal": 580, "service-companionship": 580, "service-homesupport": 520, blog: 300, careers: 240, contact: 140 };
-  var AI_PROXY = "https://candor-ai-proxy-production.up.railway.app"; /* ZeroGPT proxy (Railway) */
+  var AI_PROXY = "https://candor-ai-proxy-production.up.railway.app"; /* ZeroGPT proxy + shared state (Railway) */
+
+  /* ---- shared cloud state: everyone sees the same edits + scans ---- */
+  var REMOTE = { edits: {}, ai: {}, ok: false };
+  function stateHeaders() { return { "Content-Type": "application/json", "X-Portal-Key": PASS_HASH }; }
+  function syncPull(done) {
+    var ctl = ("AbortController" in window) ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctl) ctl.abort(); }, 6000);
+    fetch(AI_PROXY + "/state", { headers: stateHeaders(), signal: ctl ? ctl.signal : undefined })
+      .then(function (r) { return r.json(); })
+      .then(function (s) { if (s && s.edits) { REMOTE.edits = s.edits || {}; REMOTE.ai = s.ai || {}; REMOTE.ok = true; } })
+      .catch(function () {})
+      .finally(function () { clearTimeout(t); migrateLocal(); done(); });
+  }
+  function pushState(type, page, data) {
+    if (data === undefined) data = null;
+    fetch(AI_PROXY + "/state", { method: "POST", headers: stateHeaders(), body: JSON.stringify({ type: type, page: page, data: data }) }).catch(function () {});
+  }
+  /* one-time: lift this browser's older local edits/scans into the shared store */
+  function migrateLocal() {
+    if (!REMOTE.ok) return;
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i); if (!k) continue;
+        if (k.indexOf(LS) === 0) {
+          var page = k.slice(LS.length);
+          if (!(page in REMOTE.edits)) { var v = JSON.parse(localStorage.getItem(k) || "null"); if (v) { REMOTE.edits[page] = v; pushState("edits", page, v); } }
+        } else if (k.indexOf("cl_ai_v3_") === 0) {
+          var p2 = k.slice("cl_ai_v3_".length);
+          if (!(p2 in REMOTE.ai)) { var v2 = JSON.parse(localStorage.getItem(k) || "null"); if (v2) { REMOTE.ai[p2] = v2; pushState("ai", p2, v2); } }
+        }
+      }
+    } catch (e) {}
+  }
 
   /* ---------- tiny helpers ---------- */
   function $(s, r) { return (r || document).querySelector(s); }
@@ -48,7 +81,10 @@
   function hasTerm(normText, term) { var re = termRe(term, false); return re ? re.test(normText) : false; }
 
   /* ---------- effective page model (defaults + saved edits) ---------- */
-  function savedEdits(key) { try { return JSON.parse(localStorage.getItem(LS + key) || "null"); } catch (e) { return null; } }
+  function savedEdits(key) {
+    if (REMOTE.ok && Object.prototype.hasOwnProperty.call(REMOTE.edits, key)) return REMOTE.edits[key];
+    try { return JSON.parse(localStorage.getItem(LS + key) || "null"); } catch (e) { return null; }
+  }
   function getModel(key) {
     var p = D.pages[key]; if (!p) return null;
     var s = savedEdits(key);
@@ -73,6 +109,7 @@
       var body = $(".block__body", bl); if (body) out.blocks[id] = body.innerHTML;
     });
     try { localStorage.setItem(LS + key, JSON.stringify(out)); } catch (e) {}
+    REMOTE.edits[key] = out; pushState("edits", key, out);
   }
 
   /* ---------- scoring ---------- */
@@ -375,16 +412,19 @@
     return t.replace(/\s+/g, " ").trim();
   }
   function savedAi() {
+    if (REMOTE.ok && REMOTE.ai[current]) return REMOTE.ai[current];
     try {
       var v = JSON.parse(localStorage.getItem(aiStoreKey()) || "null");
-      if (v) return v;
-      /* migrate older scans so they never vanish (they'll show as stale) */
-      var legacy = ["cl_ai_v2_" + current, "cl_ai_v1_" + current];
-      for (var i = 0; i < legacy.length; i++) {
-        var o = JSON.parse(localStorage.getItem(legacy[i]) || "null");
-        if (o) { try { localStorage.setItem(aiStoreKey(), JSON.stringify(o)); } catch (e) {} return o; }
+      if (!v) {
+        /* migrate older local scans so they never vanish (they'll show as stale) */
+        var legacy = ["cl_ai_v2_" + current, "cl_ai_v1_" + current];
+        for (var i = 0; i < legacy.length; i++) {
+          var o = JSON.parse(localStorage.getItem(legacy[i]) || "null");
+          if (o) { v = o; try { localStorage.setItem(aiStoreKey(), JSON.stringify(o)); } catch (e) {} break; }
+        }
       }
-      return null;
+      if (v && REMOTE.ok && !REMOTE.ai[current]) { REMOTE.ai[current] = v; pushState("ai", current, v); }
+      return v;
     } catch (e) { return null; }
   }
   function aiStamp() { try { var d = new Date(); return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ", " + d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
@@ -420,6 +460,7 @@
         if (d && d.error) { box.innerHTML = "<span class='ai__err'>" + escAttr(d.error) + "</span>"; return; }
         var rec = { aiPercentage: (d && d.aiPercentage) || 0, feedback: (d && d.feedback) || "", ts: aiStamp(), hash: aiHash(text) };
         try { localStorage.setItem(aiStoreKey(), JSON.stringify(rec)); } catch (e) {}
+        REMOTE.ai[current] = rec; pushState("ai", current, rec);
         box.innerHTML = aiResultHtml(rec, false);
         if (btn) btn.textContent = "Re-scan page";
       })
@@ -632,19 +673,20 @@
     $("#app").addEventListener("click", function (e) { if (e.target === $("#app")) closeMobileNav(); });
     $("#btn-save").addEventListener("click", function () { persist(current); flashSaved(true); });
     $("#btn-reset").addEventListener("click", function () {
-      if (!confirm("Reset this page to the original content? Your edits on this page will be cleared.")) return;
-      localStorage.removeItem(LS + current); renderPage(current);
+      if (!confirm("Reset this page to the original content? Edits on this page will be cleared for everyone.")) return;
+      localStorage.removeItem(LS + current); delete REMOTE.edits[current]; pushState("edits", current, null); renderPage(current);
     });
   }
 
   /* ---------- auth gate ---------- */
   var gate = $("#gate"), app = $("#app"), form = $("#gate-form"), input = $("#gate-pass"), err = $("#gate-error");
+  function startApp() { syncPull(function () { boot(); }); }
   function unlock() {
     sessionStorage.setItem("cl_portal", "1");
     gate.classList.add("is-unlocked");
     setTimeout(function () { gate.style.display = "none"; }, 600);
     app.hidden = false;
-    setTimeout(boot, 0);
+    setTimeout(startApp, 0);
   }
   $("#gate-eye").addEventListener("click", function () {
     input.type = input.type === "password" ? "text" : "password"; input.focus();
@@ -656,6 +698,6 @@
       else { err.hidden = false; gate.classList.add("is-shake"); setTimeout(function () { gate.classList.remove("is-shake"); }, 450); input.select(); }
     });
   });
-  if (sessionStorage.getItem("cl_portal") === "1") { gate.style.display = "none"; gate.classList.add("is-unlocked"); app.hidden = false; setTimeout(boot, 0); }
+  if (sessionStorage.getItem("cl_portal") === "1") { gate.style.display = "none"; gate.classList.add("is-unlocked"); app.hidden = false; setTimeout(startApp, 0); }
 
 })();
