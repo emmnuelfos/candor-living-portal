@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/portal.css?v=20260703b">
+<link rel="stylesheet" href="assets/css/portal.css?v=20260710a">
 <style>
 /* ---------- PREVIEW MODE: clean reading view, no editor chrome ---------- */
 body{background:#e9e2d2;overflow:auto}
@@ -18,10 +18,17 @@ body{background:#e9e2d2;overflow:auto}
 .pv-bar__label{font-family:"Spline Sans Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a7a55}
 .pv-bar__page{font-family:"Fraunces",Georgia,serif;font-size:20px;font-weight:600;color:#2e2a26}
 .pv-bar__note{margin-left:auto;font-size:13px;color:#8b8272}
-.pv-pages{display:flex;flex-wrap:wrap;gap:7px;padding:0 6px 16px}
-.pv-pages a{font-family:"Instrument Sans",sans-serif;font-size:13.5px;font-weight:600;color:#5c554d;background:#f7f2ea;border:1px solid #ddd2bd;border-radius:999px;padding:7px 14px;text-decoration:none}
-.pv-pages a:hover{border-color:#4F8A8B;color:#356a6b}
-.pv-pages a.on{background:#4F8A8B;border-color:#4F8A8B;color:#fff}
+.pv-menu{position:relative}
+.pv-menu summary{list-style:none;cursor:pointer;font-family:"Instrument Sans",sans-serif;font-size:13.5px;font-weight:600;color:#5c554d;background:#f7f2ea;border:1px solid #ddd2bd;border-radius:999px;padding:8px 16px;user-select:none;white-space:nowrap}
+.pv-menu summary::-webkit-details-marker{display:none}
+.pv-menu summary::after{content:"\25BE";margin-left:7px;font-size:11px;color:#8a7a55}
+.pv-menu[open] summary{background:#4F8A8B;border-color:#4F8A8B;color:#fff}
+.pv-menu[open] summary::after{color:#fff}
+.pv-menu__panel{position:absolute;top:calc(100% + 8px);left:0;z-index:80;min-width:252px;background:#fff;border:1px solid #ddd2bd;border-radius:14px;box-shadow:0 26px 52px -22px rgba(60,48,30,.4);padding:10px;display:flex;flex-direction:column;gap:2px}
+.pv-menu__label{font-family:"Spline Sans Mono",monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a8917d;padding:8px 10px 4px}
+.pv-menu__panel a{font-family:"Instrument Sans",sans-serif;font-size:13.5px;font-weight:500;color:#5c554d;padding:8px 10px;border-radius:8px;text-decoration:none}
+.pv-menu__panel a:hover{background:#f7f2ea;color:#356a6b}
+.pv-menu__panel a.on{background:#4F8A8B;color:#fff}
 /* the website frame reuses portal styles; strip editor artifacts */
 .preview .block__bar{display:none !important}
 .preview .block::after{display:none !important}
@@ -40,14 +47,17 @@ body{background:#e9e2d2;overflow:auto}
   <div class="pv-bar">
     <span class="pv-bar__label">Website preview</span>
     <span class="pv-bar__page" id="pv-page">Home</span>
+    <details class="pv-menu" id="pv-menu">
+      <summary>Browse pages</summary>
+      <div class="pv-menu__panel" id="pv-menu-panel"></div>
+    </details>
     <span class="pv-bar__note">A preview of candorlivinghcs.com &mdash; for review only</span>
   </div>
-  <nav class="pv-pages" id="pv-pages" aria-label="Preview pages"></nav>
   <div class="site" id="pv-site"><!-- rendered by script --></div>
   <p class="pv-foot">Prepared for Candor Living Home Care Services by TaskFloVA &middot; content preview, not the live website</p>
 </div>
 
-<script src="assets/js/data.js?v=20260703b"></script>
+<script src="assets/js/data.js?v=20260710a"></script>
 <script>
 (function () {
   "use strict";
@@ -56,9 +66,14 @@ body{background:#e9e2d2;overflow:auto}
   var STATE_KEY = "63bf487578e946cfa006bed174e70e8140d5d48fc952fd8db1f1988960e5484e";
   var REMOTE = { edits: {}, ok: false };
 
-  var PAGES = ["home", "about", "services", "service-24hour", "service-respite", "service-personal", "service-companionship", "service-homesupport", "blog", "careers", "contact"];
-  var NAVITEMS = [["home", "Home"], ["about", "About"], ["services", "Services"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact"]];
+  var PAGES = ["home", "about", "services", "service-personal", "service-companionship", "service-homesupport", "service-respite", "service-24hour", "blog", "careers", "contact"];
+  var NAVITEMS = [["home", "Home"], ["about", "About Us"], ["services", "Services"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact Us"]];
   var SUBPAGES = ["service-personal", "service-companionship", "service-homesupport", "service-respite", "service-24hour"];
+  var SUBNAV = [["service-personal", "Personal Care"], ["service-companionship", "Companionship"], ["service-homesupport", "Home Support"], ["service-respite", "Respite Care"], ["service-24hour", "24-Hour Home Care"]];
+  var MENU = [
+    ["Main pages", [["home", "Home"], ["about", "About Us"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact Us"]]],
+    ["Services", [["services", "Services Overview"], ["service-personal", "Personal Care"], ["service-companionship", "Companionship"], ["service-homesupport", "Home Support (Homemaking)"], ["service-respite", "Respite Care"], ["service-24hour", "24-Hour Home Care"]]]
+  ];
   var MEDIA_TYPES = { hero: 1, intro: 1, story: 1, mission: 1, "what-it-is": 1, "why-it-matters": 1, dignity: 1, "why-us": 1, "what-s-included": 1, "who-it-s-for": 1, values: 1, audience: 1, safety: 1, "why-work-here": 1, guidance: 1, "service-area": 1, landscape: 1 };
   var PIC_SVG = "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='3'/><circle cx='8.5' cy='8.5' r='1.7'/><path d='m21 15-5-5L5 21'/></svg>";
 
@@ -84,20 +99,29 @@ body{background:#e9e2d2;overflow:auto}
     var parent = D.pages[activeKey] && D.pages[activeKey].parent;
     var links = NAVITEMS.map(function (it) {
       var on = (it[0] === activeKey || it[0] === parent);
-      return "<span class='site-nav__link" + (on ? " is-active" : "") + "' data-goto='" + it[0] + "'>" + it[1] + "</span>";
+      if (it[0] === "services") {
+        var dd = "<span class='site-nav__dd'><span class='dd-label'>Our services</span>" +
+          SUBNAV.map(function (s) { return "<a href='#" + s[0] + "'>" + s[1] + "</a>"; }).join("") + "</span>";
+        return "<span class='site-nav__item'><a class='site-nav__link" + (on ? " is-active" : "") + "' href='#services'>Services <span class='site-nav__caret'>&#9662;</span></a>" + dd + "</span>";
+      }
+      return "<a class='site-nav__link" + (on ? " is-active" : "") + "' href='#" + it[0] + "'>" + it[1] + "</a>";
     }).join("");
     return "<div class='site-nav'><img class='site-nav__logoimg' src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'>" +
-      "<nav class='site-nav__links'>" + links + "</nav><span class='site-nav__cta'>Request Care</span></div>";
+      "<nav class='site-nav__links'>" + links + "</nav>" +
+      "<a class='site-nav__phone' href='tel:+17137305017'>(713) 730-5017</a>" +
+      "<span class='site-nav__review' title='Google Business review link connects here at launch'>Leave a Review</span>" +
+      "<a class='site-nav__cta' href='#contact'>Request Care</a></div>";
   }
 
   function siteFooter() {
     return "<div class='site-foot'><div class='site-foot__top'>" +
-      "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living'></span><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
+      "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living'></span><p><span class='site-foot__tag'>Care That Feels Like Home.</span> Compassionate, non-medical home care serving Houston and the surrounding area.</p>" +
       "<div class='site-foot__social'><span>f</span><span>in</span><span>X</span></div></div>" +
-      "<div class='site-foot__col'><h4>Services</h4><a>Personal Care</a><a>Companionship</a><a>Home Support</a><a>Respite Care</a><a>24-Hour Home Care</a></div>" +
-      "<div class='site-foot__col'><h4>Company</h4><a>About Us</a><a>Careers</a><a>Blog</a><a>Contact</a></div>" +
-      "<div class='site-foot__col'><h4>Get in touch</h4><a>(713) 730-5017</a><a>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a></div>" +
-      "</div><div class='site-foot__pay'>We accept private pay &middot; long-term care insurance &middot; ask about VA benefit options</div><div class='site-foot__bar'><span>&copy; 2026 Candor Living Home Care Service</span><span>Privacy Policy &nbsp;&middot;&nbsp; Accessibility</span></div></div>";
+      "<div class='site-foot__col'><h4>Services</h4><a href='#service-personal'>Personal Care</a><a href='#service-companionship'>Companionship</a><a href='#service-homesupport'>Home Support</a><a href='#service-respite'>Respite Care</a><a href='#service-24hour'>24-Hour Home Care</a></div>" +
+      "<div class='site-foot__col'><h4>Company</h4><a href='#about'>About Us</a><a href='#careers'>Careers</a><a href='#blog'>Blog</a><a href='#contact'>Contact Us</a></div>" +
+      "<div class='site-foot__col'><h4>Get in touch</h4><a href='tel:+17137305017'>(713) 730-5017</a><a href='mailto:info@candorlivinghcs.com'>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a><a class='rev' title='Google Business review link connects here at launch'>Leave a Review</a></div>" +
+      "</div><div class='site-foot__cta'>The consultation is free: <a href='tel:+17137305017'>(713) 730-5017</a> &nbsp;&middot;&nbsp; <a class='rev' title='Google Business review link connects here at launch'>Leave a Review</a></div>" +
+      "<div class='site-foot__pay'>We accept private pay &middot; long-term care insurance &middot; ask about VA benefit options</div><div class='site-foot__bar'><span>&copy; 2026 Candor Living Home Care Service</span><span>Privacy Policy &nbsp;&middot;&nbsp; Accessibility</span></div></div>";
   }
 
   function render() {
@@ -106,10 +130,14 @@ body{background:#e9e2d2;overflow:auto}
     document.getElementById("pv-page").textContent = p.nav;
     document.title = "Candor Living — " + p.nav + " (Preview)";
 
-    /* page pills */
-    document.getElementById("pv-pages").innerHTML = PAGES.map(function (k) {
-      return "<a href='#" + k + "' class='" + (k === key ? "on" : "") + "'>" + D.pages[k].nav + "</a>";
-    }).join("");
+    /* categorized page menu in the task bar */
+    var panel = "";
+    MENU.forEach(function (g) {
+      panel += "<span class='pv-menu__label'>" + g[0] + "</span>";
+      g[1].forEach(function (it) { panel += "<a href='#" + it[0] + "' class='" + (it[0] === key ? "on" : "") + "'>" + it[1] + "</a>"; });
+    });
+    document.getElementById("pv-menu-panel").innerHTML = panel;
+    document.getElementById("pv-menu").open = false;
 
     /* website frame */
     var html = siteNav(key) + "<div class='blocks'>";

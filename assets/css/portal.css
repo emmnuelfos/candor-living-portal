@@ -530,3 +530,27 @@ button{font-family:inherit;cursor:pointer}
 }
 
 .site-foot__pay{padding:14px 0 2px;font-size:12.5px;color:#CBB38A;border-top:1px solid rgba(255,255,255,.1);text-align:center;letter-spacing:.02em}
+
+/* ---------- Jul 2026 client feedback: nav dropdown, top phone, review links, footer CTA ---------- */
+.site-nav{position:relative;z-index:40}
+a.site-nav__link,.site-nav__dd a,.site-foot__col a,.site-foot__cta a,a.site-nav__cta,a.site-nav__phone{text-decoration:none}
+.site-nav__item{position:relative;display:inline-flex}
+.site-nav__item .site-nav__link{cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.site-nav__caret{font-size:9px;color:#a8917d;transform:translateY(1px)}
+.site-nav__dd{position:absolute;top:calc(100% + 10px);left:-14px;min-width:236px;background:#fff;border:1px solid #ece1cf;border-radius:14px;box-shadow:0 26px 52px -22px rgba(60,48,30,.45);padding:8px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:60}
+.site-nav__item:hover .site-nav__dd,.site-nav__item:focus-within .site-nav__dd{opacity:1;visibility:visible;transform:translateY(0)}
+.site-nav__dd .dd-label{font-family:var(--font-ui);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#a8917d;padding:8px 12px 4px}
+.site-nav__dd a{font-family:var(--font-ui);font-size:13.5px;font-weight:500;color:#5c554d;padding:9px 12px;border-radius:9px;cursor:pointer}
+.site-nav__dd a:hover{background:#F7F2EA;color:#356a6b}
+.site-nav__phone{font-family:var(--font-ui);font-size:13.5px;font-weight:700;color:#356a6b;white-space:nowrap}
+.site-nav__review{font-family:var(--font-ui);font-size:12.5px;font-weight:600;color:#5c554d;border:1px solid #d8c9bb;border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap}
+.site-nav__review:hover{border-color:#CBB38A;color:#356a6b}
+a.site-nav__cta{cursor:pointer}
+@media (max-width:980px){.site-nav__phone,.site-nav__review{display:none}}
+.site-foot__col a{cursor:pointer}
+.site-foot__col a:hover{color:#F7F2EA}
+.site-foot__col a.rev{color:#CBB38A}
+.site-foot__cta{padding:16px 0 2px;text-align:center;font-size:13.5px;color:#e8e0d2;border-top:1px solid rgba(255,255,255,.1)}
+.site-foot__cta a{color:#fff;font-weight:700}
+.site-foot__cta a.rev{color:#CBB38A;font-weight:600;cursor:pointer}
+.site-foot__tag{font-family:var(--font-serif);font-style:italic;color:#F7F2EA}

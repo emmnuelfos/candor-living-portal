@@ -50,7 +50,7 @@ window.CANDOR.addPages({
   home: {
     nav: "Home", group: "pages", kind: "content", url: "/",
     seoTitle: "Home Care in Houston, TX | Candor Living Home Care Service",
-    metaDescription: "Compassionate non-medical home care in Houston. Trained caregivers for 24-hour care, respite, personal care and companionship. Call (713) 730-5017.",
+    metaDescription: "Compassionate non-medical home care in Houston. Trained caregivers for personal care, companionship, respite and 24-hour care. Call (713) 730-5017.",
     h1: "Compassionate Home Care in Houston, Built Around Your Family",
     targetWords: 780,
     competitors: [
@@ -105,10 +105,10 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "home-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Non-medical home care in Houston, TX</p><h1>Compassionate Home Care in Houston, Built Around Your Family</h1><p class='lead'>Your loved one wants to stay home. We help Houston families make that happen. Candor Living sends trained, non-medical caregivers to your door, often within 24 hours of your first call. No waitlists. No hard sell.</p><p class='cta-row'><a class='btn btn-primary'>Start care today</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Non-medical home care in Houston, TX</p><h1>Compassionate Home Care in Houston, Built Around Your Family</h1><p class='lead'>Your loved one wants to stay home. We help Houston families make that happen. Candor Living sends trained, non-medical caregivers to your door, often within 24 hours of your first call. No waitlists. No hard sell.</p><p class='cta-row'><a class='btn btn-primary'>Start care today</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "home-intro", type: "Intro", label: "Welcome / Intro", html:
-        "<h2>Home care in Houston that feels like family</h2><p>Picking someone to help mom or dad is hard. Most families call us worried about the same stuff. Is she safe? Will they treat him with dignity? Can I trust a stranger in the house? Fair questions, every one. That's the bar we hire and train to.</p><p>Candor Living is a home care agency here in Houston. We send caregivers into the home for seniors, elderly parents, and other older adults who need a hand with everyday things, from a shower and a hot meal to a ride to the doctor. Small stuff. Big difference. It's the kind of in-home care that keeps aging in place realistic instead of wishful.</p>" },
+        "<h2>Care That Feels Like Home</h2><p>Picking someone to help mom or dad is hard. Most families call us worried about the same stuff. Is she safe? Will they treat him with dignity? Can I trust a stranger in the house? Fair questions, every one. That's the bar we hire and train to.</p><p>Candor Living is a home care agency here in Houston. We send caregivers into the home for seniors, elderly parents, and other older adults who need a hand with everyday things, from a shower and a hot meal to a ride to the doctor. Small stuff. Big difference. It's the kind of in-home care that keeps aging in place realistic instead of wishful.</p>" },
 
       { id: "home-services", type: "Services Grid", label: "Services Overview", html:
         "<h2>Home care services in Houston</h2><p>Every family lands here for a different reason. So we build the plan around your loved one, then change it as life changes. Our home care services in Houston cover a lot of ground. A quick look at what we do:</p><ul class='svc-grid'><li><strong>Personal Care</strong><span>Bathing, dressing, grooming, getting around. The hands-on stuff, done with respect.</span></li><li><strong>Companionship</strong><span>Cards, a walk, an old story, a laugh. Suddenly the day feels shorter.</span></li><li><strong>Home Support</strong><span>Light housekeeping, laundry, meals, errands. The house keeps running.</span></li><li><strong>Respite Care</strong><span>Family caregivers burn out. Go to work, take a trip, sleep in. We cover the shift.</span></li><li><strong>24-Hour Home Care</strong><span>Day and night, someone's awake and close by. Even at 3 a.m.</span></li></ul>" },
@@ -129,7 +129,7 @@ window.CANDOR.addPages({
         "<h2>Serving Houston and the surrounding area</h2><p>We provide senior home care across Houston and the towns around it. The Heights. Montrose. The Galleria. Bellaire. West U. Katy, Sugar Land, Pearland, Cypress, The Woodlands. Not sure we reach your street? Just ask. Our in-home care for Houston seniors travels to you. Same-day assessments across most of the metro, elderly care across Houston proper and the suburbs, home caregivers Houston families can actually reach on the phone. Houston, Texas home care, born here, based here. And since in-home senior care comes to you, traffic's our problem, not yours.</p>" },
 
       { id: "home-faq", type: "FAQ", label: "FAQ", html:
-        "<h2>Questions Houston families ask</h2><h3>What is non-medical home care?</h3><p>People ask, so, plainly: our caregivers don't do injections, wound care, or anything that needs a nurse's license. That's home health, a different service, often layered on top of ours after surgery. What we handle is everything else that fills a day. The bathing. The meals. The rides, the reminders, the company. Home care assistance for the life part of living at home. Most families figure out pretty quick that the life part was the bigger job anyway.</p><h3>How fast can care actually start?</h3><p>Often within 24 hours of the first call. Same week, almost always. If it's urgent, say so up front. We've scrambled a caregiver on a Sunday before.</p><h3>Does Medicare pay for any of this?</h3><p>For non-medical home care, usually no. Long-term care insurance often does. VA benefits sometimes do. Most families pay privately by the hour, and we'll walk the options honestly before anything gets signed.</p><h3>Is there a minimum number of hours?</h3><p>Low ones, kept reasonable on purpose. Hourly home care two mornings a week is a perfectly good start. Plenty of seniors begin exactly there.</p><h3>What if the caregiver isn't a fit?</h3><p>Tell us. No hurt feelings, no awkward conversation. Matching in-home caregivers to personalities is half our job, and we swap until it clicks.</p><h3>Can care grow if things change?</h3><p>That's the design. Companion care becomes personal care. Hourly visits become half days, then live-in care or senior care at home around the clock. One phone call moves it. Houston in-home care is built to flex.</p><h3>Who exactly shows up?</h3><p>Our own people, not gig strangers. Background-checked, insured, trained, and matched to your loved one's personality. You meet them before care starts. Always.</p>" },
+        "<h2>Questions Houston families ask</h2><h3>What is non-medical home care?</h3><p>People ask, so, plainly: our caregivers don't do injections, wound care, or anything that needs a nurse's license. That's home health, a different service, often layered on top of ours after surgery. What we handle is everything else that fills a day. The bathing. The meals. The rides, the reminders, the company. Home care assistance for the life part of living at home. Most families figure out pretty quick that the life part was the bigger job anyway.</p><h3>Why choose Candor Living?</h3><p>Fast placement, honest pricing, and people we vetted ourselves. We're veteran-founded, we answer our own phone, and we match on personality, not just availability. The name is the promise: candor from the first call, even when the honest answer is that you don't need us yet.</p><h3>How fast can care actually start?</h3><p>Often within 24 hours of the first call. Same week, almost always. If it's urgent, say so up front. We've scrambled a caregiver on a Sunday before.</p><h3>Does Medicare pay for any of this?</h3><p>For non-medical home care, usually no. Long-term care insurance often does. VA benefits sometimes do. Most families pay privately by the hour, and we'll walk the options honestly before anything gets signed.</p><h3>Is there a minimum number of hours?</h3><p>Low ones, kept reasonable on purpose. Hourly home care two mornings a week is a perfectly good start. Plenty of seniors begin exactly there.</p><h3>What if the caregiver isn't a fit?</h3><p>Tell us. No hurt feelings, no awkward conversation. Matching in-home caregivers to personalities is half our job, and we swap until it clicks.</p><h3>Can care grow if things change?</h3><p>That's the design. Companion care becomes personal care. Hourly visits become half days, then live-in care or senior care at home around the clock. One phone call moves it. Houston in-home care is built to flex.</p><h3>Who exactly shows up?</h3><p>Our own people, not gig strangers. Background-checked, insured, trained, and matched to your loved one's personality. You meet them before care starts. Always.</p>" },
 
       { id: "home-testimonials", type: "Testimonials", label: "Testimonials", html:
         "<h2>Kind words, straight from the source</h2><div class='tst-grid'><figure class='tst'><span class='tst__stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote>They had someone at mom's house within a day of my first call. Two months in, she calls Rosa &ldquo;my Tuesday girl.&rdquo;</blockquote><figcaption><strong>D.M.</strong><span>Daughter of a client &middot; The Heights</span></figcaption></figure><figure class='tst'><span class='tst__stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote>I slept through a whole weekend for the first time in a year. Came home to a cleaner house than I left.</blockquote><figcaption><strong>R.T.</strong><span>Family caregiver &middot; Katy</span></figcaption></figure><figure class='tst'><span class='tst__stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><blockquote>Straight answers about cost on the first phone call. No runaround. That alone sold us.</blockquote><figcaption><strong>J.C.</strong><span>Son of a client &middot; Pearland</span></figcaption></figure></div><p class='muted'>Sample layout. Verified reviews from real Candor Living clients replace these before launch.</p>" },
@@ -197,14 +197,23 @@ window.CANDOR.addPages({
       { id: "about-values", type: "Values", label: "Our Values", html:
         "<h2>How we care</h2><ul class='check'><li><strong>Respect first.</strong> Your loved one runs their own day. We support, we don't take over.</li><li><strong>The right caregiver.</strong> We match on need and on personality, because trust is built between two real people.</li><li><strong>Honest talk.</strong> You always know how it's going and who to call.</li><li><strong>Dependable.</strong> When we say a caregiver's coming, they come.</li></ul>" },
 
+      { id: "about-candilyn", type: "Founder", label: "Meet Candilyn", html:
+        "<h2>Meet Candilyn Gee, MBA</h2><p class='muted'>Co-Founder &amp; Client Care Coordinator</p><p>Caring for people starts with treating them like family. I've believed that my whole life.</p><p>I served nearly twenty years in the United States Navy, much of it alongside Hospital Corpsmen and healthcare professionals, leading teams whose whole job was showing up for people. What stuck with me wasn't the big operations. It was how far one small kindness travels when somebody's having the worst week of their life.</p><p>Along the way I earned a Bachelor's in Psychology and an MBA. Psychology for the human side. The MBA because good intentions still need payroll, scheduling, and somebody minding the details. Candor Living is where both land: dependable support so seniors and adults with disabilities can stay in the place they call home, safe and comfortable, still running their own lives.</p><p>What I want is plain enough. Clients who feel valued, families who can finally exhale, and caregivers who carry our name like it means something.</p>" },
+
+      { id: "about-brian", type: "Founder", label: "Meet Brian", html:
+        "<h2>Meet Brian &ldquo;Chill&rdquo; Landor</h2><p class='muted'>Co-Founder &amp; Director of Operations</p><p>How you care for people comes down to how you show up for them. Discipline. Respect. Genuine compassion. That's the short version of twenty years in the United States Navy, and it's how we run this company.</p><p>I kept my CPR and medical readiness training current through my whole career, and the habit underneath it, stay prepared, stay calm, respond with care, is now the operating manual for our caregivers.</p><p>This work is personal for me. My grandmothers are the reason, honestly. Whole afternoons at their kitchen tables, talking, laughing, doing nothing much. Nobody photographed any of it, and I remember all of it. Those hours taught me that care isn't really the tasks. It's being present, keeping trust, and letting a person feel like themselves in their own house.</p><p>As Director of Operations, my job is making sure that happens on every single visit.</p>" },
+
+      { id: "about-founders-note", type: "Founders Note", label: "From the Founders", html:
+        "<p class='lead'>Great care starts with an actual relationship. That's the whole philosophy. Trust us with someone you love and you'll get straight answers, real warmth, and the calm of knowing good people have it handled.</p>" },
+
       { id: "about-who", type: "Audience", label: "Who We Help", html:
-        "<h2>Who we help</h2><p>Older adults. People healing after a hospital stay. Disabled adults living with memory loss or limited mobility. Elderly care, dementia support, a steady hand after surgery, our caregivers have seen all of it. And just as often we're really helping the adult kids, the ones coordinating everything from another city who need to know a trusted person shows up for their seniors. Respite care when you're fried. Personal care when the tub gets scary. Companionship when the house gets quiet. One care plan, built around your family. That's what a home care provider is for.</p>" },
+        "<h2>Who we help</h2><p>Older adults. People healing after a hospital stay. Disabled adults living with memory loss or limited mobility. Elderly care, dementia support, a steady hand after surgery, our caregivers have seen all of it. And just as often we're really helping the adult kids, the ones coordinating everything from another city who need to know a trusted person shows up for their seniors. Respite care when you're fried. Personal care when the tub gets scary. Companionship when the house gets quiet. One care plan, built around your family. That's what a home care provider is for. Hospital discharge planners, rehab teams, and senior living staff send families our way too, mostly because care starts fast and updates actually arrive.</p>" },
 
       { id: "about-vetting", type: "Vetting", label: "How We Vet Caregivers", html:
         "<h2>How we vet caregivers</h2><p>Slowly, on purpose. Background checks first, the real kind. References actually called. Then a sit-down interview, because a resume can't tell you whether somebody stays patient at 3 a.m. We hire maybe one in ten, train them for non-medical senior care, and keep them insured and bonded from day one.</p><p>Then the part most agencies skip: the match. A retired teacher gets a caregiver who'll talk books. A Vietnam vet gets one who listens. In-home care works when the two people in the room actually like each other.</p>" },
 
       { id: "about-area", type: "Service Area", label: "Where We Work", html:
-        "<h2>Where we work</h2><p>Houston and the loop around it. The Heights to Pearland, Katy to The Woodlands. If your grandma's street is within a half hour of downtown, odds are good we cover it. Ask.</p>" },
+        "<h2>Where we work in Houston</h2><p>Houston and the loop around it. The Heights to Pearland, Katy to The Woodlands. If your grandma's street is within a half hour of downtown, odds are good we cover it. Ask.</p>" },
 
       { id: "about-cta", type: "CTA", label: "Closing CTA", html:
         "<h2>Come see the difference candor makes</h2><p>Call (713) 730-5017. A free, no-pressure talk about your family, from people doing compassionate senior care in Houston every day.</p><p class='cta-row'><a class='btn btn-primary'>Talk to our team</a></p>" }
@@ -214,7 +223,7 @@ window.CANDOR.addPages({
   services: {
     nav: "Services", group: "pages", kind: "content", url: "/services/", isParent: true,
     seoTitle: "Home Care Services in Houston | Candor Living Home Care",
-    metaDescription: "Explore Candor Living's Houston home care services: 24-hour care, respite, personal care, companionship and home support. Call (713) 730-5017.",
+    metaDescription: "Explore Candor Living's Houston home care services: personal care, companionship, home support, respite and 24-hour care. Call (713) 730-5017.",
     h1: "Home Care Services in Houston",
     targetWords: 620,
     competitors: [
@@ -256,7 +265,7 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "svc-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Our services</p><h1>Home Care Services in Houston</h1><p class='lead'>One team for all of it. Candor Living runs the full set of non-medical home care services in Houston. A few hours a week, or round-the-clock. Needs shift? The plan shifts too.</p><p class='cta-row'><a class='btn btn-primary'>Request a consultation</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Our services</p><h1>Home Care Services in Houston</h1><p class='lead'>One team for all of it. Candor Living runs the full set of non-medical home care services in Houston. A few hours a week, or round-the-clock. Needs shift? The plan shifts too.</p><p class='cta-row'><a class='btn btn-primary'>Request a free consultation</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "svc-intro", type: "Intro", label: "Intro", html:
         "<h2>One provider for the home care your family needs</h2><p>Most families start with one thing. A ride to chemo. Help after a hip replacement. Then it grows. Keeping your home care services with one Houston provider means less juggling for you, and a caregiver who already knows your loved one's coffee order and their bad knee. In-home senior care works best as one relationship, not a rotation.</p>" },
@@ -265,7 +274,7 @@ window.CANDOR.addPages({
         "<div class='svc-cards'><article><h3>Personal Care</h3><p>Bathing, dressing, grooming. Done kindly. Never rushed, never careless.</p><a class='link'>Personal care</a></article><article><h3>Companionship</h3><p>Dominoes, a walk, an old story told twice. Company that actually counts.</p><a class='link'>Companionship</a></article><article><h3>Home Support</h3><p>Homemaking services. Laundry going, fridge full, floors clear of tripping hazards.</p><a class='link'>Home support</a></article><article><h3>Respite Care</h3><p>You take Tuesday off. Or a week in Galveston. We hold the fort while you're gone.</p><a class='link'>Respite care</a></article><article><h3>24-Hour Home Care</h3><p>Somebody's there all night. And all day after that. Overnight shifts, live-in caregivers, the works.</p><a class='link'>24-hour home care</a></article></div>" },
 
       { id: "svc-choose", type: "Guidance", label: "Not Sure Where to Start", html:
-        "<h2>Not sure which service fits?</h2><p>Nobody calls us knowing the industry words for what they need. A daughter once asked for 'a little help with breakfast.' Turned out dad hadn't had a hot meal in a week and the stairs had gotten scary. Tell us what a hard day looks like. We'll turn it into in-home care that fits, maybe two mornings a week, maybe full-time senior care in Houston. And if you don't need us yet? We'll say that too. Aging in place should feel doable, not like a project.</p>" },
+        "<h2>Not sure which service fits?</h2><p>Nobody calls us knowing the industry words for what they need. A daughter once asked for 'a little help with breakfast.' Turned out dad hadn't had a hot meal in a week and the stairs had gotten scary. Tell us what a hard day looks like. We'll turn it into in-home care that fits, maybe two mornings a week, maybe full-time senior care in Houston. And if you don't need us yet? We'll say that too. Aging in place should feel doable for seniors, not like a project.</p>" },
 
       { id: "svc-how", type: "Process", label: "How We Build Your Plan", html:
         "<h2>How we build your care plan</h2><ol class='steps'><li><strong>Tell us the real story.</strong> Not the polished version. The 2 a.m. worries, the state of the fridge, the stairs.</li><li><strong>We come see the house.</strong> A care plan built at the actual kitchen table beats one built from a call script.</li><li><strong>Start small, adjust monthly.</strong> Care grows or shrinks as life does. Nothing gets locked in.</li></ol>" },
@@ -274,7 +283,7 @@ window.CANDOR.addPages({
         "<h2>Questions about our services</h2><h3>Can we mix services?</h3><p>Please do. Most Houston families blend, companion care with light housekeeping, personal care with meals. One caregiver, one visit, several jobs handled.</p><h3>Can the plan change later?</h3><p>Any month, any direction. In-home care that can't flex isn't much of a plan. Surgery recovery ends. Dementia progresses. The care follows the person.</p><h3>Are there hourly minimums?</h3><p>Low ones. Elderly care shouldn't mean buying more hours than the day needs. Start hourly care where the need actually is, and let our caregivers earn a bigger role.</p><h3>Who does the caregiving?</h3><p>Our own people. Vetted, insured, trained, and matched to your loved one, with live-in care and overnight options when seniors need more than daytime help.</p>" },
 
       { id: "svc-cta", type: "CTA", label: "Closing CTA", html:
-        "<h2>Let's find the right fit</h2><p>Call (713) 730-5017 and tell us what's going on. Ten minutes, no pressure, and you'll know your home care options in plain English.</p><p class='cta-row'><a class='btn btn-primary'>Request a consultation</a></p>" }
+        "<h2>Let's find the right fit</h2><p>Call (713) 730-5017 and tell us what's going on. Ten minutes, free, no pressure, and you'll know your home care options in plain English.</p><p class='cta-row'><a class='btn btn-primary'>Request a free consultation</a></p>" }
     ]
   }
 
@@ -330,7 +339,7 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "h24-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Services / 24-Hour Home Care</p><h1>24-Hour Home Care in Houston</h1><p class='lead'>Some nights you can't sleep because you're listening for dad. 24-hour home care fixes that. A trained caregiver stays around the clock. A fall at 3 a.m.? A wander at midnight? Somebody's already up.</p><p class='cta-row'><a class='btn btn-primary'>Arrange 24-hour care</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Services / 24-Hour Home Care</p><h1>24-Hour Home Care in Houston</h1><p class='lead'>Some nights you can't sleep because you're listening for dad. 24-hour home care fixes that. A trained caregiver stays around the clock. A fall at 3 a.m.? A wander at midnight? Somebody's already up.</p><p class='cta-row'><a class='btn btn-primary'>Arrange 24-hour care</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "h24-what", type: "What It Is", label: "What It Is", html:
         "<h2>What 24-hour home care covers</h2><p>Simple version: someone's there. All the time. In your loved one's own home. Caregivers rotate shifts so a person is always awake, or a live-in caregiver stays the night and gets up when needed. Around the clock care, without packing anyone off to a facility.</p><p>Families call it the nursing home alternative. Same safety. One-on-one attention instead of a hallway call button. And your loved one keeps their own bed. The coffee mug with the chip in it. The recliner that fits.</p>" },
@@ -405,7 +414,7 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "resp-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Services / Respite Care</p><h1>Respite Care in Houston</h1><p class='lead'>Caring for family is love. It's also 5 a.m. pill sorting and zero weekends. Respite care drops a trained caregiver into your seat. A few hours, a few weeks, your call. You go rest.</p><p class='cta-row'><a class='btn btn-primary'>Schedule respite care</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Services / Respite Care</p><h1>Respite Care in Houston</h1><p class='lead'>Caring for family is love. It's also 5 a.m. pill sorting and zero weekends. Respite care drops a trained caregiver into your seat. A few hours, a few weeks, your call. You go rest.</p><p class='cta-row'><a class='btn btn-primary'>Schedule respite care</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "resp-what", type: "What It Is", label: "What It Is", html:
         "<h2>What respite care means</h2><p>Plainly? We cover your shift. You hand us the routine. Lunch at noon. Pills at two. Wheel of Fortune at six. Our caregivers run it exactly that way until you're back, personal care and meals and company included.</p><p>Some Houston families book a standing Thursday. Some book a wedding weekend. One daughter just wanted eight hours of sleep. All of it counts.</p>" },
@@ -478,7 +487,7 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "pers-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Services / Personal Care</p><h1>Personal Care Services in Houston</h1><p class='lead'>The most personal tasks are the hardest ones to ask help for. Our personal care services handle bathing, dressing and grooming in a way that guards your loved one's dignity. And their privacy.</p><p class='cta-row'><a class='btn btn-primary'>Request personal care</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Services / Personal Care</p><h1>Personal Care Services in Houston</h1><p class='lead'>The most personal tasks are the hardest ones to ask help for. Our personal care services handle bathing, dressing and grooming in a way that guards your loved one's dignity. And their privacy.</p><p class='cta-row'><a class='btn btn-primary'>Request personal care</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "pers-what", type: "What It Is", label: "What It Is", html:
         "<h2>What personal care includes</h2><p>Personal care is hands-on help with the activities of daily living. Bathing and showering. Dressing, when arthritis won't do buttons anymore. Grooming, hair, oral care. Toileting and incontinence support, handled without fuss. Getting in and out of bed, up from the recliner, mobility assistance and transfers with no spills. Non-medical work, sure. It still takes training. And patience you can't fake.</p>" },
@@ -550,7 +559,7 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "comp-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Services / Companionship</p><h1>Companion Care for Seniors in Houston</h1><p class='lead'>Not all care is physical. Ask around and seniors will tell you the hardest part of the day is 2 p.m. Nothing on TV. Nobody calling. Companion care fixes the quiet.</p><p class='cta-row'><a class='btn btn-primary'>Request companionship</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Services / Companionship</p><h1>Companion Care for Seniors in Houston</h1><p class='lead'>Not all care is physical. Ask around and seniors will tell you the hardest part of the day is 2 p.m. Nothing on TV. Nobody calling. Companion care fixes the quiet.</p><p class='cta-row'><a class='btn btn-primary'>Request companionship</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "comp-what", type: "What It Is", label: "What It Is", html:
         "<h2>What companion care looks like</h2><p>A companion spends real time with your loved one. Coffee and talk. Dominoes. The garden. A walk around the block, a ride to the store, old photos sorted into piles. It's companionship for seniors with a pulse to it, not a stranger watching the clock until five.</p>" },
@@ -622,7 +631,7 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "hs-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Services / Home Support</p><h1>Homemaking & Home Support Services in Houston</h1><p class='lead'>A safe home is a clean, stocked, manageable home. Our homemaking services handle the housework, laundry, cooking and errands that get harder with age, so your loved one's place stays comfortable and hazard-free.</p><p class='cta-row'><a class='btn btn-primary'>Request home support</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Services / Home Support</p><h1>Homemaking & Home Support Services in Houston</h1><p class='lead'>A safe home is a clean, stocked, manageable home. Our homemaking services handle the housework, laundry, cooking and errands that get harder with age, so your loved one's place stays comfortable and hazard-free.</p><p class='cta-row'><a class='btn btn-primary'>Request home support</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
 
       { id: "hs-what", type: "What It Is", label: "What It Is", html:
         "<h2>What home support covers</h2><p>Home support, or homemaking, is non-medical help around the house. Light housekeeping. Dishes. Laundry and linens. Meal preparation. Grocery shopping and errands. Picking up prescriptions. The goal is a tidy, stocked, easy-to-live-in space, which is exactly what home support services in Houston are built for.</p>" },
@@ -706,7 +715,7 @@ window.CANDOR.addPages({
         "<p class='muted'>These first posts map to what Houston families really search. Each one's written to rank, sure, and also to be the page we'd want our own relatives to find.</p><div class='post-list'><article><h3>What In-Home Senior Care Really Costs in Houston</h3><p>Real hourly rates around Houston. The home care cost per hour swings more than you'd think, and one Katy family's budgeting trick makes the math less scary. For everyone typing how much does in-home care cost at midnight.</p></article><article><h3>Medicare and In-Home Care: What It Pays, What It Won't</h3><p>Short answer? Less than folks hope. The whole does-Medicare-cover-in-home-care question, minus the fine-print runaround. Where Medicaid picks up, and when private pay home care becomes the honest option.</p></article><article><h3>10 Signs It Might Be Time for Home Care</h3><p>Missed pills. Mail piling up. A kitchen that's gone sideways. Quiet signs an elderly parent needs help. Worth catching early, before a crisis does the deciding for everyone.</p></article><article><h3>Aging in Place: How Home Care Keeps Seniors Home</h3><p>Staying put is the plan for most seniors. Good caregivers make the plan hold, without taking over the house. Quality of life, guarded by people who do this every day.</p></article></div>" },
 
       { id: "blog-cta", type: "CTA", label: "Closing CTA", html:
-        "<h2>Got a question we haven't answered?</h2><p>Call (713) 730-5017. We'll talk it through whether or not you ever hire us. Dementia care, respite care, elderly care, the true cost of home care, whatever's keeping you up. Your loved one, your call, our caregiver know-how.</p>" }
+        "<h2>Got a question we haven't answered?</h2><p>Call (713) 730-5017. We'll talk it through whether or not you ever hire us. Dementia care, respite care, elderly care, the true cost of home care, whatever's keeping you up. Home care in Houston for seniors is the only thing we do. Your loved one, your call, our caregiver know-how.</p><p class='cta-row'><a class='btn btn-primary'>Ask us anything</a></p>" }
     ]
   },
 
@@ -727,7 +736,7 @@ window.CANDOR.addPages({
         { term: "cna jobs houston", min: 2, max: 5 },
         { term: "home care jobs houston", min: 1, max: 3 },
         { term: "caregiver jobs", min: 3, max: 6 },
-        { term: "caregiver", min: 4, max: 8 },
+        { term: "caregiver", min: 4, max: 12 },
         { term: "houston", min: 3, max: 6 },
         { term: "hiring caregivers", min: 1, max: 3 },
         { term: "home health aide", min: 1, max: 3 }
@@ -754,16 +763,37 @@ window.CANDOR.addPages({
     },
     blocks: [
       { id: "car-hero", type: "Hero", label: "Hero", html:
-        "<p class='eyebrow'>Careers</p><h1>Caregiver Jobs in Houston</h1><p class='lead'>If caring for people is the thing you do best, we should talk. Candor Living is hiring dependable caregivers and CNAs across Houston for work that actually means something.</p><p class='cta-row'><a class='btn btn-primary'>Apply now</a> <a class='btn btn-ghost'>Call (713) 730-5017</a></p>" },
+        "<p class='eyebrow'>Careers</p><h1>Caregiver Jobs in Houston</h1><p class='lead'>If caring for people is the thing you do best, we should talk. Candor Living is hiring dependable caregivers and CNAs for work that actually means something.</p><p class='cta-row'><a class='btn btn-primary'>Apply now</a> <a class='btn btn-ghost' href='tel:+17137305017'>Call (713) 730-5017</a></p>" },
+
+      { id: "car-about", type: "About Us", label: "About Candor Living", html:
+        "<h2>About Candor Living Home Care Services</h2><p>We help seniors and adults stay safe and independent in their own homes. That only works with exceptional people. So we treat caregivers the way this industry mostly doesn't: you get backup when you call, and you get noticed when you're good. Dependable? Actually like taking care of people? Keep reading. We're hiring for caregiver jobs in Houston right now, and CNA jobs in Houston rarely come with this much backup.</p>" },
 
       { id: "car-why", type: "Why Work Here", label: "Why Work Here", html:
-        "<h2>Why caregivers stick around</h2><ul class='check'><li><strong>Flexible shifts.</strong> Day, night, weekend, live-in. Caregiver jobs that fit your actual life.</li><li><strong>Real backup.</strong> A team that answers the phone and has your back on the job.</li><li><strong>Clients matched to you.</strong> We place you where your skills and personality fit.</li><li><strong>Work that lands.</strong> You'll see the difference you make, every single shift.</li></ul>" },
+        "<h2>Why caregivers stick around</h2><ul class='check'><li><strong>Flexible shifts.</strong> Day, night, weekend, live-in. Work that fits your actual life.</li><li><strong>Real backup.</strong> A team that answers the phone and has your back on the job.</li><li><strong>Clients matched to you.</strong> We place you where your skills and personality fit.</li><li><strong>Work that lands.</strong> You'll see the difference you make, every single shift.</li></ul>" },
 
-      { id: "car-roles", type: "Open Roles", label: "Open Roles", html:
-        "<h2>Who we're hiring</h2><p>Caregivers. CNAs. Home health aides. All over Houston. Experience with seniors helps, but character decides it, and we can train the rest. Part-time caregiver work, full-time, overnight caregiver shifts, live-in caregiver jobs, private caregiver jobs. Home care jobs in Houston with room to grow into real caregiver careers.</p>" },
+      { id: "car-role", type: "Open Roles", label: "The Role", html:
+        "<h2>Now hiring: Caregiver, Home Care</h2><p>You'll provide non-medical personal care and companionship in clients' homes, one person at a time, following a care plan built for them. The real job is quality of life. Independence, dignity, and safety for the person in front of you, handled with steady professionalism and zero drama.</p><p>We hire for caregiver jobs across Houston, plus CNA and home health aide jobs. Part-time caregiver work, full-time schedules, overnight caregiver shifts, live-in and private caregiver jobs. Experience with seniors helps, but character decides it, and we can train the rest. These are home care jobs in Houston with room to grow.</p>" },
+
+      { id: "car-duties", type: "Responsibilities", label: "What You'll Do", html:
+        "<h2>What you'll actually do</h2><ul class='check'><li>Help with activities of daily living: bathing, dressing, grooming, toileting, mobility</li><li>Keep clients company and keep their spirits up</li><li>Fix light meals, help with feeding when it's needed</li><li>Handle light housekeeping and laundry tied to the client's care</li><li>Give medication reminders, where state rules allow</li><li>Spot fall risks, help with transfers and walking</li><li>Drive clients to appointments, errands, and outings</li><li>Notice changes in condition and report them fast</li><li>Keep notes accurate and supervisors in the loop</li><li>Follow the care plan, agency policy, and safety procedures</li><li>Guard client privacy and professional boundaries, always</li></ul>" },
+
+      { id: "car-quals", type: "Qualifications", label: "What You'll Need", html:
+        "<h2>What you'll need</h2><ul class='check'><li>High school diploma or GED, preferred</li><li>Experience in caregiving, home care, assisted living, or healthcare, preferred. CNA certification is a plus</li><li>Current CPR certification, or the willingness to get it</li><li>Valid driver's license, reliable transportation, and current auto insurance if the role involves driving</li><li>Clean background screening and any required pre-employment testing</li><li>Able to read, write, and communicate clearly in English</li><li>Legally authorized to work in the United States</li></ul>" },
+
+      { id: "car-skills", type: "Skills", label: "The Intangibles", html:
+        "<h2>The stuff we can't train</h2><ul class='check'><li>Patience, warmth, and dependability</li><li>Strong communication, stronger boundaries</li><li>Professional appearance, steady attitude</li><li>Organized enough to run a shift on your own</li><li>Sound judgment, and discretion with what you see and hear in someone's home</li></ul>" },
+
+      { id: "car-physical", type: "Physical Requirements", label: "Physical Requirements", html:
+        "<h2>Physical requirements</h2><ul class='check'><li>Lift, transfer, push, or pull up to 50 pounds, with or without reasonable accommodation</li><li>Stand, walk, bend, kneel, reach, and take stairs through a full shift</li><li>Help clients move and transfer safely</li><li>Work comfortably in all kinds of home environments</li></ul>" },
+
+      { id: "car-benefits", type: "Benefits", label: "Benefits", html:
+        "<h2>What eligible employees get</h2><ul class='check'><li>Competitive pay</li><li>Paid training and continuing education</li><li>A company-matched retirement plan</li><li>Real room to advance</li><li>Leadership that answers the phone</li><li>Recognition that isn't a coffee mug</li></ul>" },
+
+      { id: "car-whyjoin", type: "Why Join", label: "Why Join", html:
+        "<h2>Why join Candor Living?</h2><p>Because caregivers are the foundation here, not a line item. The founders spent twenty years apiece in the Navy, so respect and backup aren't slogans, they're how the schedule runs. Your compassion changes somebody's whole day, every shift you work. Caregiver careers grow here instead of stalling.</p><p class='muted'>Candor Living Home Care Services is an Equal Opportunity Employer. Every qualified applicant gets considered, regardless of race, color, religion, sex, national origin, age, disability, veteran status, or any other legally protected status.</p>" },
 
       { id: "car-apply", type: "How to Apply", label: "How to Apply", html:
-        "<h2>How to apply</h2><p>Call (713) 730-5017, or fire your details through the contact form, whichever's easier. Tell us where you've worked and the shifts you want. We usually get back same week. Hunting cna jobs in Houston? Typing caregiver jobs near me at midnight? Skip the forty-page application. Ours is a phone call, and hiring moves fast. Bring your compassionate streak and a home health aide certificate if you've got one. Training on us.</p><p class='cta-row'><a class='btn btn-primary'>Apply now</a></p>" }
+        "<h2>How to apply</h2><p>Call (713) 730-5017 or toss your details through the contact form. Two things we need: where you've worked, what shifts you want. Most people hear back the same week. Hunting cna jobs in Houston? Typing caregiver jobs near me at midnight? Skip the forty-page application. Ours is a phone call, and hiring moves fast. Bring your compassionate streak and a home health aide certificate if you've got one. Training on us.</p><p class='cta-row'><a class='btn btn-primary'>Apply now</a></p>" }
     ]
   },
 
@@ -808,10 +838,13 @@ window.CANDOR.addPages({
         "<p class='eyebrow'>Contact</p><h1>Contact Candor Living Home Care</h1><p class='lead'>Ready to talk, or just have questions? First call's free. So is the advice. We answer honestly and move fast when your family needs home care in Houston.</p>" },
 
       { id: "con-info", type: "Contact Info", label: "Contact Details", html:
-        "<div class='contact-grid'><div><h3>Call us</h3><p><a href='tel:+17137305017'>(713) 730-5017</a></p></div><div><h3>Email</h3><p><a href='mailto:info@candorlivinghcs.com'>info@candorlivinghcs.com</a></p></div><div><h3>Office</h3><p>1919 Taylor Street, STE F<br>Houston, TX 77007</p></div><div><h3>Service area</h3><p>Houston and surrounding areas</p></div></div><p>Prefer the phone? Us too. One call to our home care agency in Houston gets a caregiver moving, often within a day. Beats any home care near me search, because a real person picks up and you can start care the same week.</p>" },
+        "<div class='contact-grid'><div><h3>Call us</h3><p><a href='tel:+17137305017'>(713) 730-5017</a></p></div><div><h3>Email</h3><p><a href='mailto:info@candorlivinghcs.com'>info@candorlivinghcs.com</a></p></div><div><h3>Office</h3><p>1919 Taylor Street, STE F<br>Houston, TX 77007</p></div><div><h3>Service area</h3><p>Houston and surrounding areas</p></div></div><p>Prefer the phone? Us too. One call to our home care agency in Houston gets a caregiver moving, often within a day. Beats any home care near me search, because a real person picks up and you can start care the same week. Tell us about your loved one, ask about senior care in Houston, or just request care. We'll take it from there.</p>" },
+
+      { id: "con-pro", type: "Referrals", label: "For Professionals", html:
+        "<h2>For discharge planners and referral partners</h2><p>Case managers, hospice teams, rehab discharge planners, senior living staff: call (713) 730-5017 and ask for intake. We can usually have caregivers placed within a day, we'll send confirmation back to your office, and the family gets a real person on the line, not a voicemail tree.</p>" },
 
       { id: "con-form", type: "Contact Form", label: "Contact Form", html:
-        "<h2>Send us a message</h2><form class='mock-form' onsubmit='return false'><label>Name<input type='text' placeholder='Your full name'></label><label>Email<input type='email' placeholder='you@email.com'></label><label>Phone<input type='tel' placeholder='(713) 000-0000'></label><label>When do you need care to start?<input type='text' placeholder='e.g. As soon as possible'></label><label>What's going on at home?<textarea rows='4' placeholder='Tell us a little about your loved one'></textarea></label><button class='btn btn-primary' type='submit'>Request consultation</button><p class='muted'>Name, email, phone, start date, message. That's it. We read every note, sketch a care plan, and call you back. Serving seniors with in-home care across Houston and the surrounding areas. Free consultation, zero obligation.</p></form>" }
+        "<h2>Send us a message</h2><form class='mock-form' onsubmit='return false'><label>Name<input type='text' placeholder='Your full name'></label><label>Email<input type='email' placeholder='you@email.com'></label><label>Phone<input type='tel' placeholder='(713) 000-0000'></label><label>When do you need care to start?<input type='text' placeholder='e.g. As soon as possible'></label><label>What's going on at home?<textarea rows='4' placeholder='Tell us a little about your loved one'></textarea></label><button class='btn btn-primary' type='submit'>Request consultation</button><p class='muted'>Name, email, phone, start date, message. That's it. We read every note, sketch a care plan, and call you back. Serving seniors with in-home care across the city and the suburbs around it. Free consultation, zero obligation.</p></form>" }
     ]
   }
 
@@ -952,7 +985,7 @@ window.CANDOR.addPages({
       { id: "seo-approach", type: "Approach", label: "Our Approach", html:
         "<h2>The plan, in five moves</h2>" +
         "<ol class='steps'>" +
-        "<li><strong>Own the local money terms.</strong> A dedicated, keyword-matched page for each service (24-hour, respite, personal care, companionship, home support), each targeting its Houston term plus the huge national head term.</li>" +
+        "<li><strong>Own the local money terms.</strong> A dedicated, keyword-matched page for each service (personal care, companionship, home support, respite, 24-hour), each targeting its Houston term plus the huge national head term.</li>" +
         "<li><strong>Win the map.</strong> Google Business Profile fully optimized, consistent name/address/phone everywhere, and a steady flow of reviews. Most home-care buyers convert from the local pack.</li>" +
         "<li><strong>Answer the questions.</strong> Blog posts targeting real demand: cost of in-home care, Medicare coverage, and signs it is time for help. These earn trust and catch families early.</li>" +
         "<li><strong>Prove trust (E-E-A-T).</strong> Real caregivers, credentials, service-area clarity, and structured data (LocalBusiness + FAQ schema) so Google understands the site.</li>" +
@@ -963,11 +996,11 @@ window.CANDOR.addPages({
         "<table class='kw-table'><thead><tr><th>Page</th><th>Primary keyword</th><th>Search demand</th></tr></thead><tbody>" +
         "<tr><td>Home</td><td>home care houston</td><td>High (local)</td></tr>" +
         "<tr><td>Services</td><td>home care services houston</td><td>High (local)</td></tr>" +
-        "<tr><td>24-Hour</td><td>24 hour home care</td><td>Very high (national)</td></tr>" +
-        "<tr><td>Respite</td><td>respite care houston</td><td>Medium (local)</td></tr>" +
         "<tr><td>Personal Care</td><td>personal care services</td><td>High (national)</td></tr>" +
         "<tr><td>Companionship</td><td>companion care</td><td>Very high (national)</td></tr>" +
         "<tr><td>Home Support</td><td>homemaking services</td><td>Medium</td></tr>" +
+        "<tr><td>Respite</td><td>respite care houston</td><td>Medium (local)</td></tr>" +
+        "<tr><td>24-Hour</td><td>24 hour home care</td><td>Very high (national)</td></tr>" +
         "<tr><td>Careers</td><td>cna jobs houston</td><td>Medium (local)</td></tr>" +
         "</tbody></table>" +
         "<p class='muted'>Local head terms have far higher intent and are easier to win than the national terms. We target both: local for conversions now, national for reach as authority grows.</p>" }

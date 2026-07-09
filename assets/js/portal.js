@@ -10,8 +10,8 @@
   var LS = "cl_edits_v3_"; /* v3: competitor-length expansion Jul 2026 */
   /* realistic word targets (leave visible headroom, like a real SEO tool) */
   /* competitor-informed word targets (Jul 2026 expansion) */
-  var TARGETS = { home: 1150, about: 500, services: 500, "service-24hour": 760, "service-respite": 620,
-    "service-personal": 580, "service-companionship": 580, "service-homesupport": 520, blog: 300, careers: 240, contact: 140 };
+  var TARGETS = { home: 1150, about: 800, services: 500, "service-24hour": 760, "service-respite": 620,
+    "service-personal": 580, "service-companionship": 580, "service-homesupport": 520, blog: 300, careers: 700, contact: 200 };
   var AI_PROXY = "https://candor-ai-proxy-production.up.railway.app"; /* ZeroGPT proxy + shared state (Railway) */
 
   /* ---- shared cloud state: everyone sees the same edits + scans ---- */
@@ -238,27 +238,37 @@
   function hasMedia(slug) { return !!MEDIA_TYPES[slug]; }
   var PIC_SVG = "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='3'/><circle cx='8.5' cy='8.5' r='1.7'/><path d='m21 15-5-5L5 21'/></svg>";
   function mediaFor() { var m = el("div", "block__media"); m.setAttribute("contenteditable", "false"); m.innerHTML = "<span class='block__ph'>" + PIC_SVG + "</span>"; return m; }
-  var NAVITEMS = [["home", "Home"], ["about", "About"], ["services", "Services"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact"]];
+  var NAVITEMS = [["home", "Home"], ["about", "About Us"], ["services", "Services"], ["blog", "Blog"], ["careers", "Careers"], ["contact", "Contact Us"]];
+  var SUBNAV = [["service-personal", "Personal Care"], ["service-companionship", "Companionship"], ["service-homesupport", "Home Support"], ["service-respite", "Respite Care"], ["service-24hour", "24-Hour Home Care"]];
   function siteNav(activeKey) {
     var ap = D.pages[activeKey], parent = ap && ap.parent;
     var links = NAVITEMS.map(function (it) {
       var on = (it[0] === activeKey || it[0] === parent);
-      return "<span class='site-nav__link" + (on ? " is-active" : "") + "'>" + it[1] + "</span>";
+      if (it[0] === "services") {
+        var dd = "<span class='site-nav__dd'><span class='dd-label'>Our services</span>" +
+          SUBNAV.map(function (s) { return "<a href='#" + s[0] + "'>" + s[1] + "</a>"; }).join("") + "</span>";
+        return "<span class='site-nav__item'><a class='site-nav__link" + (on ? " is-active" : "") + "' href='#services'>Services <span class='site-nav__caret'>&#9662;</span></a>" + dd + "</span>";
+      }
+      return "<a class='site-nav__link" + (on ? " is-active" : "") + "' href='#" + it[0] + "'>" + it[1] + "</a>";
     }).join("");
     var n = el("div", "site-nav"); n.setAttribute("contenteditable", "false");
-    n.innerHTML = "<img class='site-nav__logoimg' src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'><nav class='site-nav__links'>" + links + "</nav><span class='site-nav__cta'>Request Care</span>";
+    n.innerHTML = "<img class='site-nav__logoimg' src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'><nav class='site-nav__links'>" + links + "</nav>" +
+      "<a class='site-nav__phone' href='tel:+17137305017'>(713) 730-5017</a>" +
+      "<span class='site-nav__review' title='Google Business review link connects here at launch'>Leave a Review</span>" +
+      "<a class='site-nav__cta' href='#contact'>Request Care</a>";
     return n;
   }
   function siteFooter() {
     var f = el("div", "site-foot"); f.setAttribute("contenteditable", "false");
     f.innerHTML =
       "<div class='site-foot__top'>" +
-        "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'></span><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
+        "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'></span><p><span class='site-foot__tag'>Care That Feels Like Home.</span> Compassionate, non-medical home care serving Houston and the surrounding area.</p>" +
           "<div class='site-foot__social'><span>f</span><span>in</span><span>X</span></div></div>" +
-        "<div class='site-foot__col'><h4>Services</h4><a>Personal Care</a><a>Companionship</a><a>Home Support</a><a>Respite Care</a><a>24-Hour Home Care</a></div>" +
-        "<div class='site-foot__col'><h4>Company</h4><a>About Us</a><a>Careers</a><a>Blog</a><a>Contact</a></div>" +
-        "<div class='site-foot__col'><h4>Get in touch</h4><a>(713) 730-5017</a><a>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a></div>" +
+        "<div class='site-foot__col'><h4>Services</h4><a href='#service-personal'>Personal Care</a><a href='#service-companionship'>Companionship</a><a href='#service-homesupport'>Home Support</a><a href='#service-respite'>Respite Care</a><a href='#service-24hour'>24-Hour Home Care</a></div>" +
+        "<div class='site-foot__col'><h4>Company</h4><a href='#about'>About Us</a><a href='#careers'>Careers</a><a href='#blog'>Blog</a><a href='#contact'>Contact Us</a></div>" +
+        "<div class='site-foot__col'><h4>Get in touch</h4><a href='tel:+17137305017'>(713) 730-5017</a><a href='mailto:info@candorlivinghcs.com'>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a><a class='rev' title='Google Business review link connects here at launch'>Leave a Review</a></div>" +
       "</div>" +
+      "<div class='site-foot__cta'>The consultation is free: <a href='tel:+17137305017'>(713) 730-5017</a> &nbsp;&middot;&nbsp; <a class='rev' title='Google Business review link connects here at launch'>Leave a Review</a></div>" +
       "<div class='site-foot__pay'>We accept private pay &middot; long-term care insurance &middot; ask about VA benefit options</div>" +
       "<div class='site-foot__bar'><span>&copy; 2026 Candor Living Home Care Service</span><span>Privacy Policy &nbsp;&middot;&nbsp; Accessibility</span></div>";
     return f;
