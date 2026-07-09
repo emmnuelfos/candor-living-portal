@@ -528,3 +528,5 @@ button{font-family:inherit;cursor:pointer}
   .site-nav__logoimg{height:42px}
   .gate__clientlogo{width:128px}
 }
+
+.site-foot__pay{padding:14px 0 2px;font-size:12.5px;color:#CBB38A;border-top:1px solid rgba(255,255,255,.1);text-align:center;letter-spacing:.02em}

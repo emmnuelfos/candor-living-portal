@@ -165,7 +165,7 @@
       { key: "brand-logo" }, { key: "brand-palette" }, { key: "brand-typography" }, { key: "brand-sitemap" }, { key: "brand-seo" } ] },
     { group: "Pages", items: [
       { key: "home" }, { key: "about" },
-      { key: "services", children: ["service-24hour", "service-respite", "service-personal", "service-companionship", "service-homesupport"] },
+      { key: "services", children: ["service-personal", "service-companionship", "service-homesupport", "service-respite", "service-24hour"] },
       { key: "blog" }, { key: "careers" }, { key: "contact" } ] }
   ];
   var ICON = {
@@ -255,10 +255,11 @@
       "<div class='site-foot__top'>" +
         "<div class='site-foot__brand'><span class='site-foot__logowrap'><img src='assets/img/candor-logo.png' alt='Candor Living Home Care Services'></span><p>Compassionate, non-medical home care. Serving Houston and the surrounding area.</p>" +
           "<div class='site-foot__social'><span>f</span><span>in</span><span>X</span></div></div>" +
-        "<div class='site-foot__col'><h4>Services</h4><a>24-Hour Home Care</a><a>Respite Care</a><a>Personal Care</a><a>Companionship</a><a>Home Support</a></div>" +
+        "<div class='site-foot__col'><h4>Services</h4><a>Personal Care</a><a>Companionship</a><a>Home Support</a><a>Respite Care</a><a>24-Hour Home Care</a></div>" +
         "<div class='site-foot__col'><h4>Company</h4><a>About Us</a><a>Careers</a><a>Blog</a><a>Contact</a></div>" +
         "<div class='site-foot__col'><h4>Get in touch</h4><a>(713) 730-5017</a><a>info@candorlivinghcs.com</a><a>1919 Taylor St, Houston TX</a></div>" +
       "</div>" +
+      "<div class='site-foot__pay'>We accept private pay &middot; long-term care insurance &middot; ask about VA benefit options</div>" +
       "<div class='site-foot__bar'><span>&copy; 2026 Candor Living Home Care Service</span><span>Privacy Policy &nbsp;&middot;&nbsp; Accessibility</span></div>";
     return f;
   }
